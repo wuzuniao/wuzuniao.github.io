@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document 初始化样式 */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a,address, img,  strong, ol, ul, li,form,table, tr, th, td, aside,footer, header,  nav,  section, time{ margin: 0;	padding: 0;	border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+/* HTML5 浏览器不识别样式设置为块状 */
+aside, footer, header, nav, section,main {display: block;}
+body { line-height: 1; font-size:16px; font-family:"Century Gothic","Microsoft yahei";}
+ol,ul,li {	list-style: none;}
+/*去除strong加粗*/
+strong{font-weight:normal;}
+img{ vertical-align:bottom;}
+/*img:hover{ opacity:0.5;}*/
+a{ text-decoration:none; color:#000;}
+a:hover{ color:red;}
+a:active{}
+a:visited{}
+address{ font-style:normal;}
+
+/*去除IE8下a标签点击出现虚线问题*/
+a:focus{ outline:none;}
+
+/*初始化宽度,左右对齐*/
+.pc_nav,.site,.footer{ max-width:62.5em; margin-left: auto; margin-right: auto;}
+header,main,footer{ margin-left:auto; margin-right:auto; }
+
+p{line-height: 1.5em; text-indent: 2em;}

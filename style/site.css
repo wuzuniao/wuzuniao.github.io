@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document 初始化样式 */
+
+/*子页界面样式*/
+.site{ margin: 2% auto 2% auto; border:#F2F2F2 solid 3px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; border-radius:5px 5px 5px 5px;}
+.site>strong{ font-size:2em; font-family:"黑体"; display:block; width:96%; height:3.3em; line-height:3.3em; border-bottom:#CCCCCC solid 1px; margin-left:auto; margin-right:auto; text-align:center;}
+.site>section{ padding: 1em; }
+.qianyan{ margin-bottom:2.5em;}
+
+/*标题栏样式*/
+h1{ text-align:center; margin-top:2em; margin-bottom:2em; }
+
+
+/*移动端*/
+@media screen and (max-width: 1024px) and (min-width: 0px){
+
+   /*移动端子页界面样式*/
+   .site{ margin: 2%; width: 94%; margin-left:auto; margin-right:auto; }
+   .site>strong{ font-size: 1.25em; width: 90%; }
+
+}
