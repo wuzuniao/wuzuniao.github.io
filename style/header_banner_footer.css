@@ -36,6 +36,8 @@ footer{width:100%; background: #7f7f7f;}
 .footer_ziye{ display: block; border-top:1px solid #969696; border-bottom:1px solid #646464; box-sizing: border-box; }
 .footer_ziye>a{ font-size: 1em; color: #dedede; line-height: 3em; margin-left: 1em;}
 .footer_ziye>a:hover{ color: #c8c8c8; }
+.footer_ziye>a>img{ margin-bottom: 0.9em; }
+#github{ margin-left: 19em; }
 .copyright{ text-align:center; padding-top: 0.75em;padding-bottom: 0.75em; border-top:1px solid #969696; box-sizing: border-box; font-size: 1em;}
 .copyright>p{ line-height: 1.5em; color: #dedede;}
 .copyright>p>a{ color: #dedede; }
