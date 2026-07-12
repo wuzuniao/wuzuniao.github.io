@@ -1,0 +1,592 @@
+@charset "utf-8";
+/* header / footer 样式：按 DESIGN-vercel.md 调整颜色风格
+   画布 #fafafa + 墨色 #171717 + 1px 发丝线 #ebebeb。
+   灰阶文字：#4d4d4d body / #8f8f8f mute / #dedede faint。图片保留原色，不做滤镜处理。 */
+
+/* ============ PC 端导航 ============ */
+.pc_header {
+  width: 100%;
+  background: #fafafa;
+  height: 6.25em;
+  box-sizing: border-box;
+}
+
+/* 导航容器：flex 布局，左侧 logo+菜单，右侧工具区 */
+.pc_nav {
+  display: flex;
+  align-items: center;
+}
+
+.pc_nav > a {
+  flex: 0 0 auto;
+  width: 18.75em;
+  text-align: center;
+  line-height: 6.25em;
+}
+
+.pc_nav > a > img {
+  width: 15.625em;
+  max-width: 15.625em;
+}
+
+/* 一级菜单样式 */
+.pc_nav > ul {
+  display: flex;
+  flex: 0 0 auto;
+  margin-left: 0.5em;
+}
+
+.pc_nav > ul > li {
+  flex: 0 0 auto;
+}
+
+.pc_nav > ul > li > a {
+  line-height: 6.25em;
+  display: block;
+  text-align: left;
+  padding: 0 0.5em;
+  font-size: 1em;
+  font-weight: 500;
+  color: #4d4d4d;
+  transition: color 0.15s ease;
+}
+
+.pc_nav > ul > li:hover > a {
+  color: #0070f3;
+}
+
+/* 二级菜单样式（纯文字、无底无边框；悬停仅改文字颜色；无子项的一级菜单不响应） */
+.pc_nav > ul > li > .pc_nav2_ul {
+  position: absolute;
+  z-index: 99;
+  width: auto;
+  text-align: left;
+  padding: 0.25rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+/* 仅当一级菜单含二级链接时悬停才展开，作为一级导航的延伸 */
+.pc_nav > ul > li:has(.pc_nav2_li a):hover > .pc_nav2_ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.pc_nav > ul > li > .pc_nav2_ul > .pc_nav2_li > a {
+  display: block;
+  line-height: 2.75em;
+  padding-left: 0.5em;
+  white-space: nowrap;
+  color: #4d4d4d;
+  font-size: 0.875em;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.pc_nav > ul > li > .pc_nav2_ul > .pc_nav2_li > a:hover {
+  color: #0070f3;
+}
+
+/* 二级菜单背景面板：悬停含子链接的一级菜单时显示（白底、近不透明，遮住原页面） */
+.pc_nav_both {
+  position: absolute;
+  left: 0;
+  top: 6.25em;
+  width: 100%;
+  height: 100%;
+  z-index: 98;
+  background: #fafafa;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s;
+}
+
+.pc_nav:has(> ul > li:hover .pc_nav2_li a) .pc_nav_both {
+  opacity: 0.92;
+  visibility: visible;
+}
+
+/* ============ 右侧工具区（主题图标 + 中英文切换，占位） ============ */
+.pc_nav_tools {
+  flex: 0 0 auto;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.625em;
+}
+
+/* 主题切换：图标按钮（参考语言胶囊样式，仅图标大小，小一号） */
+.theme_toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25em;
+  border: 1px solid #ebebeb;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.theme_toggle img {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
+.theme_toggle:hover {
+  border-color: #d4d4d4;
+  background-color: #f2f2f2;
+}
+
+.theme_toggle:focus {
+  outline: none;
+  border-color: #171717;
+}
+
+/* 中英文切换：分段胶囊（中文为当前语言） */
+.lang_toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1875em;
+  border: 1px solid #ebebeb;
+  border-radius: 9999px;
+  background-color: #ffffff;
+}
+
+.lang_opt {
+  padding: 0.3em 0.85em;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: #8f8f8f;
+  font-size: 0.8125em;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.lang_opt.is-active {
+  background-color: #171717;
+  color: #ffffff;
+}
+
+.lang_opt:not(.is-active):hover {
+  color: #171717;
+}
+
+.lang_opt:focus {
+  outline: none;
+}
+
+
+/* ============ 页脚 ============ */
+footer {
+  width: 100%;
+  background: #fafafa;
+  border-top: 1px solid #ebebeb;
+  color: #4d4d4d;
+}
+
+.footer_erweima {
+  overflow: hidden;
+  border-bottom: 1px solid #ebebeb;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+.footer_erweima > div {
+  width: 200px;
+  display: inline-block;
+  text-align: center;
+  float: left;
+}
+
+.footer_erweima > div:last-child {
+  width: 400px;
+}
+
+.footer_erweima > div > a {
+  display: block;
+  font-size: 1em;
+  font-weight: 500;
+  color: #4d4d4d;
+  line-height: 3em;
+  transition: color 0.15s ease;
+}
+
+.footer_erweima > div > a:hover {
+  color: #0070f3;
+}
+
+.footer_erweima > div:last-child > a {
+  margin-top: 65px;
+}
+
+.footer_ziye {
+  display: block;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  box-sizing: border-box;
+}
+
+.footer_ziye > a {
+  font-size: 0.875em;
+  color: #4d4d4d;
+  line-height: 3em;
+  margin-left: 1em;
+  transition: color 0.15s ease;
+}
+
+.footer_ziye > a:hover {
+  color: #0070f3;
+}
+
+.footer_ziye > a > img {
+  margin-bottom: 0.9em;
+}
+
+#github {
+  margin-left: 19em;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  font-size: 0.875em;
+}
+
+.copyright > p {
+  line-height: 1.5em;
+  color: #8f8f8f;
+}
+
+.copyright > p > a {
+  color: #8f8f8f;
+  transition: color 0.15s ease;
+}
+
+.copyright > p > a:hover {
+  color: #0070f3;
+}
+
+.gongan {
+  margin-left: 1em;
+}
+
+.gongan > img {
+  margin-bottom: 2px;
+}
+
+/* PC 界面下隐藏手机版内容 */
+.m_qian {
+  display: none;
+}
+
+.m_hou {
+  display: none;
+}
+
+.m_footer {
+  display: none;
+}
+
+
+/* 小于 1600 大于 1200 稍微调整字体 */
+@media screen and (max-width: 1600px) and (min-width: 1025px) {
+  /* 导航栏 */
+  .pc_nav > ul > li > a {
+    font-size: 0.9375em;
+  }
+
+  .pc_nav > ul > li > .pc_nav2_ul > .pc_nav2_li > a {
+    font-size: 0.8125em;
+  }
+
+  /* 页脚 */
+  .footer_erweima > div > a {
+    font-size: 0.9375em;
+  }
+
+  .footer_ziye > a {
+    font-size: 0.8125em;
+  }
+
+  .copyright {
+    font-size: 0.8125em;
+  }
+}
+
+
+/* ============ 移动端 ============ */
+@media screen and (max-width: 1024px) {
+  /* 统一移动端导航抽屉与 +/- 图标位置：通过 .m_hou.is-open 使用 100vw 锚定物理右缘
+     （见下方 .m_hou.is-open 规则），不再依赖 html overflow hack */
+  /* 移动端导航 */
+  .pc_header {
+    display: none;
+  }
+
+  .m_qian {
+    display: block;
+    height: 60px;
+    background: #fafafa;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .m_qian .m_qian_lf {
+    padding-top: 5px;
+    padding-left: 5px;
+    float: left;
+  }
+
+  .m_qian .m_qian_lf .m_qian_logo {
+    height: 50px;
+    display: block;
+  }
+
+  .m_qian .m_qian_rg {
+    padding-right: 5%;
+    padding-top: 17.5px;
+    float: right;
+  }
+
+  .m_qian .m_qian_rg a .m_qian_menuimg {
+    height: 25px;
+    display: block;
+  }
+
+  /* 抽屉容器：默认收起，is-open 展开 */
+  .m_hou {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: 10000;
+  }
+
+  .m_hou.is-open {
+    /* 用 100vw（物理视口宽，与滚动条是否占布局无关）替代 100%，
+       使首页（有滚动条）与子页（无滚动条）的抽屉容器宽度锚定到同一物理右缘，
+       彻底消除 +/- 图标 right 锚点的跨页差异 */
+    width: 100vw;
+    height: 100%;
+  }
+
+  .m_hou .m_hou_beijing {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fafafa;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .m_hou.is-open .m_hou_beijing {
+    opacity: 0.9;
+  }
+
+  .m_hou .m_hou_tubiao_beijing {
+    position: absolute;
+    width: 20%;
+    left: 0;
+    top: 5%;
+    z-index: 10;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .m_hou.is-open .m_hou_tubiao_beijing {
+    opacity: 1;
+  }
+
+  .m_hou .m_navList {
+    position: absolute;
+    width: 80%;
+    top: 0;
+    background: #ffffff;
+    border-left: 1px solid #ebebeb;
+    height: 100%;
+    z-index: 10;
+    right: -80%;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    transition: right 0.3s ease;
+  }
+
+  .m_hou.is-open .m_navList {
+    right: 0;
+  }
+
+  .m_hou .m_navList ul {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .m_hou .m_navList ul li {
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  .m_hou .m_navList ul li a {
+    display: block;
+    height: 45px;
+    color: #4d4d4d;
+    line-height: 45px;
+    padding-left: 5%;
+    font-size: 1em;
+    transition: color 0.15s ease;
+  }
+
+  .m_hou .m_navList ul > li > a:hover,
+  .m_hou .m_navList ul > li .m_navList_a > a:hover {
+    color: #0070f3;
+  }
+
+  .m_hou .m_navList ul li .m_navList_a {
+    position: relative;
+    width: 100%;
+  }
+
+  .m_hou .m_navList ul li .m_navList_a a {
+    display: block;
+    padding-right: 60px; /* 为 +/- 图标预留固定空间，避免抽屉宽度变化影响图标位置 */
+  }
+
+  .m_hou .m_navList ul li .m_navList_a i {
+    position: absolute;
+    top: 5px;
+    /* right 相对 .m_navList_a 右缘；该右缘距抽屉/物理右缘约 46px，
+       故图标实际距右缘约 46+right px，远离经典滚动条(~17px)，不会被遮挡。
+       当前 5px：整体更靠右（相对上次的 12px 再右移 7px）。 */
+    right: 5px;
+    width: 20px;
+    height: 35px;
+    display: block;
+  }
+
+  /* 展开/收起图标（仅含子链接的项显示）：深色描边，浅色模式 */
+  .m_hou_icon {
+    background: url(../images/plus.png) no-repeat 50% 50%;
+    background-size: 20px 20px;
+  }
+
+  .m_navList li.is-expanded .m_hou_icon {
+    background: url(../images/reduce.png) no-repeat 50% 50%;
+    background-size: 20px 20px;
+  }
+
+  /* 子导航：max-height 过渡 */
+  .m_hou .m_navList ul li .m_navList_nav {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .m_hou .m_navList ul li.is-expanded > .m_navList_nav {
+    max-height: 320px;
+  }
+
+  .m_hou .m_navList ul li .m_navList_nav a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 0.875em;
+    padding-left: 10%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 90%;
+    text-overflow: ellipsis;
+    color: #4d4d4d;
+    transition: color 0.15s ease;
+  }
+
+  .m_hou .m_navList ul li .m_navList_nav a:hover {
+    color: #0070f3;
+  }
+
+  /* 移动端页脚 */
+  .footer {
+    display: none;
+  }
+
+  .m_footer {
+    display: block;
+    padding: 2rem 1.25rem;
+    background: #fafafa;
+  }
+
+  .m_footer_erweima {
+    overflow: hidden;
+  }
+
+  .m_footer_erweima > a {
+    display: inline-block;
+    width: 33.3333%;
+    font-size: 0.875em;
+    color: #4d4d4d;
+    line-height: 2em;
+    text-align: center;
+    float: left;
+    transition: color 0.15s ease;
+  }
+
+  .m_footer_erweima > a:hover {
+    color: #0070f3;
+  }
+
+  .m_footer_ziye {
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    box-sizing: border-box;
+    padding: 0.5em 0 0.5em 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .m_footer_ziye > a {
+    font-size: 0.75em;
+    color: #4d4d4d;
+    line-height: 2em;
+    margin-left: 1em;
+    transition: color 0.15s ease;
+  }
+
+  .m_footer_ziye > a:hover {
+    color: #0070f3;
+  }
+
+  .m_copyright {
+    text-align: center;
+    font-size: 0.75em;
+  }
+
+  .m_copyright > p {
+    line-height: 1.5em;
+    color: #8f8f8f;
+  }
+
+  .m_copyright > p > a {
+    color: #8f8f8f;
+    transition: color 0.15s ease;
+  }
+
+  .m_copyright > p > a:hover {
+    color: #0070f3;
+  }
+
+  .gongan {
+    margin-left: 0;
+  }
+}

@@ -1,53 +1,104 @@
 @charset "utf-8";
-/* CSS Document 子页面样式 */
+/* 子页面 main 区样式：与首页 main.css 的 Vercel Geist 风格保持一致
+   画布 #fafafa + 墨色 #171717 + 1px 发丝线 #ebebeb；灰阶文字 #4d4d4d / #8f8f8f。
+   字体用系统无衬线栈近似 Geist（项目禁 CDN / 二进制字体，设计文档允许 Arial/Inter 替代）。
+   各条目以留白分隔，不用 1px 横线；日期用 Geist Mono 标签风格。 */
 
-/* 子页界面样式 */
+/* 子页 main：画布色 + 系统无衬线字体（近似 Geist） */
+main {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Microsoft Yahei", sans-serif;
+  background: #fafafa;
+  color: #171717;
+  padding: 4rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* 消除 init.css 对 <p> 的 2em 首行缩进 */
+main p {
+  text-indent: 0;
+}
+
+/* 文档容器：白底发丝边卡片，居中限宽 */
 .site {
-  margin: 2% auto 2% auto;
-  border: #f2f2f2 solid 3px;
-  border-radius: 5px;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
 }
 
+/* 页面标题（站内公告 / 免责声明）：与首页 section_title 一致——居中、2rem、600、紧字距 */
 .site > strong {
-  font-size: 2em;
-  font-family: "黑体";
   display: block;
-  width: 96%;
-  height: 3.3em;
-  line-height: 3.3em;
-  border-bottom: #ccc solid 1px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  letter-spacing: -0.08rem;
+  color: #171717;
   text-align: center;
+  margin: 0 0 2.5rem;
 }
 
+/* 各条目区块：以留白分隔，无 1px 横线 */
 .site > section {
-  padding: 1em;
+  margin: 0 0 2.5rem;
 }
 
-.qianyan {
-  margin-bottom: 2.5em;
+.site > section:last-child {
+  margin-bottom: 0;
 }
 
-/* 标题栏样式 */
-h1 {
-  text-align: center;
-  margin-top: 2em;
-  margin-bottom: 2em;
+/* 日期标题（zngg 内 h1>strong）：Geist Mono 标签风格，灰阶 */
+.site h1 {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: #8f8f8f;
+  text-align: left;
+  margin: 0 0 0.75rem;
+}
+
+.site h1 > strong {
+  font-weight: 500;
+  color: #8f8f8f;
+}
+
+/* 正文段落 */
+.site p {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  color: #4d4d4d;
+  margin: 0 0 1rem;
+}
+
+.site p:last-child {
+  margin-bottom: 0;
+}
+
+/* 前言（mzsm 引言段）：加大为引导文 */
+.site .qianyan {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #4d4d4d;
+  margin: 0 0 2rem;
 }
 
 /* 移动端 */
 @media screen and (max-width: 1024px) {
-  /* 移动端子页界面样式 */
+  main {
+    padding: 2.5rem 1.25rem;
+  }
+
   .site {
-    margin: 2%;
-    width: 94%;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 2rem 1.25rem;
   }
 
   .site > strong {
-    font-size: 1.25em;
-    width: 90%;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 1.75rem;
   }
 }

@@ -9,14 +9,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <!-- 收藏栏图标 -->
   <link rel="shortcut icon" href="images/favicon.ico">
-  <!-- 初始化样式 -->
-  <link rel="stylesheet" href="style/total.css">
+  <!-- 重置样式 -->
+  <link rel="stylesheet" href="style/init.css">
   <!-- 导航交互 -->
-  <script src="script/script.js" defer></script>
-  <!-- header banner footer 样式 -->
-  <link rel="stylesheet" href="style/header_banner_footer.css">
-  <!-- 首页 main RHCA 高科技风格样式 -->
-  <link rel="stylesheet" href="style/main_rhca.css">
+  <script src="script/nav.js" defer></script>
+  <!-- header footer 样式 -->
+  <link rel="stylesheet" href="style/header_footer.css">
+  <!-- 首页 main 区样式 -->
+  <link rel="stylesheet" href="style/main.css">
 </head>
 
 <body>
@@ -32,6 +32,7 @@
               <li class="pc_nav2_li">
                 <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener">无足鸟（红）</a>
                 <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">无足鸟（黑）</a>
+				<a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener">无足鸟（药）</a>
               </li>
             </ul>
           </li>
@@ -56,6 +57,16 @@
             </ul>
           </li>
         </ul>
+        <!-- 右侧工具区：主题图标 + 中英文切换（占位，暂未实现功能） -->
+        <div class="pc_nav_tools">
+          <button type="button" class="theme_toggle" aria-label="切换主题" aria-pressed="false">
+            <img src="images/sun.png" alt="浅色主题">
+          </button>
+          <div class="lang_toggle" role="group" aria-label="语言切换">
+            <button type="button" class="lang_opt is-active" aria-pressed="true">中文</button>
+            <button type="button" class="lang_opt" aria-pressed="false">English</button>
+          </div>
+        </div>
         <div class="pc_nav_both"></div>
       </nav>
     </div>
@@ -90,6 +101,7 @@
             <div class="m_navList_nav">
               <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener">无足鸟（红）</a>
               <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">无足鸟（黑）</a>
+			  <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener">无足鸟（药）</a>
             </div>
           </li>
           <li>
@@ -118,49 +130,100 @@
     </div>
     <!-- 手机端导航--结束 -->
   </header>
-  <main>
-    <section class="rhca">
-      <div class="rhca_inner">
-        <!-- 上半：两栏并列，一半标准 RHCA 认证，一半无足鸟合集 -->
-        <div class="rhca_two_col">
-          <!-- 左栏：标准红帽 RHCA 认证 -->
-          <div class="rhca_col">
-            <span class="rhca_eyebrow">标准认证</span>
-            <h2 class="rhca_col_title">红帽 RHCA 认证</h2>
-            <p class="rhca_col_desc">
-              红帽认证架构师（Red Hat Certified Architect）是红帽体系中的顶级称号，
-              面向具备复杂基础架构设计能力的资深工程师。
-            </p>
-            <ul class="rhca_col_list">
-              <li>需在 RHCE 基础上，通过 5 门及以上高级专项认证</li>
-              <li>覆盖 OpenShift、Ceph、Ansible、OpenStack、性能调优等领域</li>
-              <li>证明端到端架构规划与落地能力</li>
-            </ul>
-          </div>
-          <!-- 右栏：无足鸟「RHCA+」实战合集 -->
-          <div class="rhca_col">
-            <span class="rhca_eyebrow">无足鸟合集</span>
-            <h2 class="rhca_col_title">「RHCA+」实战合集</h2>
-            <p class="rhca_col_desc">
-              由无足鸟 ICT 持续更新，以「所见即所得」的实战笔法，
-              把红帽体系拆成可上手的操作记录。
-            </p>
-            <ul class="rhca_col_list">
-              <li>从认证认知、Linux 基础到容器与运维循序渐进</li>
-              <li>RHCE+ 免费 · RHCA+ 收费，计划发布 1500+ 篇</li>
-              <li>每篇均为可复现操作实录，边看边做降低试错成本</li>
-            </ul>
-          </div>
+  <main class="v-main">
+    <!-- Hero：左合集介绍 + 右红帽 RHCA 认证卡片（已移除右侧渐变） -->
+    <section class="hero">
+      <div class="hero_inner">
+        <p class="eyebrow">无足鸟ICT</p>
+        <h1 class="hero_title">红帽 RHCA 实战合集</h1>
+        <p class="hero_lead">红帽认证架构师（RHCA）是红帽体系顶级称号，需在 RHCE 基础上通过 5 门及以上高级专项认证，覆盖 性能调优、Ceph、Ansible、OpenStack、Pacemaker 等领域。</p>
+		<p class="hero_lead">由 无足鸟ICT 持续更新，并扩展 系统管理、安全、OpenvSwitch、Docker、Kubernetes、Web、缓存、数据库、Git、Prometheus 等内容，以「所见即所得」的实战笔法，把红帽体系拆成可复现的操作记录。</p>
+        <div class="hero_actions">
+          <a class="btn btn_primary" href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIwNTgxMTIwMg==&action=getalbum&album_id=4210020438417866766#wechat_redirect" target="_blank" rel="noopener">前往公众号阅读合集</a>
         </div>
+        <p class="hero_note">RHCE+ 免费 · RHCA+ 收费 · 计划 1500+ 篇</p>
+      </div>
+    </section>
 
-        <!-- 居中引导按钮：页面视觉焦点 -->
-        <div class="rhca_cta">
-          <a class="rhca_btn" href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIwNTgxMTIwMg==&action=getalbum&album_id=4210020438417866766#wechat_redirect" target="_blank" rel="noopener">
-            前往公众号阅读合集 →
-          </a>
-          <p class="rhca_cta_note">RHCE+ 免费 · RHCA+ 收费 · 计划 1500+ 篇</p>
+    <!-- 网络合集：一屏介绍网络规划设计师 / Wireshark / MobaXterm（链接取自 header） -->
+    <section class="screen network">
+      <div class="screen_inner">
+        <p class="eyebrow">网络合集</p>
+        <h2 class="section_title">网络协议与远程终端</h2>
+        <div class="network_grid">
+          <article class="feature_card">
+            <h3 class="card_title">网络规划设计师</h3>
+            <p class="card_desc">软考高级资格备考总目录，系统汇总 2023-2024 学习总结。</p>
+            <ul class="card_list">
+              <li>网络基础与路由协议（OSPF / IS-IS / BGP）</li>
+              <li>园区网设计、传输存储与网络安全</li>
+              <li>SDN / SD-WAN / WLAN / 5G</li>
+              <li>案例分析真题与论文写作指导</li>
+            </ul>
+            <a class="card_btn" href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener">阅读文章</a>
+          </article>
+          <article class="feature_card">
+            <h3 class="card_title">Wireshark</h3>
+            <p class="card_desc">开源网络抓包工具系列教程，从入门到 TCP 流分析共 8 章。</p>
+            <ul class="card_list">
+              <li>介绍与简单使用</li>
+              <li>过滤器与表达式编写</li>
+              <li>追踪 TCP 流、三次握手与四次挥手</li>
+              <li>远程接口抓取 Linux 报文</li>
+            </ul>
+            <a class="card_btn" href="https://mp.weixin.qq.com/s/LCWTZ2NWtaWwFm90bWdZfg" target="_blank" rel="noopener">阅读文章</a>
+          </article>
+          <article class="feature_card">
+            <h3 class="card_title">MobaXterm</h3>
+            <p class="card_desc">集成 SSH、X11、SFTP 的远程终端工具基础教程合集。</p>
+            <ul class="card_list">
+              <li>介绍 MobaXterm</li>
+              <li>新建会话与 SFTP 文件传输</li>
+              <li>右键粘贴、字体大小等常用设置</li>
+              <li>操作记录到日志</li>
+            </ul>
+            <a class="card_btn" href="https://mp.weixin.qq.com/s/W7i8NNIwKmfMVIdGjx8JfA" target="_blank" rel="noopener">阅读文章</a>
+          </article>
         </div>
       </div>
+    </section>
+
+    <!-- Vibe Coding：一屏展示（链接取自 header） -->
+    <section class="screen vibe">
+      <div class="screen_inner">
+        <p class="eyebrow">AI 编程</p>
+        <h2 class="section_title">Vibe Coding</h2>
+        <div class="vibe_grid">
+          <div class="vibe_concept">
+            <h3 class="card_title">什么是 Vibe Coding</h3>
+            <p class="card_desc">Vibe Coding（氛围编程）由 Andrej Karpathy 于 2025 年 2 月提出——用自然语言描述需求，让 AI 自主生成、运行与修复代码，开发者只需判断结果好坏并迭代。</p>
+            <ul class="card_list">
+              <li>自然语言描述意图，AI 生成代码</li>
+              <li>开发者审视结果，对话式迭代修正</li>
+              <li>从环境搭建到开发实现全流程 AI 辅助</li>
+            </ul>
+          </div>
+          <article class="feature_card">
+            <h3 class="card_title">无足鸟按时吃药打卡 微信小程序</h3>
+            <p class="card_desc">使用 Vibe Coding 方式开发的微信小程序系列教程目录，项目已开源。</p>
+            <ul class="card_list">
+              <li>安装环境</li>
+              <li>设计小程序</li>
+              <li>开发小程序</li>
+            </ul>
+            <a class="card_btn" href="https://mp.weixin.qq.com/s/kT6fiaZKdSvElfv_uc-3Ow" target="_blank" rel="noopener">阅读文章</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA band：收尾居中黑胶囊 -->
+    <section class="cta_band">
+      <h2 class="cta_title">以「所见即所得」的实战笔法，边看边做降低试错成本</h2>
+      <div class="cta_actions">
+        <a class="btn btn_primary" href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIwNTgxMTIwMg==&action=getalbum&album_id=4210020438417866766#wechat_redirect" target="_blank" rel="noopener">前往公众号阅读合集</a>
+      </div>
+      <p class="cta_note">RHCE+ 免费 · RHCA+ 收费 · 计划 1500+ 篇</p>
     </section>
   </main>
   <footer>

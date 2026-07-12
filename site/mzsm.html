@@ -9,12 +9,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <!-- 收藏栏图标 -->
   <link rel="shortcut icon" href="../images/favicon.ico">
-  <!-- 初始化样式 -->
-  <link rel="stylesheet" href="../style/total.css">
+  <!-- 重置样式 -->
+  <link rel="stylesheet" href="../style/init.css">
   <!-- 导航交互 -->
-  <script src="../script/script.js" defer></script>
-  <!-- header banner footer 样式 -->
-  <link rel="stylesheet" href="../style/header_banner_footer.css">
+  <script src="../script/nav.js" defer></script>
+  <!-- header footer 样式 -->
+  <link rel="stylesheet" href="../style/header_footer.css">
   <!-- 本页样式 -->
   <link rel="stylesheet" href="../style/site.css">
 </head>
@@ -32,6 +32,7 @@
               <li class="pc_nav2_li">
                 <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener">无足鸟（红）</a>
                 <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">无足鸟（黑）</a>
+				<a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener">无足鸟（药）</a>
               </li>
             </ul>
           </li>
@@ -56,6 +57,16 @@
             </ul>
           </li>
         </ul>
+        <!-- 右侧工具区：主题图标 + 中英文切换（占位，暂未实现功能） -->
+        <div class="pc_nav_tools">
+          <button type="button" class="theme_toggle" aria-label="切换主题" aria-pressed="false">
+            <img src="../images/sun.png" alt="浅色主题">
+          </button>
+          <div class="lang_toggle" role="group" aria-label="语言切换">
+            <button type="button" class="lang_opt is-active" aria-pressed="true">中文</button>
+            <button type="button" class="lang_opt" aria-pressed="false">English</button>
+          </div>
+        </div>
         <div class="pc_nav_both"></div>
       </nav>
     </div>
@@ -90,6 +101,7 @@
             <div class="m_navList_nav">
               <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener">无足鸟（红）</a>
               <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">无足鸟（黑）</a>
+			  <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener">无足鸟（药）</a>
             </div>
           </li>
           <li>
