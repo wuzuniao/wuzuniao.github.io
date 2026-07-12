@@ -1,0 +1,193 @@
+@charset "utf-8";
+/* 首页 main 区：RHCA 两栏介绍 + 居中 CTA（沿用站点原有灰色配色） */
+/* 优化依据 ui-ux-pro-max：单一 CTA 焦点、大留白、平滑过渡、可访问性 */
+
+/* 容器：全屏宽度铺满，采用更深的灰底与导航/页脚区分 */
+.rhca {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #969696;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 内容容器：限制最大宽度居中，控制内边距以适配一屏 */
+.rhca_inner {
+  position: relative;
+  max-width: 62.5em;
+  margin: 0 auto;
+  padding: 2.75em 2.5em;
+  box-sizing: border-box;
+}
+
+/* 上半：非对称两栏（左标准认证收窄、右合集加宽为重点），去除卡片包裹 */
+.rhca_two_col {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 0;
+  align-items: start;
+}
+
+/* 单栏：通透文字块，不用背景卡片，靠留白与分隔线形成层次 */
+.rhca_col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+  padding: 0.25em 2.5em;
+}
+
+/* 左栏（标准认证）：收窄、右侧竖向分隔线，并下移形成错落 */
+.rhca_col:first-child {
+  padding-left: 0;
+  margin-top: 1.5em;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* 右栏（合集）：加宽为重点内容 */
+.rhca_col:last-child {
+  padding-right: 0;
+}
+
+.rhca_eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.75em;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #dedede;
+}
+
+.rhca_eyebrow::before {
+  content: "";
+  width: 1.5em;
+  height: 1px;
+  background: #dedede;
+}
+
+.rhca_col_title {
+  font-size: 1.375em;
+  font-weight: 700;
+  color: #fff;
+  margin: 0.5em 0 0.625em;
+}
+
+/* 右栏（合集）为重点，标题更大以强化主次 */
+.rhca_col:last-child .rhca_col_title {
+  font-size: 1.75em;
+}
+
+.rhca_col_desc {
+  font-size: 0.875em;
+  line-height: 1.7;
+  color: #dedede;
+  text-indent: 0;
+  margin-bottom: 0.875em;
+}
+
+.rhca_col_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.rhca_col_list > li {
+  position: relative;
+  padding-left: 1.1em;
+  font-size: 0.8125em;
+  line-height: 1.6;
+  color: #dedede;
+  text-indent: 0;
+}
+
+.rhca_col_list > li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #dedede;
+}
+
+/* 居中 CTA：页面视觉焦点，与上方两栏拉开呼吸间距 */
+.rhca_cta {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.rhca_btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 1.1em 3em;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #7f7f7f;
+  background: #dedede;
+  border-radius: 0.5em;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rhca_btn:hover {
+  background: #fff;
+  color: #646464;
+  transform: translateY(-3px);
+  box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.25);
+}
+
+/* 键盘可达：focus 可见 */
+.rhca_btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.rhca_cta_note {
+  margin-top: 0.875em;
+  font-size: 0.8125em;
+  color: #dedede;
+  text-indent: 0;
+}
+
+/* 尊重减弱动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .rhca_btn {
+    transition: none;
+  }
+  .rhca_btn:hover {
+    transform: none;
+  }
+}
+
+/* 移动端：单列堆叠，保持可读 */
+@media screen and (max-width: 1024px) {
+  .rhca_inner {
+    padding: 2em 1.25em;
+  }
+  .rhca_two_col {
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+  .rhca_col {
+    padding: 0;
+  }
+  .rhca_col:first-child {
+    margin-top: 0;
+    border-right: none;
+    padding-bottom: 2em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .rhca_col_title,
+  .rhca_col:last-child .rhca_col_title {
+    font-size: 1.25em;
+  }
+  .rhca_cta {
+    margin-top: 2.25em;
+  }
+  .rhca_btn {
+    font-size: 1.25em;
+    padding: 1em 2em;
+  }
+}
