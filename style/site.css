@@ -30,7 +30,7 @@ main p {
 }
 
 /* 页面标题（站内公告 / 免责声明）：与首页 section_title 一致——居中、2rem、600、紧字距 */
-.site > strong {
+.site > h1 {
   display: block;
   font-size: 2rem;
   font-weight: 600;
@@ -50,8 +50,8 @@ main p {
   margin-bottom: 0;
 }
 
-/* 日期标题（zngg 内 h1>strong）：Geist Mono 标签风格，灰阶 */
-.site h1 {
+/* 日期标题（zngg 内 h2>strong）：Geist Mono 标签风格，灰阶 */
+.site > h2 {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.875rem;
   font-weight: 500;
@@ -61,7 +61,7 @@ main p {
   margin: 0 0 0.75rem;
 }
 
-.site h1 > strong {
+.site > h2 > strong {
   font-weight: 500;
   color: #8f8f8f;
 }
@@ -96,7 +96,7 @@ main p {
     padding: 2rem 1.25rem;
   }
 
-  .site > strong {
+  .site > h1 {
     font-size: 1.5rem;
     line-height: 2rem;
     margin-bottom: 1.75rem;

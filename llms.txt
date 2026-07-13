@@ -1,0 +1,24 @@
+# 无足鸟ICT (wuzuniao.com)
+
+无足鸟ICT 是一个专注红帽 RHCA 系列笔记教程的技术分享品牌，以「所见即所得」的实战笔法，把 Linux 全栈运维拆成可复现的操作记录；同时覆盖网络规划、Wireshark 抓包分析与 Vibe Coding 等实战内容。
+
+## 核心内容方向
+
+- 红帽 RHCA 笔记教程与 Linux 全栈：以 RHCA 体系为骨架，整理系统管理、Shell、安全加固（SELinux/iptables）、存储备份、数据库缓存、Web 与负载均衡、高可用集群、容器与 Kubernetes、虚拟化与 OpenStack、Ansible 自动化、监控与日志等可复现的操作笔记；并延伸至性能压测（FIO）、Git / Gitlab、Prometheus / Zabbix 监控、Ceph / GlusterFS 分布式存储等 Linux 全栈内容。RHCE 级内容免费，RHCA 级收费，计划 1500+ 篇。
+- 网络与 Wireshark：网络规划设计师备考笔记、网络配置与排障、OpenvSwitch / VXLAN / namespace、Wireshark 抓包分析与协议解读。
+- Vibe Coding：用 AI 辅助编程的实战心得、工具与工作流案例。
+
+## 站点页面
+
+- 首页（https://www.wuzuniao.com/）：红帽 RHCA 笔记教程入口，按网络热度与内容完善度展示 18 大技术域，并单列网络、Wireshark、Vibe Coding 等专栏。
+- 站内公告（https://www.wuzuniao.com/site/zngg.html）：无足鸟网站更新时间线，记录自 2020 年山海门筹建至今的重构、开源托管、公众号与小程序上线等动态。
+- 免责声明（https://www.wuzuniao.com/site/mzsm.html）：本站为个人性质导航站点，仅提供技术资源的跳转与汇总，不保证第三方资源的准确性、安全性与完整性，使用即视为认可声明全部内容。
+
+## 主题覆盖
+
+Linux 系统管理、Shell 脚本、Vim、正则表达式、软件仓库、系统监控与调优（Tuned）、硬件与 /proc、内核与启动、性能压测（FIO）、服务与资源限制、进程与时间、日志与 Graylog、用户权限与文件系统、文本三剑客、打包备份、网络规划与排障、Wireshark 抓包分析、安全加固（SELinux/iptables/TCPWrapper/Firewall）、漏洞、PXE/Cobbler、远程（SSH/VNC/OpenSSL/OpenLDAP/DHCP）、PAM/DNS/Dnsmasq/unbound、存储（iSCSI/多路径/udev/vsftpd/Samba/NFS/AutoFs）、Web（Apache/Nginx/Tomcat/LNMP）、数据库（MariaDB/MySQL/RabbitMQ/Memcached/Redis/MongoDB）、负载（LVS/HAProxy/Squid/Varnish/Pacemaker/Keepalived）、代码（Git/Gitlab/SVN/Confluence/Jenkins）、自动化（Ansible/yaml）、VPN（OpenVPN/NPS/cpolar）、监控（Nagios/Cacti/Zabbix/Prometheus/夜莺）、分布式（Ceph/GlusterFS/Hadoop）、虚拟化（KVM/OpenStack/Docker/containerd/Kubernetes/OpenShift）、IP 管理（PHPIPAM/NetBox）、Vibe Coding（AI 辅助编程）。
+
+## 联系方式
+
+- 开源仓库：https://github.com/wuzuniao
+- 微信公众号：无足鸟ICT（wuzuniao_com）
