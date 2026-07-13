@@ -1,13 +1,13 @@
 @charset "utf-8";
 /* 首页 main 区：Vercel Geist 设计语言（依据 DESIGN-vercel.md）
-   近黑墨色 #171717 于近白画布 #fafafa；纯墨白二元，无渐变装饰。
+   近黑墨色 var(--color-ink) 于近白画布 var(--color-canvas)；纯墨白二元，无渐变装饰。
    字体采用系统无衬线栈近似 Geist（项目禁止 CDN / 二进制字体，设计文档允许 Arial/Inter 替代）。 */
 
 /* ===== 作用域基础：覆盖 init.css 在 main 内的默认值 ===== */
 .v-main {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Microsoft Yahei", sans-serif;
-  color: #171717;
-  background: #fafafa;
+  color: var(--color-ink);
+  background: var(--color-canvas);
 }
 
 /* 消除 init.css 对 <p> 的 2em 首行缩进 */
@@ -23,78 +23,86 @@
   line-height: 1rem;
   letter-spacing: 0;
   text-transform: uppercase;
-  color: #8f8f8f;
+  color: var(--color-mute);
   margin: 0 0 0.75rem;
 }
 
 
-/* ===== 按钮：营销黑色胶囊（rounded.pill = 100px） ===== */
-.btn {
+/* ===== 按钮基类：营销胶囊（主按钮 .btn_primary 与卡片按钮 .card_btn 共用外形） ===== */
+.btn,
+.card_btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.0625rem;
   font-weight: 500;
   line-height: 1.25rem;
   text-decoration: none;
   border-radius: 6.25rem;
-  padding: 0.75rem 1.75rem;
-  min-height: 3rem;
   box-sizing: border-box;
-  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
 
 .btn_primary {
-  background: #171717;
-  color: #ffffff;
+  font-size: 1.0625rem;
+  padding: 0.75rem 1.75rem;
+  min-height: 3rem;
+  background: var(--color-ink);
+  color: var(--color-on-primary);
 }
 
 .btn_primary:hover {
-  background: #000000;
-  color: #ffffff;
+  background: var(--color-ink-hover);
+  color: var(--color-on-primary);
   transform: translateY(-1px);
 }
 
-.btn:focus-visible {
-  outline: 2px solid #0070f3;
+.btn:focus-visible,
+.card_btn:focus-visible {
+  outline: 2px solid var(--color-link);
   outline-offset: 2px;
 }
 
 
-/* ===== 特性卡片：1px 发丝边白卡（hero 右侧 / 网络 / Vibe 复用） ===== */
-.feature_card {
+/* ===== 卡片基类：特性卡 / 目录卡 共用白底发丝边外观 ===== */
+.feature_card,
+.catalog_card {
   display: flex;
   flex-direction: column;
   min-width: 0; /* 允许在网格轨道内收缩，避免内容撑破视口 */
-  background: #ffffff;
-  border: 1px solid #ebebeb;
+  background: var(--color-elevated);
+  border: 1px solid var(--color-hairline);
   border-radius: 0.75rem;
   padding: 1.5rem;
-  color: #171717;
+  color: var(--color-ink);
   text-decoration: none;
   transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 /* Whisper 阴影：1px 发丝边 + 极低 alpha 分层投影 */
-.feature_card:hover {
-  border-color: #d6d6d6;
+.feature_card:hover,
+.catalog_card:hover {
+  border-color: var(--color-hairline-strong);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 8px 16px -4px rgba(0, 0, 0, 0.06);
 }
 
-.card_title {
+/* 卡片标题 / 描述（两型共用） */
+.card_title,
+.catalog_card_title {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.75rem;
   letter-spacing: -0.025rem;
-  color: #171717;
+  color: var(--color-ink);
   margin: 0 0 0.75rem;
 }
 
-.card_desc {
+.card_desc,
+.catalog_card_desc {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5rem;
-  color: #4d4d4d;
+  color: var(--color-body);
   margin: 0 0 1rem;
 }
 
@@ -112,7 +120,7 @@
   padding-left: 1.1em;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  color: #4d4d4d;
+  color: var(--color-body);
 }
 
 .card_list > li::before {
@@ -120,46 +128,32 @@
   position: absolute;
   left: 0;
   top: 0;
-  color: #a1a1a1;
+  color: var(--color-faint);
 }
 
-/* 卡片内独立按钮（卡片本身不可点击时使用）：白底发丝边胶囊，hover 反转为黑底白字 */
+/* 卡片内独立按钮（卡片本身不可点击时使用）：白底发丝边胶囊，hover 反转为墨底白字 */
 .card_btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   align-self: flex-start;
   margin-top: auto;
   font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.25rem;
-  text-decoration: none;
-  color: #171717;
-  background: #ffffff;
-  border: 1px solid #ebebeb;
-  border-radius: 6.25rem;
   padding: 0.5rem 1.25rem;
   min-height: 2.5rem;
-  box-sizing: border-box;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  color: var(--color-ink);
+  background: var(--color-elevated);
+  border: 1px solid var(--color-hairline);
 }
 
 .card_btn:hover {
-  background: #171717;
-  color: #ffffff;
-  border-color: #171717;
-}
-
-.card_btn:focus-visible {
-  outline: 2px solid #0070f3;
-  outline-offset: 2px;
+  background: var(--color-ink);
+  color: var(--color-on-primary);
+  border-color: var(--color-ink);
 }
 
 
 /* ===== Hero：占满第一屏，合集与认证合并为单一居中区块，按钮为主引导 ===== */
 .hero {
   min-height: calc(100vh - 6.25em);
-  background: #fafafa;
+  background: var(--color-canvas);
   display: flex;
 }
 
@@ -181,7 +175,7 @@
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.175rem;
-  color: #171717;
+  color: var(--color-ink);
   margin: 0 0 1.5rem;
 }
 
@@ -189,7 +183,7 @@
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.75rem;
-  color: #4d4d4d;
+  color: var(--color-body);
   max-width: 36rem;
   margin: 0 0 2.5rem;
 }
@@ -201,13 +195,13 @@
 .hero_note {
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #8f8f8f;
+  color: var(--color-mute);
 }
 
 
 /* ===== 一屏式区块：网络 / Vibe，垂直居中 ===== */
 .screen {
-  background: #fafafa;
+  background: var(--color-canvas);
 }
 
 .screen_inner {
@@ -227,7 +221,7 @@
   font-weight: 600;
   line-height: 2.5rem;
   letter-spacing: -0.08rem;
-  color: #171717;
+  color: var(--color-ink);
   margin: 0 0 2.5rem;
 }
 
@@ -255,8 +249,8 @@
 /* 左栏：概念说明卡片（不可点击） */
 .vibe_concept {
   min-width: 0; /* 允许在网格轨道内收缩，避免内容撑破视口 */
-  background: #ffffff;
-  border: 1px solid #ebebeb;
+  background: var(--color-elevated);
+  border: 1px solid var(--color-hairline);
   border-radius: 0.75rem;
   padding: 1.5rem;
   display: flex;
@@ -267,7 +261,7 @@
 
 /* ===== RHCA+ 合集目录：基于 tree.txt 的 18 大技术域标签总览 ===== */
 .catalog {
-  background: #fafafa;
+  background: var(--color-canvas);
 }
 
 .catalog_inner {
@@ -282,7 +276,7 @@
   font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.75rem;
-  color: #4d4d4d;
+  color: var(--color-body);
   max-width: 46rem;
   margin: 0 auto 3rem;
 }
@@ -294,41 +288,7 @@
   text-align: left;
 }
 
-.catalog_card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0; /* 允许在网格轨道内收缩，避免内容撑破视口 */
-  background: #ffffff;
-  border: 1px solid #ebebeb;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  text-decoration: none;
-  color: #171717;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
 
-/* Whisper 阴影：1px 发丝边 + 极低 alpha 分层投影 */
-.catalog_card:hover {
-  border-color: #d6d6d6;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 8px 16px -4px rgba(0, 0, 0, 0.06);
-}
-
-.catalog_card_title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.75rem;
-  letter-spacing: -0.025rem;
-  color: #171717;
-  margin: 0 0 0.5rem;
-}
-
-.catalog_card_desc {
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.5rem;
-  color: #4d4d4d;
-  margin: 0 0 1rem;
-}
 
 /* 技术域标签：白底发丝边胶囊 */
 .catalog_tags {
@@ -343,9 +303,9 @@
 .catalog_tag {
   font-size: 0.75rem;
   line-height: 1rem;
-  color: #4d4d4d;
-  background: #ffffff;
-  border: 1px solid #ebebeb;
+  color: var(--color-body);
+  background: var(--color-elevated);
+  border: 1px solid var(--color-hairline);
   border-radius: 6.25rem;
   padding: 0.25rem 0.625rem;
 }
@@ -353,7 +313,7 @@
 
 /* ===== CTA band：收尾居中黑胶囊 ===== */
 .cta_band {
-  background: #fafafa;
+  background: var(--color-canvas);
   text-align: center;
   padding: 6rem 1.5rem;
 }
@@ -363,7 +323,7 @@
   font-weight: 600;
   line-height: 2.5rem;
   letter-spacing: -0.08rem;
-  color: #171717;
+  color: var(--color-ink);
   margin: 0 auto 1.5rem;
   max-width: 40rem;
 }
@@ -375,7 +335,7 @@
 .cta_note {
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #8f8f8f;
+  color: var(--color-mute);
 }
 
 

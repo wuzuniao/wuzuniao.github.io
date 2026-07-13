@@ -45,17 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 主题切换：分段胶囊，仅切换选中态，不实际切换主题（占位）
-  // 每个 .theme_toggle 独立成组（PC 与移动端各一组，互不干扰）
+  // 主题切换：点击分段胶囊的某一项，调用全局 setTheme 应用并持久化
+  // 选中态由 theme.js 的 applyTheme 统一同步（PC 与移动端联动）
   document.querySelectorAll('.theme_toggle').forEach((group) => {
     const opts = group.querySelectorAll('.theme_opt');
     opts.forEach((opt) => {
       opt.addEventListener('click', () => {
-        opts.forEach((other) => {
-          const isActive = other === opt;
-          other.classList.toggle('is-active', isActive);
-          other.setAttribute('aria-pressed', String(isActive));
-        });
+        const value = opt.dataset.themeValue;
+        if (typeof window.setTheme === 'function') {
+          window.setTheme(value);
+        }
       });
     });
   });

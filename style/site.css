@@ -1,14 +1,14 @@
 @charset "utf-8";
 /* 子页面 main 区样式：与首页 main.css 的 Vercel Geist 风格保持一致
-   画布 #fafafa + 墨色 #171717 + 1px 发丝线 #ebebeb；灰阶文字 #4d4d4d / #8f8f8f。
+   画布 var(--color-canvas) + 墨色 var(--color-ink) + 1px 发丝线 var(--color-hairline)；灰阶文字 var(--color-body) / var(--color-mute)。
    字体用系统无衬线栈近似 Geist（项目禁 CDN / 二进制字体，设计文档允许 Arial/Inter 替代）。
    各条目以留白分隔，不用 1px 横线；日期用 Geist Mono 标签风格。 */
 
 /* 子页 main：画布色 + 系统无衬线字体（近似 Geist） */
 main {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Microsoft Yahei", sans-serif;
-  background: #fafafa;
-  color: #171717;
+  background: var(--color-canvas);
+  color: var(--color-ink);
   padding: 4rem 1.5rem;
   box-sizing: border-box;
 }
@@ -23,8 +23,8 @@ main p {
   max-width: 48rem;
   margin: 0 auto;
   padding: 3rem 2.5rem;
-  background: #ffffff;
-  border: 1px solid #ebebeb;
+  background: var(--color-elevated);
+  border: 1px solid var(--color-hairline);
   border-radius: 0.75rem;
   box-sizing: border-box;
 }
@@ -36,7 +36,7 @@ main p {
   font-weight: 600;
   line-height: 2.5rem;
   letter-spacing: -0.08rem;
-  color: #171717;
+  color: var(--color-ink);
   text-align: center;
   margin: 0 0 2.5rem;
 }
@@ -56,21 +56,21 @@ main p {
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem;
-  color: #8f8f8f;
+  color: var(--color-mute);
   text-align: left;
   margin: 0 0 0.75rem;
 }
 
 .site > h2 > strong {
   font-weight: 500;
-  color: #8f8f8f;
+  color: var(--color-mute);
 }
 
 /* 正文段落 */
 .site p {
   font-size: 1rem;
   line-height: 1.75rem;
-  color: #4d4d4d;
+  color: var(--color-body);
   margin: 0 0 1rem;
 }
 
@@ -82,7 +82,7 @@ main p {
 .site .qianyan {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  color: #4d4d4d;
+  color: var(--color-body);
   margin: 0 0 2rem;
 }
 

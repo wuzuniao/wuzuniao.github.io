@@ -1,6 +1,40 @@
 @charset "utf-8";
 /* CSS Document 初始化样式 */
 
+/* ============ 设计令牌：语义化配色（集中管理，便于主题切换） ============ */
+:root {
+  /* 画布 / 墨色 / 抬升面 */
+  --color-canvas: #fafafa;
+  --color-ink: #171717;
+  --color-ink-hover: #383838;
+  --color-elevated: #ffffff;
+  /* 发丝线（默认 / 强化） */
+  --color-hairline: #ebebeb;
+  --color-hairline-strong: #d6d6d6;
+  /* 文字灰阶 */
+  --color-body: #4d4d4d;
+  --color-mute: #8f8f8f;
+  --color-faint: #a1a1a1;
+  /* 链接与反白文字 */
+  --color-link: #0070f3;
+  --color-on-primary: #ffffff;
+}
+
+/* 深色主题：仅覆盖语义令牌即可整体换肤 */
+:root[data-theme="dark"] {
+  --color-canvas: #000000;
+  --color-ink: #ededed;
+  --color-ink-hover: #a1a1a1;
+  --color-elevated: #111111;
+  --color-hairline: #2e2e2e;
+  --color-hairline-strong: #444444;
+  --color-body: #a1a1a1;
+  --color-mute: #8f8f8f;
+  --color-faint: #666666;
+  --color-link: #3291ff;
+  --color-on-primary: #000000;
+}
+
 /* 全局盒模型：border-box 让 padding/border 计入总宽度，
    避免 width:100% + padding 超出视口引发移动端横向滚动条 */
 *, *::before, *::after {
@@ -21,6 +55,9 @@ body {
   line-height: 1;
   font-size: 16px;
   font-family: "Century Gothic", "Microsoft yahei";
+  /* 全页底色与默认文字色随主题切换（覆盖浏览器默认白底） */
+  background: var(--color-canvas);
+  color: var(--color-ink);
 }
 
 ol, ul, li {
@@ -38,11 +75,12 @@ img {
 
 a {
   text-decoration: none;
-  color: #000;
+  /* 默认链接跟随墨色；hover 高亮为主题链接蓝（均走令牌，便于主题切换） */
+  color: var(--color-ink);
 }
 
 a:hover {
-  color: red;
+  color: var(--color-link);
 }
 
 address {
