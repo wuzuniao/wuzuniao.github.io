@@ -5,8 +5,8 @@
   <!-- 视觉区域与屏幕宽度一致 -->
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <!-- SEO 基础元信息 -->
-  <title>免责声明 - 无足鸟ICT 网站使用条款与版权声明</title>
-  <meta name="description" content="无足鸟（wuzuniao.com）免责声明：本站为个人性质导航站点，仅提供技术资源的跳转与汇总，不保证第三方资源的准确性、安全性与完整性，使用即视为认可本声明全部内容。">
+  <title data-en="Disclaimer - Wuzuniao ICT Terms of Use & Copyright Notice">免责声明 - 无足鸟ICT 网站使用条款与版权声明</title>
+  <meta name="description" data-en="Wuzuniao (wuzuniao.com) disclaimer: This site is a personal navigation site that only provides redirection to and aggregation of technical resources, does not guarantee the accuracy, security, or completeness of third-party resources, and using the site is deemed acceptance of this entire disclaimer." data-en-attr="content" content="无足鸟（wuzuniao.com）免责声明：本站为个人性质导航站点，仅提供技术资源的跳转与汇总，不保证第三方资源的准确性、安全性与完整性，使用即视为认可本声明全部内容。">
   <meta name="keywords" content="无足鸟,无足鸟ICT,免责声明,使用条款,版权声明,导航站点,责任声明,wuzuniao">
   <meta name="author" content="无足鸟ICT">
   <meta name="robots" content="index,follow">
@@ -14,15 +14,17 @@
   <!-- Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="无足鸟ICT">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:title" content="免责声明 - 无足鸟ICT 网站使用条款与版权声明">
-  <meta property="og:description" content="无足鸟（wuzuniao.com）免责声明：本站为个人性质导航站点，仅提供技术资源的跳转与汇总，使用即视为认可本声明全部内容。">
+  <meta property="og:locale" data-en="en_US" data-en-attr="content" content="zh_CN">
+  <meta property="og:title" data-en="Disclaimer - Wuzuniao ICT Terms of Use & Copyright Notice" data-en-attr="content" content="免责声明 - 无足鸟ICT 网站使用条款与版权声明">
+  <meta property="og:description" data-en="Wuzuniao (wuzuniao.com) disclaimer: This site is a personal navigation site providing only redirection to and aggregation of technical resources, and using the site is deemed acceptance of this entire disclaimer." data-en-attr="content" content="无足鸟（wuzuniao.com）免责声明：本站为个人性质导航站点，仅提供技术资源的跳转与汇总，使用即视为认可本声明全部内容。">
   <meta property="og:url" content="https://www.wuzuniao.com/site/mzsm.html">
   <meta property="og:image" content="https://www.wuzuniao.com/images/logo_wuzuniao_com.png">
   <!-- 收藏栏图标 -->
   <link rel="shortcut icon" href="../images/favicon.ico">
   <!-- 重置样式 -->
   <link rel="stylesheet" href="../style/init.css">
+  <!-- 国际化（中英文切换） -->
+  <script src="../script/i18n.js" defer></script>
   <!-- 导航交互 -->
   <script src="../script/nav.js" defer></script>
   <!-- header footer 样式 -->
@@ -44,11 +46,17 @@
       {
         "@type": "WebPage",
         "url": "https://www.wuzuniao.com/site/mzsm.html",
-        "name": "免责声明",
+        "name": [
+          { "@language": "zh-CN", "@value": "免责声明" },
+          { "@language": "en", "@value": "Disclaimer" }
+        ],
         "inLanguage": "zh-CN",
         "isPartOf": { "@id": "https://www.wuzuniao.com/#website" },
         "publisher": { "@id": "https://www.wuzuniao.com/#organization" },
-        "description": "无足鸟（wuzuniao.com）免责声明：本站为个人性质导航站点，仅提供技术资源的跳转与汇总，不保证第三方资源的准确性、安全性与完整性。"
+        "description": [
+          { "@language": "zh-CN", "@value": "无足鸟（wuzuniao.com）免责声明：本站为个人性质导航站点，仅提供技术资源的跳转与汇总，不保证第三方资源的准确性、安全性与完整性。" },
+          { "@language": "en", "@value": "Wuzuniao (wuzuniao.com) disclaimer: this site is a personal navigation site providing only redirection to and aggregation of technical resources, and using the site is deemed acceptance of this entire disclaimer." }
+        ]
       }
     ]
   }
@@ -63,21 +71,21 @@
         <a href="../index.html"><img src="../images/logo_wuzuniao_com.png" alt="无足鸟LOGO"></a>
         <ul>
           <li>
-            <a href="https://github.com/wuzuniao" target="_blank" rel="noopener">开源</a>
+            <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
             <ul class="pc_nav2_ul">
               <li class="pc_nav2_li">
-                <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener">无足鸟（红）</a>
-                <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">无足鸟（黑）</a>
-				<a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener">无足鸟（药）</a>
+                <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)">无足鸟（红）</a>
+                <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)">无足鸟（黑）</a>
+				<a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)">无足鸟（药）</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener">微信文章</a>
+            <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Articles">微信文章</a>
             <ul class="pc_nav2_ul">
               <li class="pc_nav2_li">
                 <a href="https://mp.weixin.qq.com/s/kT6fiaZKdSvElfv_uc-3Ow" target="_blank" rel="noopener">Vibe Coding</a>
-                <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener">网络规划设计师</a>
+                <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer">网络规划设计师</a>
                 <a href="https://mp.weixin.qq.com/s/LCWTZ2NWtaWwFm90bWdZfg" target="_blank" rel="noopener">Wireshark</a>
                 <a href="https://mp.weixin.qq.com/s/W7i8NNIwKmfMVIdGjx8JfA" target="_blank" rel="noopener">MobaXterm</a>
                 <a href="https://mp.weixin.qq.com/s/60oJa98_B7J4hV6VKBjYIA" target="_blank" rel="noopener">Markdown</a>
@@ -86,25 +94,25 @@
             </ul>
           </li>
           <li>
-            <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener">聊天交流</a>
+            <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="Community">聊天交流</a>
             <ul class="pc_nav2_ul">
               <li class="pc_nav2_li">
               </li>
             </ul>
           </li>
         </ul>
-        <!-- 右侧工具区：主题切换 + 中英文切换（占位，暂未实现功能） -->
+        <!-- 右侧工具区：主题切换 + 中英文切换 -->
         <div class="pc_nav_tools">
-          <div class="theme_toggle" role="group" aria-label="主题切换">
-            <button type="button" class="theme_opt is-active" aria-pressed="true"><img class="theme_icon theme_icon_sun" src="../images/sun.png" alt="">浅色</button>
-            <button type="button" class="theme_opt" aria-pressed="false"><img class="theme_icon theme_icon_moon" src="../images/moon.png" alt="">深色</button>
+          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label">
+            <button type="button" class="theme_opt is-active" aria-pressed="true"><img class="theme_icon theme_icon_sun" src="../images/sun.png" alt=""><span data-en="Light">浅色</span></button>
+            <button type="button" class="theme_opt" aria-pressed="false"><img class="theme_icon theme_icon_moon" src="../images/moon.png" alt=""><span data-en="Dark">深色</span></button>
           </div>
-          <div class="lang_select" role="listbox" aria-label="语言切换" aria-expanded="false">
+          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" aria-expanded="false">
             <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
               <span class="lang_current">中文</span>
             </button>
             <ul class="lang_menu">
-              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">中文</li>
+              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">简体中文</li>
               <li class="lang_item" role="option" aria-selected="false" data-value="en">English</li>
             </ul>
           </div>
@@ -120,7 +128,7 @@
         </a>
       </div>
       <div class="m_qian_rg">
-        <a href="#" class="m_qian_tubiao" role="button" aria-label="打开导航菜单">
+        <a href="#" class="m_qian_tubiao" role="button" aria-label="打开导航菜单" data-en="Open navigation menu" data-en-attr="aria-label">
           <img class="m_qian_menuimg" src="../images/m_menuimg.png" alt="菜单">
         </a>
       </div>
@@ -129,23 +137,23 @@
     <div class="m_hou">
       <div class="m_hou_beijing m_hou_tubiao"></div>
       <div class="m_hou_tubiao_beijing">
-        <a href="#" class="m_hou_tubiao" role="button" aria-label="关闭导航菜单">
+        <a href="#" class="m_hou_tubiao" role="button" aria-label="关闭导航菜单" data-en="Close navigation menu" data-en-attr="aria-label">
           <img src="../images/close.png" width="22" alt="关闭">
         </a>
       </div>
       <div class="m_navList">
         <!-- 移动端抽屉顶部工具区：主题切换 + 中英文切换 -->
         <div class="m_nav_tools">
-          <div class="theme_toggle" role="group" aria-label="主题切换">
-            <button type="button" class="theme_opt is-active" aria-pressed="true"><img class="theme_icon theme_icon_sun" src="../images/sun.png" alt="">浅色</button>
-            <button type="button" class="theme_opt" aria-pressed="false"><img class="theme_icon theme_icon_moon" src="../images/moon.png" alt="">深色</button>
+          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label">
+            <button type="button" class="theme_opt is-active" aria-pressed="true"><img class="theme_icon theme_icon_sun" src="../images/sun.png" alt=""><span data-en="Light">浅色</span></button>
+            <button type="button" class="theme_opt" aria-pressed="false"><img class="theme_icon theme_icon_moon" src="../images/moon.png" alt=""><span data-en="Dark">深色</span></button>
           </div>
-          <div class="lang_select" role="listbox" aria-label="语言切换" aria-expanded="false">
+          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" aria-expanded="false">
             <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
               <span class="lang_current">中文</span>
             </button>
             <ul class="lang_menu">
-              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">中文</li>
+              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">简体中文</li>
               <li class="lang_item" role="option" aria-selected="false" data-value="en">English</li>
             </ul>
           </div>
@@ -153,23 +161,23 @@
         <ul>
           <li>
             <div class="m_navList_a">
-              <a href="https://github.com/wuzuniao" target="_blank" rel="noopener">开源</a>
+              <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
               <i></i>
             </div>
             <div class="m_navList_nav">
-              <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener">无足鸟（红）</a>
-              <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">无足鸟（黑）</a>
-			  <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener">无足鸟（药）</a>
+              <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)">无足鸟（红）</a>
+              <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)">无足鸟（黑）</a>
+			  <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)">无足鸟（药）</a>
             </div>
           </li>
           <li>
             <div class="m_navList_a">
-              <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener">微信文章</a>
+              <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Articles">微信文章</a>
               <i></i>
             </div>
             <div class="m_navList_nav">
               <a href="https://mp.weixin.qq.com/s/kT6fiaZKdSvElfv_uc-3Ow" target="_blank" rel="noopener">Vibe Coding</a>
-              <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener">网络规划设计师</a>
+              <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer">网络规划设计师</a>
               <a href="https://mp.weixin.qq.com/s/LCWTZ2NWtaWwFm90bWdZfg" target="_blank" rel="noopener">Wireshark</a>
               <a href="https://mp.weixin.qq.com/s/W7i8NNIwKmfMVIdGjx8JfA" target="_blank" rel="noopener">MobaXterm</a>
               <a href="https://mp.weixin.qq.com/s/60oJa98_B7J4hV6VKBjYIA" target="_blank" rel="noopener">Markdown</a>
@@ -178,7 +186,7 @@
           </li>
           <li>
             <div class="m_navList_a">
-              <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener">聊天交流</a>
+              <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="Community">聊天交流</a>
               <i></i>
             </div>
             <div class="m_navList_nav"></div>
@@ -191,14 +199,14 @@
   <main>
     <!-- 页面主体内容 -->
     <div class="site">
-      <h1>免责声明</h1>
+      <h1 data-en="Disclaimer">免责声明</h1>
       <section>
-        <p class="qianyan">在使用无足鸟（wuzuniao.com）之前，请您务必仔细阅读并透彻理解本声明，您的使用行为将被视为对本声明全部内容的认可。</p>
-        <p>一、本网站为个人性质的导航站点，链接至个人相关的网站、微信公众号、QQ群等，后续或增加链接至其他一些实用站点，提供更方便快捷的技术资料获取途径。</p>
-        <p>二、任何使用本站提供的信息作为依据而对自己或第三方造成的各类损失，均由信息使用方负责，本站概不负责，亦不承担任何法律责任！无足鸟不保证资源的准确性、安全性和完整性，请您在阅读、下载及使用过程中自行确认！本站仅为导航站点，不涉及最终内容提供，请找最终内容提供方处理。</p>
-        <p>三、未经无足鸟允许，不得盗链、盗用本站资源，不得复制或仿造本网站，不得在非无足鸟（wuzuniao.com）所属的服务器上建立镜像，无足鸟对其自行开发的或和他人共同开发的所有内容、技术手段和服务拥有全部知识产权，任何人不得侵害或破坏，也不得擅自用于商业用途。</p>
-        <p>四、本站为非营利性站点，不会通过限制资料获取等方式向您索取收益，如您遇到此类情况，一定是遇到钓鱼，请提高警惕，不要进行交易。</p>
-        <p>五、互联网的本质是自由与分享，希望有价值的资料能够在互联网中自由传播，为您提供方便！</p>
+        <p class="qianyan" data-en="Before using Wuzuniao (wuzuniao.com), please read and fully understand this statement carefully. Your use of the site will be deemed as acceptance of all the contents of this disclaimer.">在使用无足鸟（wuzuniao.com）之前，请您务必仔细阅读并透彻理解本声明，您的使用行为将被视为对本声明全部内容的认可。</p>
+        <p data-en="I. This website is a personal navigation site linking to personal-related websites, WeChat Official Accounts, QQ groups, etc. More links to other useful sites may be added later to provide a more convenient and faster way to access technical materials.">一、本网站为个人性质的导航站点，链接至个人相关的网站、微信公众号、QQ群等，后续或增加链接至其他一些实用站点，提供更方便快捷的技术资料获取途径。</p>
+        <p data-en="II. Any losses caused to yourself or third parties from using the information provided by this site as a basis are the responsibility of the information user; this site bears no responsibility and assumes no legal liability whatsoever! Wuzuniao does not guarantee the accuracy, security, or completeness of the resources. Please verify them yourself during reading, downloading, and use! This site is only a navigation site and is not involved in providing final content; please contact the final content provider for resolution.">二、任何使用本站提供的信息作为依据而对自己或第三方造成的各类损失，均由信息使用方负责，本站概不负责，亦不承担任何法律责任！无足鸟不保证资源的准确性、安全性和完整性，请您在阅读、下载及使用过程中自行确认！本站仅为导航站点，不涉及最终内容提供，请找最终内容提供方处理。</p>
+        <p data-en="III. Without Wuzuniao's permission, do not hotlink or misappropriate this site's resources, do not copy or imitate this website, and do not establish mirrors on servers not belonging to Wuzuniao (wuzuniao.com). Wuzuniao owns all intellectual property rights to all content, technical means, and services it independently developed or jointly developed with others. No one may infringe upon or undermine them, nor use them for commercial purposes without authorization.">三、未经无足鸟允许，不得盗链、盗用本站资源，不得复制或仿造本网站，不得在非无足鸟（wuzuniao.com）所属的服务器上建立镜像，无足鸟对其自行开发的或和他人共同开发的所有内容、技术手段和服务拥有全部知识产权，任何人不得侵害或破坏，也不得擅自用于商业用途。</p>
+        <p data-en="IV. This site is non-profit; it will not solicit profit from you by restricting access to materials. If you encounter such a situation, it must be phishing—please stay vigilant and do not transact.">四、本站为非营利性站点，不会通过限制资料获取等方式向您索取收益，如您遇到此类情况，一定是遇到钓鱼，请提高警惕，不要进行交易。</p>
+        <p data-en="V. The essence of the internet is freedom and sharing. We hope valuable materials can spread freely across the internet and bring convenience to you!">五、互联网的本质是自由与分享，希望有价值的资料能够在互联网中自由传播，为您提供方便！</p>
       </section>
     </div>
   </main>
@@ -207,15 +215,15 @@
     <div class="footer">
       <div class="footer_erweima">
         <div>
-          <a href="https://github.com/wuzuniao" target="_blank" rel="noopener">开源</a>
+          <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
           <img src="../images/biaoqingbao.gif" alt="开源表情包">
         </div>
         <div>
-          <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener">微信公众号</a>
+          <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Official Account">微信公众号</a>
           <img src="../images/ewm_wx.png" alt="微信公众号二维码">
         </div>
         <div>
-          <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener">QQ群</a>
+          <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="QQ Group">QQ群</a>
           <img src="../images/ewm_qq.png" alt="QQ群二维码">
         </div>
         <div>
@@ -223,16 +231,16 @@
         </div>
       </div>
       <div class="footer_ziye">
-        <a href="../site/zngg.html">站内公告</a>
-        <a href="../site/mzsm.html">免责声明</a>
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener">联系我们：xpg@wuzuniao.com</a>
+        <a href="../site/zngg.html" data-en="Site Announcements">站内公告</a>
+        <a href="../site/mzsm.html" data-en="Disclaimer">免责声明</a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
         <a href="https://github.com/wuzuniao/wuzuniao.github.io" target="_blank" rel="noopener" id="github">
           <img src="../images/github.png" alt="GitHub">
-          <span>GitHub</span>
+          <span data-en="GitHub">GitHub</span>
         </a>
         <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">
           <img src="../images/gitee.png" alt="Gitee">
-          <span>Gitee</span>
+          <span data-en="Gitee">Gitee</span>
         </a>
       </div>
       <div class="copyright">
@@ -249,14 +257,14 @@
     <!-- 手机端页脚 -->
     <div class="m_footer">
       <div class="m_footer_erweima">
-        <a href="https://github.com/wuzuniao" target="_blank" rel="noopener">开源</a>
-        <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener">微信公众号</a>
-        <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener">QQ群</a>
+        <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
+        <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Official Account">微信公众号</a>
+        <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="QQ Group">QQ群</a>
       </div>
       <div class="m_footer_ziye">
-        <a href="../site/zngg.html">站内公告</a>
-        <a href="../site/mzsm.html">免责声明</a>
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener">联系我们：xpg@wuzuniao.com</a>
+        <a href="../site/zngg.html" data-en="Site Announcements">站内公告</a>
+        <a href="../site/mzsm.html" data-en="Disclaimer">免责声明</a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
         <a href="https://github.com/wuzuniao/wuzuniao.github.io" target="_blank" rel="noopener">GitHub</a>
         <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">Gitee</a>
       </div>

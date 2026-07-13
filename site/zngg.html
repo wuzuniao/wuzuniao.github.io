@@ -5,8 +5,8 @@
   <!-- 视觉区域与屏幕宽度一致 -->
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <!-- SEO 基础元信息 -->
-  <title>站内公告 - 无足鸟ICT 网站更新记录</title>
-  <meta name="description" content="无足鸟（wuzuniao.com）站内公告，记录网站重构、开源托管、公众号更新与小程序上线等历史动态，自 2020 年 9 月山海门筹建至今的更新时间线。">
+  <title data-en="Site Announcements - Wuzuniao ICT Update Log">站内公告 - 无足鸟ICT 网站更新记录</title>
+  <meta name="description" data-en="Wuzuniao (wuzuniao.com) site announcements, recording the historical updates of website rebuilds, open-source hosting, WeChat Official Account updates, and Mini Program launches—the update timeline from the founding of Shanhaimen in September 2020 to now." data-en-attr="content" content="无足鸟（wuzuniao.com）站内公告，记录网站重构、开源托管、公众号更新与小程序上线等历史动态，自 2020 年 9 月山海门筹建至今的更新时间线。">
   <meta name="keywords" content="无足鸟,无足鸟ICT,站内公告,网站更新,更新记录,山海门,wuzuniao">
   <meta name="author" content="无足鸟ICT">
   <meta name="robots" content="index,follow">
@@ -14,15 +14,17 @@
   <!-- Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="无足鸟ICT">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:title" content="站内公告 - 无足鸟ICT 网站更新记录">
-  <meta property="og:description" content="记录无足鸟网站重构、开源托管、公众号更新与小程序上线等历史动态的更新时间线。">
+  <meta property="og:locale" data-en="en_US" data-en-attr="content" content="zh_CN">
+  <meta property="og:title" data-en="Site Announcements - Wuzuniao ICT Update Log" data-en-attr="content" content="站内公告 - 无足鸟ICT 网站更新记录">
+  <meta property="og:description" data-en="A timeline of Wuzuniao site updates including website rebuilds, open-source hosting, WeChat Official Account updates, and Mini Program launches." data-en-attr="content" content="记录无足鸟网站重构、开源托管、公众号更新与小程序上线等历史动态的更新时间线。">
   <meta property="og:url" content="https://www.wuzuniao.com/site/zngg.html">
   <meta property="og:image" content="https://www.wuzuniao.com/images/logo_wuzuniao_com.png">
   <!-- 收藏栏图标 -->
   <link rel="shortcut icon" href="../images/favicon.ico">
   <!-- 重置样式 -->
   <link rel="stylesheet" href="../style/init.css">
+  <!-- 国际化（中英文切换） -->
+  <script src="../script/i18n.js" defer></script>
   <!-- 导航交互 -->
   <script src="../script/nav.js" defer></script>
   <!-- header footer 样式 -->
@@ -44,11 +46,17 @@
       {
         "@type": "WebPage",
         "url": "https://www.wuzuniao.com/site/zngg.html",
-        "name": "站内公告",
+        "name": [
+          { "@language": "zh-CN", "@value": "站内公告" },
+          { "@language": "en", "@value": "Site Announcements" }
+        ],
         "inLanguage": "zh-CN",
         "isPartOf": { "@id": "https://www.wuzuniao.com/#website" },
         "publisher": { "@id": "https://www.wuzuniao.com/#organization" },
-        "description": "无足鸟站内公告，记录网站重构、开源托管、公众号更新与小程序上线等历史动态。"
+        "description": [
+          { "@language": "zh-CN", "@value": "无足鸟站内公告，记录网站重构、开源托管、公众号更新与小程序上线等历史动态。" },
+          { "@language": "en", "@value": "Wuzuniao site announcements recording the update timeline of website rebuilds, open-source hosting, WeChat Official Account updates, and Mini Program launches." }
+        ]
       }
     ]
   }
@@ -63,21 +71,21 @@
         <a href="../index.html"><img src="../images/logo_wuzuniao_com.png" alt="无足鸟LOGO"></a>
         <ul>
           <li>
-            <a href="https://github.com/wuzuniao" target="_blank" rel="noopener">开源</a>
+            <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
             <ul class="pc_nav2_ul">
               <li class="pc_nav2_li">
-                <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener">无足鸟（红）</a>
-                <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">无足鸟（黑）</a>
-				<a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener">无足鸟（药）</a>
+                <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)">无足鸟（红）</a>
+                <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)">无足鸟（黑）</a>
+				<a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)">无足鸟（药）</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener">微信文章</a>
+            <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Articles">微信文章</a>
             <ul class="pc_nav2_ul">
               <li class="pc_nav2_li">
                 <a href="https://mp.weixin.qq.com/s/kT6fiaZKdSvElfv_uc-3Ow" target="_blank" rel="noopener">Vibe Coding</a>
-                <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener">网络规划设计师</a>
+                <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer">网络规划设计师</a>
                 <a href="https://mp.weixin.qq.com/s/LCWTZ2NWtaWwFm90bWdZfg" target="_blank" rel="noopener">Wireshark</a>
                 <a href="https://mp.weixin.qq.com/s/W7i8NNIwKmfMVIdGjx8JfA" target="_blank" rel="noopener">MobaXterm</a>
                 <a href="https://mp.weixin.qq.com/s/60oJa98_B7J4hV6VKBjYIA" target="_blank" rel="noopener">Markdown</a>
@@ -86,25 +94,25 @@
             </ul>
           </li>
           <li>
-            <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener">聊天交流</a>
+            <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="Community">聊天交流</a>
             <ul class="pc_nav2_ul">
               <li class="pc_nav2_li">
               </li>
             </ul>
           </li>
         </ul>
-        <!-- 右侧工具区：主题切换 + 中英文切换（占位，暂未实现功能） -->
+        <!-- 右侧工具区：主题切换 + 中英文切换 -->
         <div class="pc_nav_tools">
-          <div class="theme_toggle" role="group" aria-label="主题切换">
-            <button type="button" class="theme_opt is-active" aria-pressed="true"><img class="theme_icon theme_icon_sun" src="../images/sun.png" alt="">浅色</button>
-            <button type="button" class="theme_opt" aria-pressed="false"><img class="theme_icon theme_icon_moon" src="../images/moon.png" alt="">深色</button>
+          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label">
+            <button type="button" class="theme_opt is-active" aria-pressed="true"><img class="theme_icon theme_icon_sun" src="../images/sun.png" alt=""><span data-en="Light">浅色</span></button>
+            <button type="button" class="theme_opt" aria-pressed="false"><img class="theme_icon theme_icon_moon" src="../images/moon.png" alt=""><span data-en="Dark">深色</span></button>
           </div>
-          <div class="lang_select" role="listbox" aria-label="语言切换" aria-expanded="false">
+          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" aria-expanded="false">
             <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
               <span class="lang_current">中文</span>
             </button>
             <ul class="lang_menu">
-              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">中文</li>
+              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">简体中文</li>
               <li class="lang_item" role="option" aria-selected="false" data-value="en">English</li>
             </ul>
           </div>
@@ -120,7 +128,7 @@
         </a>
       </div>
       <div class="m_qian_rg">
-        <a href="#" class="m_qian_tubiao" role="button" aria-label="打开导航菜单">
+        <a href="#" class="m_qian_tubiao" role="button" aria-label="打开导航菜单" data-en="Open navigation menu" data-en-attr="aria-label">
           <img class="m_qian_menuimg" src="../images/m_menuimg.png" alt="菜单">
         </a>
       </div>
@@ -129,23 +137,23 @@
     <div class="m_hou">
       <div class="m_hou_beijing m_hou_tubiao"></div>
       <div class="m_hou_tubiao_beijing">
-        <a href="#" class="m_hou_tubiao" role="button" aria-label="关闭导航菜单">
+        <a href="#" class="m_hou_tubiao" role="button" aria-label="关闭导航菜单" data-en="Close navigation menu" data-en-attr="aria-label">
           <img src="../images/close.png" width="22" alt="关闭">
         </a>
       </div>
       <div class="m_navList">
         <!-- 移动端抽屉顶部工具区：主题切换 + 中英文切换 -->
         <div class="m_nav_tools">
-          <div class="theme_toggle" role="group" aria-label="主题切换">
-            <button type="button" class="theme_opt is-active" aria-pressed="true"><img class="theme_icon theme_icon_sun" src="../images/sun.png" alt="">浅色</button>
-            <button type="button" class="theme_opt" aria-pressed="false"><img class="theme_icon theme_icon_moon" src="../images/moon.png" alt="">深色</button>
+          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label">
+            <button type="button" class="theme_opt is-active" aria-pressed="true"><img class="theme_icon theme_icon_sun" src="../images/sun.png" alt=""><span data-en="Light">浅色</span></button>
+            <button type="button" class="theme_opt" aria-pressed="false"><img class="theme_icon theme_icon_moon" src="../images/moon.png" alt=""><span data-en="Dark">深色</span></button>
           </div>
-          <div class="lang_select" role="listbox" aria-label="语言切换" aria-expanded="false">
+          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" aria-expanded="false">
             <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
               <span class="lang_current">中文</span>
             </button>
             <ul class="lang_menu">
-              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">中文</li>
+              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">简体中文</li>
               <li class="lang_item" role="option" aria-selected="false" data-value="en">English</li>
             </ul>
           </div>
@@ -153,23 +161,23 @@
         <ul>
           <li>
             <div class="m_navList_a">
-              <a href="https://github.com/wuzuniao" target="_blank" rel="noopener">开源</a>
+              <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
               <i></i>
             </div>
             <div class="m_navList_nav">
-              <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener">无足鸟（红）</a>
-              <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">无足鸟（黑）</a>
-			  <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener">无足鸟（药）</a>
+              <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)">无足鸟（红）</a>
+              <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)">无足鸟（黑）</a>
+			  <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)">无足鸟（药）</a>
             </div>
           </li>
           <li>
             <div class="m_navList_a">
-              <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener">微信文章</a>
+              <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Articles">微信文章</a>
               <i></i>
             </div>
             <div class="m_navList_nav">
               <a href="https://mp.weixin.qq.com/s/kT6fiaZKdSvElfv_uc-3Ow" target="_blank" rel="noopener">Vibe Coding</a>
-              <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener">网络规划设计师</a>
+              <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer">网络规划设计师</a>
               <a href="https://mp.weixin.qq.com/s/LCWTZ2NWtaWwFm90bWdZfg" target="_blank" rel="noopener">Wireshark</a>
               <a href="https://mp.weixin.qq.com/s/W7i8NNIwKmfMVIdGjx8JfA" target="_blank" rel="noopener">MobaXterm</a>
               <a href="https://mp.weixin.qq.com/s/60oJa98_B7J4hV6VKBjYIA" target="_blank" rel="noopener">Markdown</a>
@@ -178,7 +186,7 @@
           </li>
           <li>
             <div class="m_navList_a">
-              <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener">聊天交流</a>
+              <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="Community">聊天交流</a>
               <i></i>
             </div>
             <div class="m_navList_nav"></div>
@@ -191,51 +199,51 @@
   <main>
     <!-- 页面主体内容 -->
     <div class="site">
-      <h1>站内公告</h1>
+      <h1 data-en="Site Announcements">站内公告</h1>
       <section>
         <h2>
           <strong>2026.7.12 23:00</strong>
         </h2>
-        <p>一、使用Vibe Coding重构无足鸟前端展示网站。</p>
-        <p>二、上线 无足鸟（药，无足鸟按时吃药打卡） 微信小程序：优化存储与传输安全，修复UI界面Bug，增强UX交互体验。</p>
+        <p data-en="I. Rebuilt the Wuzuniao front-end showcase website using Vibe Coding.">一、使用Vibe Coding重构无足鸟前端展示网站。</p>
+        <p data-en="II. Launched the Wuzuniao (Medicine, 'Wuzuniao Take-Medicine-on-Time Check-in') WeChat Mini Program: optimized storage and transmission security, fixed UI bugs, and enhanced UX interactions.">二、上线 无足鸟（药，无足鸟按时吃药打卡） 微信小程序：优化存储与传输安全，修复UI界面Bug，增强UX交互体验。</p>
       </section>
       <section>
         <h2>
           <strong>2025.10.13 20:00</strong>
         </h2>
-        <p>一、将 无足鸟（黑，wuzuniao.com）、无足鸟（红，wuzuniao.cn） 托管至GitHub、Gitee，代码开源。</p>
-        <p>二、下线 无足鸟（wuzuniao.cn） 网站，关闭服务器，释放wuzuniao.cn域名。</p>
-        <p>三、公众号 无足鸟ICT（wuzuniao_com） 计划于2026年1月1日恢复更新。</p>
+        <p data-en="I. Hosted Wuzuniao (Black, wuzuniao.com) and Wuzuniao (Red, wuzuniao.cn) on GitHub and Gitee, open-sourcing the code.">一、将 无足鸟（黑，wuzuniao.com）、无足鸟（红，wuzuniao.cn） 托管至GitHub、Gitee，代码开源。</p>
+        <p data-en="II. Taken down the Wuzuniao (wuzuniao.cn) website, shut down its server, and released the wuzuniao.cn domain.">二、下线 无足鸟（wuzuniao.cn） 网站，关闭服务器，释放wuzuniao.cn域名。</p>
+        <p data-en="III. The WeChat Official Account Wuzuniao ICT (wuzuniao_com) is planned to resume updates on January 1, 2026.">三、公众号 无足鸟ICT（wuzuniao_com） 计划于2026年1月1日恢复更新。</p>
       </section>
       <section>
         <h2>
           <strong>2023.03.11 19:35</strong>
         </h2>
-        <p>一、本网站微信公众号相关文章链接更新。</p>
-        <p>二、微信公众号暂定停更五年，调整心态完成原定学习目标。</p>
-        <p>三、微信公众号从 山海门 更名为 无足鸟ICT。</p>
+        <p data-en="I. Updated the article links for this site's WeChat Official Account.">一、本网站微信公众号相关文章链接更新。</p>
+        <p data-en="II. The WeChat Official Account will temporarily suspend updates for five years to adjust mindset and complete the originally planned learning goals.">二、微信公众号暂定停更五年，调整心态完成原定学习目标。</p>
+        <p data-en="III. The WeChat Official Account was renamed from Shanhaimen to Wuzuniao ICT.">三、微信公众号从 山海门 更名为 无足鸟ICT。</p>
       </section>
       <section>
         <h2>
           <strong>2023.01.01 00:00</strong>
         </h2>
-        <p>一、山海门（shanhaimen.com）正式更替为 无足鸟（wuzuniao.com），网站定位不变。原因：从2017年的时候就想用wuzuniao.com这个域名的，但这个域名当时被其他公司在用，等待5年后，原使用此域名公司放弃续费，于是才于去年注册到并完成备案，后续都将使用此域名。</p>
-        <p>二、更新部分UI，去除全部可能涉及版权元素。</p>
-        <p>三、设计字体更新为：方正黑体简体.TTF</p>
+        <p data-en="I. Shanhaimen (shanhaimen.com) was officially replaced by Wuzuniao (wuzuniao.com), with the site positioning unchanged. Reason: I had wanted to use the wuzuniao.com domain since 2017, but it was then used by another company. After waiting five years, the original registrant let it expire, so I registered it last year and completed filing; this domain will be used thereafter.">一、山海门（shanhaimen.com）正式更替为 无足鸟（wuzuniao.com），网站定位不变。原因：从2017年的时候就想用wuzuniao.com这个域名的，但这个域名当时被其他公司在用，等待5年后，原使用此域名公司放弃续费，于是才于去年注册到并完成备案，后续都将使用此域名。</p>
+        <p data-en="II. Updated part of the UI and removed all potentially copyright-infringing elements.">二、更新部分UI，去除全部可能涉及版权元素。</p>
+        <p data-en="III. Updated the design font to: Founder HeiTi (Simplified) .TTF">三、设计字体更新为：方正黑体简体.TTF</p>
       </section>
       <section>
         <h2>
-          <strong>2020年10月24日</strong>
+          <strong data-en="October 24, 2020">2020年10月24日</strong>
         </h2>
-        <p>一、下线 无足鸟论坛 （2017年2月22日 - 2020年10月24日），正式使用微信公众号 山海门 代替其分享技术文章功能。</p>
-        <p>二、迭代并正式上线 无足鸟（wuzuniao.cn）v2.0 版本，重新设计前端且应用响应式布局。</p>
+        <p data-en="I. Taken down the Wuzuniao Forum (2017-02-22 – 2020-10-24) and officially replaced it with the WeChat Official Account Shanhaimen for sharing technical articles.">一、下线 无足鸟论坛 （2017年2月22日 - 2020年10月24日），正式使用微信公众号 山海门 代替其分享技术文章功能。</p>
+        <p data-en="II. Iterated and officially launched Wuzuniao (wuzuniao.cn) v2.0, redesigned the front end, and applied a responsive layout.">二、迭代并正式上线 无足鸟（wuzuniao.cn）v2.0 版本，重新设计前端且应用响应式布局。</p>
       </section>
       <section>
         <h2>
-          <strong>2020年9月20日</strong>
+          <strong data-en="September 20, 2020">2020年9月20日</strong>
         </h2>
-        <p>一、正式开始设计山海门，用于对目前已在运行的无足鸟网站、山海门微信公众号以及QQ群做一个统一的入口，设计目的在于通过这一个网站，可方便查看跳转到需要查找的内容；比如微信公众号上的某一系列文章汇总在本站可直接跳转。</p>
-        <p>二、独立设计本站做汇总跳转也是为了解决无足鸟网站页面加载问题，特此进行架构分离；计划将本站部署于对象存储，实现更快的网站加载速度；无足鸟剔除展示型内容，以实现现有带宽下更快的服务器响应。</p>
+        <p data-en="I. Formally began designing Shanhaimen, intended as a unified entry point for the already-running Wuzuniao website, the Shanhaimen WeChat Official Account, and the QQ group—so that visitors could conveniently find and jump to the content they need; for example, a series of articles on the WeChat Official Account can be linked and jumped to directly from this site.">一、正式开始设计山海门，用于对目前已在运行的无足鸟网站、山海门微信公众号以及QQ群做一个统一的入口，设计目的在于通过这一个网站，可方便查看跳转到需要查找的内容；比如微信公众号上的某一系列文章汇总在本站可直接跳转。</p>
+        <p data-en="II. Independently designing this site for aggregation and redirection also addresses the Wuzuniao website's page-loading issues, hence the architectural separation; the site is planned to be deployed on object storage for faster loading, while Wuzuniao removes showcase content to achieve faster server responses under the existing bandwidth.">二、独立设计本站做汇总跳转也是为了解决无足鸟网站页面加载问题，特此进行架构分离；计划将本站部署于对象存储，实现更快的网站加载速度；无足鸟剔除展示型内容，以实现现有带宽下更快的服务器响应。</p>
       </section>
     </div>
   </main>
@@ -244,15 +252,15 @@
     <div class="footer">
       <div class="footer_erweima">
         <div>
-          <a href="https://github.com/wuzuniao" target="_blank" rel="noopener">开源</a>
+          <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
           <img src="../images/biaoqingbao.gif" alt="开源表情包">
         </div>
         <div>
-          <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener">微信公众号</a>
+          <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Official Account">微信公众号</a>
           <img src="../images/ewm_wx.png" alt="微信公众号二维码">
         </div>
         <div>
-          <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener">QQ群</a>
+          <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="QQ Group">QQ群</a>
           <img src="../images/ewm_qq.png" alt="QQ群二维码">
         </div>
         <div>
@@ -260,16 +268,16 @@
         </div>
       </div>
       <div class="footer_ziye">
-        <a href="../site/zngg.html">站内公告</a>
-        <a href="../site/mzsm.html">免责声明</a>
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener">联系我们：xpg@wuzuniao.com</a>
+        <a href="../site/zngg.html" data-en="Site Announcements">站内公告</a>
+        <a href="../site/mzsm.html" data-en="Disclaimer">免责声明</a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
         <a href="https://github.com/wuzuniao/wuzuniao.github.io" target="_blank" rel="noopener" id="github">
           <img src="../images/github.png" alt="GitHub">
-          <span>GitHub</span>
+          <span data-en="GitHub">GitHub</span>
         </a>
         <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">
           <img src="../images/gitee.png" alt="Gitee">
-          <span>Gitee</span>
+          <span data-en="Gitee">Gitee</span>
         </a>
       </div>
       <div class="copyright">
@@ -286,14 +294,14 @@
     <!-- 手机端页脚 -->
     <div class="m_footer">
       <div class="m_footer_erweima">
-        <a href="https://github.com/wuzuniao" target="_blank" rel="noopener">开源</a>
-        <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener">微信公众号</a>
-        <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener">QQ群</a>
+        <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
+        <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Official Account">微信公众号</a>
+        <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="QQ Group">QQ群</a>
       </div>
       <div class="m_footer_ziye">
-        <a href="../site/zngg.html">站内公告</a>
-        <a href="../site/mzsm.html">免责声明</a>
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener">联系我们：xpg@wuzuniao.com</a>
+        <a href="../site/zngg.html" data-en="Site Announcements">站内公告</a>
+        <a href="../site/mzsm.html" data-en="Disclaimer">免责声明</a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
         <a href="https://github.com/wuzuniao/wuzuniao.github.io" target="_blank" rel="noopener">GitHub</a>
         <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">Gitee</a>
       </div>

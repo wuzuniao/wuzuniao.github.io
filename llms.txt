@@ -22,3 +22,30 @@ Linux 系统管理、Shell 脚本、Vim、正则表达式、软件仓库、系�
 
 - 开源仓库：https://github.com/wuzuniao
 - 微信公众号：无足鸟ICT（wuzuniao_com）
+
+## English
+
+# Wuzuniao ICT (wuzuniao.com)
+
+Wuzuniao ICT is a technical-sharing brand focused on Red Hat RHCA note tutorials. With a "what you see is what you get" hands-on approach, it breaks Linux full-stack operations into reproducible operation records, while also covering network planning, Wireshark packet analysis, and Vibe Coding.
+
+### Core Topics
+
+- Red Hat RHCA notes & Linux full-stack: built on the RHCA framework, covering system administration, Shell, security hardening (SELinux/iptables), storage & backup, database caching, web & load balancing, high-availability clusters, containers & Kubernetes, virtualization & OpenStack, Ansible automation, monitoring & logging, and more. RHCE-level content is free, RHCA-level is paid; 1500+ articles planned.
+- Networking & Wireshark: Network Planning Designer exam notes, network configuration & troubleshooting, OpenvSwitch / VXLAN / namespace, Wireshark packet capture analysis and protocol interpretation.
+- Vibe Coding: practical insights, tools, and workflow examples of AI-assisted programming.
+
+### Site Pages
+
+- Home (https://www.wuzuniao.com/): entry point for Red Hat RHCA note tutorials, presenting 18 technical domains by popularity and completeness, with dedicated sections for Networking, Wireshark, and Vibe Coding.
+- Site Announcements (https://www.wuzuniao.com/site/zngg.html): timeline of Wuzuniao site updates, recording rebuilds, open-source hosting, WeChat Official Account, and Mini Program launches since the founding of Shanhaimen in 2020.
+- Disclaimer (https://www.wuzuniao.com/site/mzsm.html): a personal navigation site providing only redirection to and aggregation of technical resources; using the site is deemed acceptance of the full disclaimer.
+
+### Topic Coverage
+
+Linux system administration, Shell scripting, Vim, regex, package repositories, system monitoring & tuning (Tuned), hardware & /proc, kernel & boot, performance testing (FIO), services & resource limits, processes & time, logging & Graylog, users/permissions & filesystems, text processing, packaging & backup, network planning & troubleshooting, Wireshark analysis, security hardening (SELinux/iptables/TCPWrapper/Firewall), vulnerabilities, PXE/Cobbler, remote (SSH/VNC/OpenSSL/OpenLDAP/DHCP), PAM/DNS/Dnsmasq/unbound, storage (iSCSI/multipath/udev/vsftpd/Samba/NFS/AutoFs), web (Apache/Nginx/Tomcat/LNMP), database (MariaDB/MySQL/RabbitMQ/Memcached/Redis/MongoDB), load (LVS/HAProxy/Squid/Varnish/Pacemaker/Keepalived), code (Git/Gitlab/SVN/Confluence/Jenkins), automation (Ansible/yaml), VPN (OpenVPN/NPS/cpolar), monitoring (Nagios/Cacti/Zabbix/Prometheus/Nightingale), distributed (Ceph/GlusterFS/Hadoop), virtualization (KVM/OpenStack/Docker/containerd/Kubernetes/OpenShift), IP management (PHPIPAM/NetBox), Vibe Coding (AI-assisted programming).
+
+### Contact
+
+- Open-source repos: https://github.com/wuzuniao
+- WeChat Official Account: Wuzuniao ICT (wuzuniao_com)

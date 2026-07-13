@@ -60,11 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 中英文切换：自定义下拉单选框（占位，暂未实现翻译切换）
+  // 中英文切换：自定义下拉单选框，选择后调用全局 setLanguage 切换并持久化
   // 每个 .lang_select 独立处理（PC 与移动端各一组）
   document.querySelectorAll('.lang_select').forEach((langSelect) => {
     const langTrigger = langSelect.querySelector('.lang_trigger');
-    const langCurrent = langSelect.querySelector('.lang_current');
     const langItems = langSelect.querySelectorAll('.lang_item');
 
     // 收起当前下拉
@@ -82,16 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
       langSelect.setAttribute('aria-expanded', String(isOpen));
     });
 
-    // 选择某一项：更新当前显示、选中态，并收起
+    // 选择某一项：切换全站语言（含 UI 同步）并收起
     langItems.forEach((item) => {
       item.addEventListener('click', (event) => {
         event.stopPropagation();
-        langCurrent.textContent = item.textContent;
-        langItems.forEach((other) => {
-          const selected = other === item;
-          other.classList.toggle('is-selected', selected);
-          other.setAttribute('aria-selected', String(selected));
-        });
+        const value = item.getAttribute('data-value');
+        if (typeof window.setLanguage === 'function') {
+          window.setLanguage(value);
+        }
         closeLang();
       });
     });
