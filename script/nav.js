@@ -45,14 +45,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 主题切换按钮：仅切换太阳/月亮图标，不实际切换主题（占位）
-  const themeToggle = document.querySelector('.theme_toggle');
-  themeToggle?.addEventListener('click', () => {
-    const img = themeToggle.querySelector('img');
-    if (!img) return;
-    const isDark = img.src.includes('moon.png');
-    img.src = img.src.replace(/(sun|moon)\.png$/, isDark ? 'sun.png' : 'moon.png');
-    img.alt = isDark ? '浅色主题' : '深色主题';
-    themeToggle.setAttribute('aria-pressed', String(!isDark));
+  // 主题切换：分段胶囊，仅切换选中态，不实际切换主题（占位）
+  // 每个 .theme_toggle 独立成组（PC 与移动端各一组，互不干扰）
+  document.querySelectorAll('.theme_toggle').forEach((group) => {
+    const opts = group.querySelectorAll('.theme_opt');
+    opts.forEach((opt) => {
+      opt.addEventListener('click', () => {
+        opts.forEach((other) => {
+          const isActive = other === opt;
+          other.classList.toggle('is-active', isActive);
+          other.setAttribute('aria-pressed', String(isActive));
+        });
+      });
+    });
+  });
+
+  // 中英文切换：自定义下拉单选框（占位，暂未实现翻译切换）
+  // 每个 .lang_select 独立处理（PC 与移动端各一组）
+  document.querySelectorAll('.lang_select').forEach((langSelect) => {
+    const langTrigger = langSelect.querySelector('.lang_trigger');
+    const langCurrent = langSelect.querySelector('.lang_current');
+    const langItems = langSelect.querySelectorAll('.lang_item');
+
+    // 收起当前下拉
+    const closeLang = () => {
+      langSelect.classList.remove('is-open');
+      langTrigger.setAttribute('aria-expanded', 'false');
+      langSelect.setAttribute('aria-expanded', 'false');
+    };
+
+    // 点击触发按钮展开 / 收起（阻止冒泡，避免被外部点击立即收起）
+    langTrigger.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const isOpen = langSelect.classList.toggle('is-open');
+      langTrigger.setAttribute('aria-expanded', String(isOpen));
+      langSelect.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // 选择某一项：更新当前显示、选中态，并收起
+    langItems.forEach((item) => {
+      item.addEventListener('click', (event) => {
+        event.stopPropagation();
+        langCurrent.textContent = item.textContent;
+        langItems.forEach((other) => {
+          const selected = other === item;
+          other.classList.toggle('is-selected', selected);
+          other.setAttribute('aria-selected', String(selected));
+        });
+        closeLang();
+      });
+    });
+
+    // 点击组件外部收起
+    document.addEventListener('click', (event) => {
+      if (!langSelect.contains(event.target)) closeLang();
+    });
+
+    // 按 Esc 收起
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeLang();
+    });
   });
 });

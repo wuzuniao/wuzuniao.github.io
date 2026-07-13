@@ -108,7 +108,7 @@
   visibility: visible;
 }
 
-/* ============ 右侧工具区（主题图标 + 中英文切换，占位） ============ */
+/* ============ 右侧工具区（主题切换 + 中英文切换，占位） ============ */
 .pc_nav_tools {
   flex: 0 0 auto;
   margin-left: auto;
@@ -117,37 +117,8 @@
   gap: 0.625em;
 }
 
-/* 主题切换：图标按钮（参考语言胶囊样式，仅图标大小，小一号） */
+/* 主题切换：分段胶囊（当前项为墨色底白字） */
 .theme_toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25em;
-  border: 1px solid #ebebeb;
-  border-radius: 9999px;
-  background-color: #ffffff;
-  cursor: pointer;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
-}
-
-.theme_toggle img {
-  display: block;
-  width: 1em;
-  height: 1em;
-}
-
-.theme_toggle:hover {
-  border-color: #d4d4d4;
-  background-color: #f2f2f2;
-}
-
-.theme_toggle:focus {
-  outline: none;
-  border-color: #171717;
-}
-
-/* 中英文切换：分段胶囊（中文为当前语言） */
-.lang_toggle {
   display: inline-flex;
   align-items: center;
   padding: 0.1875em;
@@ -156,7 +127,10 @@
   background-color: #ffffff;
 }
 
-.lang_opt {
+.theme_opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
   padding: 0.3em 0.85em;
   border: 0;
   border-radius: 9999px;
@@ -168,17 +142,107 @@
   transition: color 0.15s ease, background 0.15s ease;
 }
 
-.lang_opt.is-active {
+.theme_opt.is-active {
   background-color: #171717;
   color: #ffffff;
 }
 
-.lang_opt:not(.is-active):hover {
+/* 主题段内图标：复用 sun/moon PNG，当前项（墨色底）反白显示 */
+.theme_icon {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
+.theme_opt.is-active .theme_icon {
+  filter: brightness(0) invert(1);
+}
+
+.theme_opt:not(.is-active):hover {
   color: #171717;
 }
 
-.lang_opt:focus {
+.theme_opt:focus {
   outline: none;
+}
+
+/* 中英文切换：自定义下拉单选框（展开面板与整体风格一致，非系统默认） */
+.lang_select {
+  position: relative;
+}
+
+.lang_trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin: 0;
+  padding: 0.3em 1.6em 0.3em 0.85em;
+  border: 1px solid #ebebeb;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  color: #4d4d4d;
+  font-size: 0.8125em;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+  /* 自定义下拉箭头（内联 SVG 数据 URI，离线可用） */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238f8f8f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7em center;
+  background-size: 0.75em;
+}
+
+.lang_trigger:hover {
+  border-color: #d4d4d4;
+  color: #171717;
+}
+
+.lang_trigger:focus {
+  outline: none;
+  border-color: #171717;
+}
+
+/* 展开面板：白底发丝边圆角，与界面协调 */
+.lang_menu {
+  position: absolute;
+  top: calc(100% + 0.4em);
+  right: 0;
+  min-width: 100%;
+  margin: 0;
+  padding: 0.25em 0;
+  list-style: none;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 0.75em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  z-index: 100;
+}
+
+.lang_select.is-open .lang_menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang_item {
+  padding: 0.45em 1em;
+  white-space: nowrap;
+  color: #4d4d4d;
+  font-size: 0.8125em;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.lang_item:hover,
+.lang_item.is-selected {
+  color: #0070f3;
+  background-color: #fafafa;
 }
 
 
@@ -432,6 +496,16 @@ footer {
   .m_hou .m_navList ul {
     padding-left: 5%;
     padding-right: 5%;
+  }
+
+  /* 移动端抽屉顶部工具区：复用主题切换 + 中英文切换组件，与导航列表以发丝线分隔 */
+  .m_nav_tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.625em;
+    padding: 0.75em 5%;
+    border-bottom: 1px solid #ebebeb;
   }
 
   .m_hou .m_navList ul li {

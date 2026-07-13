@@ -57,14 +57,20 @@
             </ul>
           </li>
         </ul>
-        <!-- 右侧工具区：主题图标 + 中英文切换（占位，暂未实现功能） -->
+        <!-- 右侧工具区：主题切换 + 中英文切换（占位，暂未实现功能） -->
         <div class="pc_nav_tools">
-          <button type="button" class="theme_toggle" aria-label="切换主题" aria-pressed="false">
-            <img src="images/sun.png" alt="浅色主题">
-          </button>
-          <div class="lang_toggle" role="group" aria-label="语言切换">
-            <button type="button" class="lang_opt is-active" aria-pressed="true">中文</button>
-            <button type="button" class="lang_opt" aria-pressed="false">English</button>
+          <div class="theme_toggle" role="group" aria-label="主题切换">
+            <button type="button" class="theme_opt is-active" aria-pressed="true"><img class="theme_icon theme_icon_sun" src="images/sun.png" alt="">浅色</button>
+            <button type="button" class="theme_opt" aria-pressed="false"><img class="theme_icon theme_icon_moon" src="images/moon.png" alt="">深色</button>
+          </div>
+          <div class="lang_select" role="listbox" aria-label="语言切换" aria-expanded="false">
+            <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
+              <span class="lang_current">中文</span>
+            </button>
+            <ul class="lang_menu">
+              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">中文</li>
+              <li class="lang_item" role="option" aria-selected="false" data-value="en">English</li>
+            </ul>
           </div>
         </div>
         <div class="pc_nav_both"></div>
@@ -92,6 +98,22 @@
         </a>
       </div>
       <div class="m_navList">
+        <!-- 移动端抽屉顶部工具区：主题切换 + 中英文切换 -->
+        <div class="m_nav_tools">
+          <div class="theme_toggle" role="group" aria-label="主题切换">
+            <button type="button" class="theme_opt is-active" aria-pressed="true"><img class="theme_icon theme_icon_sun" src="images/sun.png" alt="">浅色</button>
+            <button type="button" class="theme_opt" aria-pressed="false"><img class="theme_icon theme_icon_moon" src="images/moon.png" alt="">深色</button>
+          </div>
+          <div class="lang_select" role="listbox" aria-label="语言切换" aria-expanded="false">
+            <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
+              <span class="lang_current">中文</span>
+            </button>
+            <ul class="lang_menu">
+              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">中文</li>
+              <li class="lang_item" role="option" aria-selected="false" data-value="en">English</li>
+            </ul>
+          </div>
+        </div>
         <ul>
           <li>
             <div class="m_navList_a">
