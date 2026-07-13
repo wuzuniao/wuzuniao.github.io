@@ -239,6 +239,262 @@
       </div>
     </section>
 
+    <!-- RHCA+ 合集目录：基于 tree.txt，按网络热度 / 内容完善度归类展示 -->
+    <section class="catalog">
+      <div class="catalog_inner">
+        <p class="eyebrow">RHCA+ 合集目录</p>
+        <h2 class="section_title">18 大技术域，覆盖 Linux 全栈实战</h2>
+        <p class="catalog_lead">合集以红帽 RHCA 体系为骨架，持续扩展系统管理、网络、存储、数据库、容器、自动化与监控等内容。下方按热度与完成度梳理主要技术域，每个标签在对应合集中均有实战笔记详细阐述。</p>
+        <div class="catalog_grid">
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">系统基础与 Shell 编程</h3>
+            <p class="catalog_card_desc">从 Linux 安装到命令行进阶，构建可复用的 Shell 自动化能力。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">操作系统与 Linux 结构</li>
+              <li class="catalog_tag">红帽认证体系</li>
+              <li class="catalog_tag">有趣的命令</li>
+              <li class="catalog_tag">Vim 三种模式</li>
+              <li class="catalog_tag">正则表达式</li>
+              <li class="catalog_tag">Shell 变量与运算</li>
+              <li class="catalog_tag">条件与循环</li>
+              <li class="catalog_tag">自定义函数</li>
+              <li class="catalog_tag">RPM / yum 仓库</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">系统管理与性能调优</h3>
+            <p class="catalog_card_desc">进程、资源、内核到启动全流程管理，辅以压力测试与 Tuned 调优。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">系统监控 sar/vmstat</li>
+              <li class="catalog_tag">htop / iftop / iotop</li>
+              <li class="catalog_tag">系统调优与 Tuned</li>
+              <li class="catalog_tag">硬件管理 lshw/dmidecode</li>
+              <li class="catalog_tag">proc 伪文件系统</li>
+              <li class="catalog_tag">内核模块管理</li>
+              <li class="catalog_tag">GRUB 启动管理</li>
+              <li class="catalog_tag">stress / sysbench 压测</li>
+              <li class="catalog_tag">systemctl 服务管理</li>
+              <li class="catalog_tag">ulimit / cgroup</li>
+              <li class="catalog_tag">进程管理 top/ps/kill</li>
+              <li class="catalog_tag">时间 chrony/ntp</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">用户、权限与安全</h3>
+            <p class="catalog_card_desc">账户体系、细粒度权限与隐藏属性，筑牢系统第一道防线。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">用户与用户组</li>
+              <li class="catalog_tag">sudo 提权</li>
+              <li class="catalog_tag">chmod / SUID / SGID</li>
+              <li class="catalog_tag">chattr 隐藏权限</li>
+              <li class="catalog_tag">ACL 访问控制</li>
+              <li class="catalog_tag">文件与目录操作</li>
+              <li class="catalog_tag">软硬链接</li>
+              <li class="catalog_tag">find / locate 搜索</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">网络配置与排障</h3>
+            <p class="catalog_card_desc">从网卡配置到抓包排障，覆盖主流虚拟网络与自动化装机。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">ip / nmcli 网卡</li>
+              <li class="catalog_tag">网卡聚合</li>
+              <li class="catalog_tag">ping / traceroute</li>
+              <li class="catalog_tag">tcpdump 抓包</li>
+              <li class="catalog_tag">nmap 扫描</li>
+              <li class="catalog_tag">Bridge / OVS</li>
+              <li class="catalog_tag">namespace / VXLAN</li>
+              <li class="catalog_tag">RouterOS</li>
+              <li class="catalog_tag">PXE+Kickstart</li>
+              <li class="catalog_tag">Cobbler</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">防火墙与安全加固</h3>
+            <p class="catalog_card_desc">包过滤、区域防火墙与漏洞评估，构建纵深防御。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">iptables 包过滤</li>
+              <li class="catalog_tag">firewalld 区域</li>
+              <li class="catalog_tag">TCP Wrapper</li>
+              <li class="catalog_tag">SELinux 安全上下文</li>
+              <li class="catalog_tag">Nessus 漏洞扫描</li>
+              <li class="catalog_tag">Prism X 渗透</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">存储、文件系统与备份</h3>
+            <p class="catalog_card_desc">分区、LVM、RAID 到分布式存储与备份恢复全链路。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">LVM 逻辑卷</li>
+              <li class="catalog_tag">软 RAID mdadm</li>
+              <li class="catalog_tag">XFS / ext 文件系统</li>
+              <li class="catalog_tag">磁盘配额 Quota</li>
+              <li class="catalog_tag">tar / gzip / xz</li>
+              <li class="catalog_tag">rsync 实时同步</li>
+              <li class="catalog_tag">dump / dd 备份</li>
+              <li class="catalog_tag">Ceph 分布式存储</li>
+              <li class="catalog_tag">Glusterfs</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">数据库与缓存中间件</h3>
+            <p class="catalog_card_desc">关系型、文档型与缓存型数据库，含主从复制与集群。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">MySQL 主从复制</li>
+              <li class="catalog_tag">事务与 SQL 优化</li>
+              <li class="catalog_tag">MariaDB</li>
+              <li class="catalog_tag">Redis 哨兵</li>
+              <li class="catalog_tag">Memcached</li>
+              <li class="catalog_tag">MongoDB 副本集</li>
+              <li class="catalog_tag">RabbitMQ 消息队列</li>
+              <li class="catalog_tag">Oracle OCP</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">Web 服务与负载均衡</h3>
+            <p class="catalog_card_desc">主流 Web 服务器、动静分离与反向代理实践。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">Nginx 反向代理</li>
+              <li class="catalog_tag">Nginx 负载均衡</li>
+              <li class="catalog_tag">Apache httpd</li>
+              <li class="catalog_tag">Tomcat</li>
+              <li class="catalog_tag">LNMP 架构</li>
+              <li class="catalog_tag">phpStudy</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">高可用集群</h3>
+            <p class="catalog_card_desc">负载调度、健康检查与双机热备，保障服务持续可用。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">LVS 负载调度</li>
+              <li class="catalog_tag">HAProxy</li>
+              <li class="catalog_tag">Keepalived</li>
+              <li class="catalog_tag">Pacemaker 集群</li>
+              <li class="catalog_tag">Squid 代理</li>
+              <li class="catalog_tag">Varnish 缓存</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">容器与 Kubernetes</h3>
+            <p class="catalog_card_desc">容器运行时到编排平台，覆盖 Pod、Service 与 Ingress。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">Docker / Podman</li>
+              <li class="catalog_tag">containerd</li>
+              <li class="catalog_tag">Harbor 仓库</li>
+              <li class="catalog_tag">kubectl 管理</li>
+              <li class="catalog_tag">Deployment / StatefulSet</li>
+              <li class="catalog_tag">Service / Ingress</li>
+              <li class="catalog_tag">Helm 包管理</li>
+              <li class="catalog_tag">OpenShift</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">虚拟化与 OpenStack</h3>
+            <p class="catalog_card_desc">KVM 虚拟化与 OpenStack 云平台的组件与命令行管理。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">KVM / virsh</li>
+              <li class="catalog_tag">virt-install 建虚拟机</li>
+              <li class="catalog_tag">vbmc 虚拟BMC</li>
+              <li class="catalog_tag">OpenStack</li>
+              <li class="catalog_tag">nova / cinder / neutron / glance</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">自动化运维 Ansible</h3>
+            <p class="catalog_card_desc">RHCA 核心方向：剧本、角色与事实变量驱动的批量运维。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">Ad-Hoc 临时任务</li>
+              <li class="catalog_tag">playbook 剧本</li>
+              <li class="catalog_tag">role 角色</li>
+              <li class="catalog_tag">Inventory 主机清单</li>
+              <li class="catalog_tag">变量与事实</li>
+              <li class="catalog_tag">Jinja2 模板</li>
+              <li class="catalog_tag">navigator 自动化内容导航器</li>
+              <li class="catalog_tag">yaml 语法</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">监控体系</h3>
+            <p class="catalog_card_desc">从传统监控到云原生可观测性，含图表与告警闭环。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">Zabbix 4.4</li>
+              <li class="catalog_tag">Prometheus</li>
+              <li class="catalog_tag">Grafana 图表</li>
+              <li class="catalog_tag">Alertmanager 告警</li>
+              <li class="catalog_tag">Nagios</li>
+              <li class="catalog_tag">Cacti / SNMP</li>
+              <li class="catalog_tag">夜莺 Nightingale</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">日志管理与分析</h3>
+            <p class="catalog_card_desc">集中式日志采集、分析与可视化一站式方案。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">rsyslog</li>
+              <li class="catalog_tag">logrotate 转储</li>
+              <li class="catalog_tag">journalctl</li>
+              <li class="catalog_tag">LogAnalyzer</li>
+              <li class="catalog_tag">Graylog</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">代码协作与 CI/CD</h3>
+            <p class="catalog_card_desc">版本控制、代码托管到持续集成流水线。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">Git 命令</li>
+              <li class="catalog_tag">GitHub / GitLab</li>
+              <li class="catalog_tag">Subversion</li>
+              <li class="catalog_tag">Jenkins 流水线</li>
+              <li class="catalog_tag">Confluence</li>
+              <li class="catalog_tag">OpsMange</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">文件共享服务</h3>
+            <p class="catalog_card_desc">FTP、Samba、NFS 与块存储共享的搭建与挂载。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">vsftpd</li>
+              <li class="catalog_tag">ProFTPD</li>
+              <li class="catalog_tag">Samba</li>
+              <li class="catalog_tag">NFS</li>
+              <li class="catalog_tag">AutoFs 自动挂载</li>
+              <li class="catalog_tag">iSCSI</li>
+              <li class="catalog_tag">多路径 multipath</li>
+              <li class="catalog_tag">udev 规则</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">IP 管理与基础网络服务</h3>
+            <p class="catalog_card_desc">IP 规划、CMDB 与常见基础网络服务的配置。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">PHPIPAM</li>
+              <li class="catalog_tag">NetBox</li>
+              <li class="catalog_tag">DNS / BIND</li>
+              <li class="catalog_tag">Dnsmasq</li>
+              <li class="catalog_tag">unbound 缓存</li>
+              <li class="catalog_tag">DHCP</li>
+              <li class="catalog_tag">PAM 认证</li>
+              <li class="catalog_tag">OpenLDAP</li>
+              <li class="catalog_tag">Email / Postfix</li>
+            </ul>
+          </article>
+          <article class="catalog_card">
+            <h3 class="catalog_card_title">远程访问与内网穿透</h3>
+            <p class="catalog_card_desc">安全远程登录、桌面共享与跨网络访问通道。</p>
+            <ul class="catalog_tags">
+              <li class="catalog_tag">SSH 密钥互信</li>
+              <li class="catalog_tag">screen / tmux</li>
+              <li class="catalog_tag">fail2ban 防爆破</li>
+              <li class="catalog_tag">TigerVNC</li>
+              <li class="catalog_tag">OpenVPN</li>
+              <li class="catalog_tag">NPS 内网穿透</li>
+              <li class="catalog_tag">cpolar</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA band：收尾居中黑胶囊 -->
     <section class="cta_band">
       <h2 class="cta_title">以「所见即所得」的实战笔法，边看边做降低试错成本</h2>
