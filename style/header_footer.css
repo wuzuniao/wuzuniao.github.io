@@ -249,8 +249,8 @@
 /* ============ 页脚 ============ */
 footer {
   width: 100%;
-  background: #fafafa;
-  border-top: 1px solid #ebebeb;
+  /* 取消顶部横线分割；背景改为纯白 #ffffff，在整体 #fafafa 画布上轻微区分 */
+  background: #ffffff;
   color: #4d4d4d;
 }
 
@@ -598,7 +598,7 @@ footer {
   .m_footer {
     display: block;
     padding: 2rem 1.25rem;
-    background: #fafafa;
+    background: #ffffff;
   }
 
   .m_footer_erweima {

@@ -65,6 +65,7 @@
 .feature_card {
   display: flex;
   flex-direction: column;
+  min-width: 0; /* 允许在网格轨道内收缩，避免内容撑破视口 */
   background: #ffffff;
   border: 1px solid #ebebeb;
   border-radius: 0.75rem;
@@ -234,7 +235,8 @@
 /* ===== 网络合集：3-up 卡片网格 ===== */
 .network_grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* minmax(0,1fr)：轨道可收缩到 0，确保卡片宽度自适应、不超出视口 */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
   text-align: left;
 }
@@ -245,13 +247,14 @@
   max-width: 56rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 3rem;
   text-align: left;
 }
 
 /* 左栏：概念说明卡片（不可点击） */
 .vibe_concept {
+  min-width: 0; /* 允许在网格轨道内收缩，避免内容撑破视口 */
   background: #ffffff;
   border: 1px solid #ebebeb;
   border-radius: 0.75rem;

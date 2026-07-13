@@ -1,6 +1,12 @@
 @charset "utf-8";
 /* CSS Document 初始化样式 */
 
+/* 全局盒模型：border-box 让 padding/border 计入总宽度，
+   避免 width:100% + padding 超出视口引发移动端横向滚动条 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, img, strong,
 ol, ul, li, form, table, tr, th, td, aside, footer, header, nav, section, time {
   margin: 0;
