@@ -1,6 +1,6 @@
-# 无足鸟ICT (wuzuniao.com)
+# 无足鸟（wuzuniao.com）
 
-无足鸟ICT 是一个专注红帽 RHCA 系列笔记教程的技术分享品牌，以「所见即所得」的实战笔法，把 Linux 全栈运维拆成可复现的操作记录；同时覆盖网络规划、Wireshark 抓包分析与 Vibe Coding 等实战内容。
+无足鸟（wuzuniao.com）是技术分享品牌，旗下 无足鸟ICT 微信公众号以「所见即所得」的实战笔法，专注红帽 RHCA 系列笔记教程，把 Linux 全栈运维拆成可复现的操作记录；同时覆盖网络规划、Wireshark 抓包分析与 Vibe Coding 等实战内容。
 
 ## 核心内容方向
 
@@ -25,9 +25,9 @@ Linux 系统管理、Shell 脚本、Vim、正则表达式、软件仓库、系�
 
 ## English
 
-# Wuzuniao ICT (wuzuniao.com)
+# Wuzuniao (wuzuniao.com)
 
-Wuzuniao ICT is a technical-sharing brand focused on Red Hat RHCA note tutorials. With a "what you see is what you get" hands-on approach, it breaks Linux full-stack operations into reproducible operation records, while also covering network planning, Wireshark packet analysis, and Vibe Coding.
+Wuzuniao (wuzuniao.com) is a technical-sharing brand. Its WeChat Official Account, Wuzuniao ICT, with a "what you see is what you get" hands-on approach, focuses on Red Hat RHCA note tutorials, breaking Linux full-stack operations into reproducible operation records, while also covering network planning, Wireshark packet analysis, and Vibe Coding.
 
 ### Core Topics
 

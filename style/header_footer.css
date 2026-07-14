@@ -277,7 +277,8 @@ footer {
 
 .footer_erweima {
   overflow: hidden;
-  border-bottom: 1px solid var(--color-hairline);
+  /* 白底页脚内的分隔线改用更强的 hairline-strong，在纯白底上更清晰有质感 */
+  border-bottom: 1px solid var(--color-hairline-strong);
   box-sizing: border-box;
   padding-bottom: 20px;
 }
@@ -312,8 +313,9 @@ footer {
 
 .footer_ziye {
   display: block;
-  border-top: 1px solid var(--color-hairline);
-  border-bottom: 1px solid var(--color-hairline);
+  /* 去掉与上方 .footer_erweima 底边线相邻的重复 border-top，避免重影双线；
+     仅保留底部单线，并改用 hairline-strong 增强白底上的可见度 */
+  border-bottom: 1px solid var(--color-hairline-strong);
   box-sizing: border-box;
 }
 
@@ -642,8 +644,9 @@ footer {
   }
 
   .m_footer_ziye {
-    border-top: 1px solid var(--color-hairline);
-    border-bottom: 1px solid var(--color-hairline);
+    /* 移动端分隔线同样改用 hairline-strong，与 PC 页脚保持一致、白底更清晰 */
+    border-top: 1px solid var(--color-hairline-strong);
+    border-bottom: 1px solid var(--color-hairline-strong);
     box-sizing: border-box;
     padding: 0.5em 0 0.5em 0;
     margin-top: 0.5em;
@@ -733,7 +736,7 @@ footer {
   flex-wrap: wrap;
   gap: 0.75em 1.25em;
   background: var(--color-elevated);
-  border-top: 1px solid var(--color-hairline);
+  border-top: 1px solid var(--color-hairline-strong);
   color: var(--color-mute);
   font-size: 0.875em;
 }
