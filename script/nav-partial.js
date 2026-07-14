@@ -20,21 +20,21 @@
         <a href="${base}index.html"><img class="site-logo" src="${base}images/logo_wuzuniao_com_q.png" alt="无足鸟LOGO"></a>
         <ul>
           <li>
-            <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
+            <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source" data-hant="開源">开源</a>
             <ul class="pc_nav2_ul">
               <li class="pc_nav2_li">
-                <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)">无足鸟（红）</a>
-                <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)">无足鸟（黑）</a>
-                <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)">无足鸟（药）</a>
+                <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)" data-hant="無足鳥（紅）">无足鸟（红）</a>
+                <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)" data-hant="無足鳥（黑）">无足鸟（黑）</a>
+                <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)" data-hant="無足鳥（藥）">无足鸟（药）</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Articles">微信文章</a>
+            <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Articles" data-hant="微信文章">微信文章</a>
             <ul class="pc_nav2_ul">
               <li class="pc_nav2_li">
                 <a href="https://mp.weixin.qq.com/s/kT6fiaZKdSvElfv_uc-3Ow" target="_blank" rel="noopener">Vibe Coding</a>
-                <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer">网络规划设计师</a>
+                <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer" data-hant="網絡規劃設計師">网络规划设计师</a>
                 <a href="https://mp.weixin.qq.com/s/LCWTZ2NWtaWwFm90bWdZfg" target="_blank" rel="noopener">Wireshark</a>
                 <a href="https://mp.weixin.qq.com/s/W7i8NNIwKmfMVIdGjx8JfA" target="_blank" rel="noopener">MobaXterm</a>
                 <a href="https://mp.weixin.qq.com/s/60oJa98_B7J4hV6VKBjYIA" target="_blank" rel="noopener">Markdown</a>
@@ -43,7 +43,7 @@
             </ul>
           </li>
           <li>
-            <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="Community">聊天交流</a>
+            <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="Community" data-hant="聊天交流">聊天交流</a>
             <ul class="pc_nav2_ul">
               <li class="pc_nav2_li">
               </li>
@@ -52,16 +52,17 @@
         </ul>
         <!-- 右侧工具区：主题切换 + 中英文切换 -->
         <div class="pc_nav_tools">
-          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label">
-            <button type="button" class="theme_opt is-active" aria-pressed="true" data-theme-value="light"><img class="theme_icon theme_icon_sun" src="${base}images/sun.png" alt=""><span data-en="Light">浅色</span></button>
-            <button type="button" class="theme_opt" aria-pressed="false" data-theme-value="dark"><img class="theme_icon theme_icon_moon" src="${base}images/moon.png" alt=""><span data-en="Dark">深色</span></button>
+          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label" data-hant-attr="主題切换">
+            <button type="button" class="theme_opt is-active" aria-pressed="true" data-theme-value="light"><img class="theme_icon theme_icon_sun" src="${base}images/sun.png" alt=""><span data-en="Light" data-hant="淺色">浅色</span></button>
+            <button type="button" class="theme_opt" aria-pressed="false" data-theme-value="dark"><img class="theme_icon theme_icon_moon" src="${base}images/moon.png" alt=""><span data-en="Dark" data-hant="深色">深色</span></button>
           </div>
-          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" aria-expanded="false">
+          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" data-hant-attr="語言切换" aria-expanded="false">
             <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
-              <span class="lang_current">中文</span>
+              <span class="lang_current">English</span>
             </button>
             <ul class="lang_menu">
               <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">简体中文</li>
+              <li class="lang_item" role="option" aria-selected="false" data-value="zh-Hant">繁體中文</li>
               <li class="lang_item" role="option" aria-selected="false" data-value="en">English</li>
             </ul>
           </div>
@@ -77,7 +78,7 @@
         </a>
       </div>
       <div class="m_qian_rg">
-        <a href="#" class="m_qian_tubiao" role="button" aria-label="打开导航菜单" data-en="Open navigation menu" data-en-attr="aria-label">
+        <a href="#" class="m_qian_tubiao" role="button" aria-label="打开导航菜单" data-en="Open navigation menu" data-en-attr="aria-label" data-hant-attr="打開導航菜單">
           <img class="m_qian_menuimg" src="${base}images/m_menuimg.png" alt="菜单">
         </a>
       </div>
@@ -86,23 +87,24 @@
     <div class="m_hou">
       <div class="m_hou_beijing m_hou_tubiao"></div>
       <div class="m_hou_tubiao_beijing">
-        <a href="#" class="m_hou_tubiao" role="button" aria-label="关闭导航菜单" data-en="Close navigation menu" data-en-attr="aria-label">
+        <a href="#" class="m_hou_tubiao" role="button" aria-label="关闭导航菜单" data-en="Close navigation menu" data-en-attr="aria-label" data-hant-attr="關闭導航菜單">
           <img src="${base}images/close.png" width="22" alt="关闭">
         </a>
       </div>
       <div class="m_navList">
         <!-- 移动端抽屉顶部工具区：主题切换 + 中英文切换 -->
         <div class="m_nav_tools">
-          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label">
-            <button type="button" class="theme_opt is-active" aria-pressed="true" data-theme-value="light"><img class="theme_icon theme_icon_sun" src="${base}images/sun.png" alt=""><span data-en="Light">浅色</span></button>
-            <button type="button" class="theme_opt" aria-pressed="false" data-theme-value="dark"><img class="theme_icon theme_icon_moon" src="${base}images/moon.png" alt=""><span data-en="Dark">深色</span></button>
+          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label" data-hant-attr="主題切换">
+            <button type="button" class="theme_opt is-active" aria-pressed="true" data-theme-value="light"><img class="theme_icon theme_icon_sun" src="${base}images/sun.png" alt=""><span data-en="Light" data-hant="淺色">浅色</span></button>
+            <button type="button" class="theme_opt" aria-pressed="false" data-theme-value="dark"><img class="theme_icon theme_icon_moon" src="${base}images/moon.png" alt=""><span data-en="Dark" data-hant="深色">深色</span></button>
           </div>
-          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" aria-expanded="false">
+          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" data-hant-attr="語言切换" aria-expanded="false">
             <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
-              <span class="lang_current">中文</span>
+              <span class="lang_current">English</span>
             </button>
             <ul class="lang_menu">
               <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">简体中文</li>
+              <li class="lang_item" role="option" aria-selected="false" data-value="zh-Hant">繁體中文</li>
               <li class="lang_item" role="option" aria-selected="false" data-value="en">English</li>
             </ul>
           </div>
@@ -110,23 +112,23 @@
         <ul>
           <li>
             <div class="m_navList_a">
-              <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
+              <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source" data-hant="開源">开源</a>
               <i></i>
             </div>
             <div class="m_navList_nav">
-              <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)">无足鸟（红）</a>
-              <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)">无足鸟（黑）</a>
-              <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)">无足鸟（药）</a>
+              <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)" data-hant="無足鳥（紅）">无足鸟（红）</a>
+              <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)" data-hant="無足鳥（黑）">无足鸟（黑）</a>
+              <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)" data-hant="無足鳥（藥）">无足鸟（药）</a>
             </div>
           </li>
           <li>
             <div class="m_navList_a">
-              <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Articles">微信文章</a>
+              <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Articles" data-hant="微信文章">微信文章</a>
               <i></i>
             </div>
             <div class="m_navList_nav">
               <a href="https://mp.weixin.qq.com/s/kT6fiaZKdSvElfv_uc-3Ow" target="_blank" rel="noopener">Vibe Coding</a>
-              <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer">网络规划设计师</a>
+              <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer" data-hant="網絡規劃設計師">网络规划设计师</a>
               <a href="https://mp.weixin.qq.com/s/LCWTZ2NWtaWwFm90bWdZfg" target="_blank" rel="noopener">Wireshark</a>
               <a href="https://mp.weixin.qq.com/s/W7i8NNIwKmfMVIdGjx8JfA" target="_blank" rel="noopener">MobaXterm</a>
               <a href="https://mp.weixin.qq.com/s/60oJa98_B7J4hV6VKBjYIA" target="_blank" rel="noopener">Markdown</a>
@@ -135,7 +137,7 @@
           </li>
           <li>
             <div class="m_navList_a">
-              <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="Community">聊天交流</a>
+              <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="Community" data-hant="聊天交流">聊天交流</a>
               <i></i>
             </div>
             <div class="m_navList_nav"></div>
@@ -152,15 +154,15 @@
     <div class="footer">
       <div class="footer_erweima">
         <div>
-          <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
+          <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source" data-hant="開源">开源</a>
           <img src="${base}images/biaoqingbao.gif" alt="开源表情包">
         </div>
         <div>
-          <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Official Account">微信公众号</a>
+          <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Official Account" data-hant="微信公眾號">微信公众号</a>
           <img class="footer-ewm-wx" src="${base}images/ewm_wx.png" alt="微信公众号二维码">
         </div>
         <div>
-          <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="QQ Group">QQ群</a>
+          <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="QQ Group" data-hant="QQ群">QQ群</a>
           <img class="footer-ewm-qq" src="${base}images/ewm_qq.png" alt="QQ群二维码">
         </div>
         <div>
@@ -168,16 +170,16 @@
         </div>
       </div>
       <div class="footer_ziye">
-        <a href="${base}site/zngg.html" data-en="Site Announcements">站内公告</a>
-        <a href="${base}site/mzsm.html" data-en="Disclaimer">免责声明</a>
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
+        <a href="${base}site/zngg.html" data-en="Site Announcements" data-hant="站內公告">站内公告</a>
+        <a href="${base}site/mzsm.html" data-en="Disclaimer" data-hant="免責声明">免责声明</a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com" data-hant="聯繫我們：xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
         <a href="https://github.com/wuzuniao/wuzuniao.github.io" target="_blank" rel="noopener" id="github">
           <img class="footer-github" src="${base}images/github.png" alt="GitHub">
-          <span data-en="GitHub">GitHub</span>
+          <span data-en="GitHub" data-hant="GitHub">GitHub</span>
         </a>
         <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">
           <img src="${base}images/gitee.png" alt="Gitee">
-          <span data-en="Gitee">Gitee</span>
+          <span data-en="Gitee" data-hant="Gitee">Gitee</span>
         </a>
       </div>
       <div class="copyright">
@@ -194,14 +196,14 @@
     <!-- 手机端页脚 -->
     <div class="m_footer">
       <div class="m_footer_erweima">
-        <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source">开源</a>
-        <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Official Account">微信公众号</a>
-        <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="QQ Group">QQ群</a>
+        <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source" data-hant="開源">开源</a>
+        <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Official Account" data-hant="微信公眾號">微信公众号</a>
+        <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="QQ Group" data-hant="QQ群">QQ群</a>
       </div>
       <div class="m_footer_ziye">
-        <a href="${base}site/zngg.html" data-en="Site Announcements">站内公告</a>
-        <a href="${base}site/mzsm.html" data-en="Disclaimer">免责声明</a>
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
+        <a href="${base}site/zngg.html" data-en="Site Announcements" data-hant="站內公告">站内公告</a>
+        <a href="${base}site/mzsm.html" data-en="Disclaimer" data-hant="免責声明">免责声明</a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com" data-hant="聯繫我們：xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
         <a href="https://github.com/wuzuniao/wuzuniao.github.io" target="_blank" rel="noopener">GitHub</a>
         <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">Gitee</a>
       </div>
