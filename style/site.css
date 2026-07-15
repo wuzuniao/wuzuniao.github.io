@@ -6,7 +6,6 @@
 
 /* 子页 main：画布色 + 系统无衬线字体（近似 Geist） */
 main {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Microsoft Yahei", sans-serif;
   background: var(--color-canvas);
   color: var(--color-ink);
   padding: 4rem 1.5rem;

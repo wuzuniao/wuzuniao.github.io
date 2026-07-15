@@ -54,7 +54,7 @@ ol, ul, li, form, table, tr, th, td, aside, footer, header, nav, section, time {
 body {
   line-height: 1;
   font-size: 16px;
-  font-family: "Century Gothic", "Microsoft yahei";
+  font-family: Geist, "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft Yahei", sans-serif;
   /* 全页底色与默认文字色随主题切换（覆盖浏览器默认白底） */
   background: var(--color-canvas);
   color: var(--color-ink);
