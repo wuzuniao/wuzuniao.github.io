@@ -34,7 +34,7 @@
             <ul class="pc_nav2_ul">
               <li class="pc_nav2_li">
                 <a href="https://mp.weixin.qq.com/s/kT6fiaZKdSvElfv_uc-3Ow" target="_blank" rel="noopener">Vibe Coding</a>
-                <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer" data-hant="網絡規劃設計師">网络规划设计师</a>
+                <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer" data-hant="網路規劃設計師">网络规划设计师</a>
                 <a href="https://mp.weixin.qq.com/s/LCWTZ2NWtaWwFm90bWdZfg" target="_blank" rel="noopener">Wireshark</a>
                 <a href="https://mp.weixin.qq.com/s/W7i8NNIwKmfMVIdGjx8JfA" target="_blank" rel="noopener">MobaXterm</a>
                 <a href="https://mp.weixin.qq.com/s/60oJa98_B7J4hV6VKBjYIA" target="_blank" rel="noopener">Markdown</a>
@@ -52,11 +52,11 @@
         </ul>
         <!-- 右侧工具区：主题切换 + 中英文切换 -->
         <div class="pc_nav_tools">
-          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label" data-hant-attr="主題切换">
+          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label" data-hant-attr="主題切換">
             <button type="button" class="theme_opt is-active" aria-pressed="true" data-theme-value="light"><img class="theme_icon theme_icon_sun" src="${base}images/sun.png" alt=""><span data-en="Light" data-hant="淺色">浅色</span></button>
             <button type="button" class="theme_opt" aria-pressed="false" data-theme-value="dark"><img class="theme_icon theme_icon_moon" src="${base}images/moon.png" alt=""><span data-en="Dark" data-hant="深色">深色</span></button>
           </div>
-          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" data-hant-attr="語言切换" aria-expanded="false">
+          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" data-hant-attr="語言切換" aria-expanded="false">
             <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
               <span class="lang_current">English</span>
             </button>
@@ -78,7 +78,7 @@
         </a>
       </div>
       <div class="m_qian_rg">
-        <a href="#" class="m_qian_tubiao" role="button" aria-label="打开导航菜单" data-en="Open navigation menu" data-en-attr="aria-label" data-hant-attr="打開導航菜單">
+        <a href="#" class="m_qian_tubiao" role="button" aria-label="打开导航菜单" data-en="Open navigation menu" data-en-attr="aria-label" data-hant-attr="打開導覽選單">
           <img class="m_qian_menuimg" src="${base}images/m_menuimg.png" alt="菜单">
         </a>
       </div>
@@ -87,18 +87,18 @@
     <div class="m_hou">
       <div class="m_hou_beijing m_hou_tubiao"></div>
       <div class="m_hou_tubiao_beijing">
-        <a href="#" class="m_hou_tubiao" role="button" aria-label="关闭导航菜单" data-en="Close navigation menu" data-en-attr="aria-label" data-hant-attr="關闭導航菜單">
+        <a href="#" class="m_hou_tubiao" role="button" aria-label="关闭导航菜单" data-en="Close navigation menu" data-en-attr="aria-label" data-hant-attr="關閉導覽選單">
           <img src="${base}images/close.png" width="22" alt="关闭">
         </a>
       </div>
       <div class="m_navList">
         <!-- 移动端抽屉顶部工具区：主题切换 + 中英文切换 -->
         <div class="m_nav_tools">
-          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label" data-hant-attr="主題切换">
+          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label" data-hant-attr="主題切換">
             <button type="button" class="theme_opt is-active" aria-pressed="true" data-theme-value="light"><img class="theme_icon theme_icon_sun" src="${base}images/sun.png" alt=""><span data-en="Light" data-hant="淺色">浅色</span></button>
             <button type="button" class="theme_opt" aria-pressed="false" data-theme-value="dark"><img class="theme_icon theme_icon_moon" src="${base}images/moon.png" alt=""><span data-en="Dark" data-hant="深色">深色</span></button>
           </div>
-          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" data-hant-attr="語言切换" aria-expanded="false">
+          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" data-hant-attr="語言切換" aria-expanded="false">
             <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
               <span class="lang_current">English</span>
             </button>
@@ -128,7 +128,7 @@
             </div>
             <div class="m_navList_nav">
               <a href="https://mp.weixin.qq.com/s/kT6fiaZKdSvElfv_uc-3Ow" target="_blank" rel="noopener">Vibe Coding</a>
-              <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer" data-hant="網絡規劃設計師">网络规划设计师</a>
+              <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer" data-hant="網路規劃設計師">网络规划设计师</a>
               <a href="https://mp.weixin.qq.com/s/LCWTZ2NWtaWwFm90bWdZfg" target="_blank" rel="noopener">Wireshark</a>
               <a href="https://mp.weixin.qq.com/s/W7i8NNIwKmfMVIdGjx8JfA" target="_blank" rel="noopener">MobaXterm</a>
               <a href="https://mp.weixin.qq.com/s/60oJa98_B7J4hV6VKBjYIA" target="_blank" rel="noopener">Markdown</a>
@@ -171,7 +171,7 @@
       </div>
       <div class="footer_ziye">
         <a href="${base}site/zngg.html" data-en="Site Announcements" data-hant="站內公告">站内公告</a>
-        <a href="${base}site/mzsm.html" data-en="Disclaimer" data-hant="免責声明">免责声明</a>
+        <a href="${base}site/mzsm.html" data-en="Disclaimer" data-hant="免責聲明">免责声明</a>
         <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com" data-hant="聯繫我們：xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
         <a href="https://github.com/wuzuniao/wuzuniao.github.io" target="_blank" rel="noopener" id="github">
           <img class="footer-github" src="${base}images/github.png" alt="GitHub">
@@ -190,7 +190,7 @@
             <span>赣公网安备 36098202000226号</span>
           </a>
         </p>
-        <p>CopyRight 2020-2026 wuzuniao.com © All Rights Reserved.</p>
+        <p>Copyright 2020-2026 wuzuniao.com © All Rights Reserved.</p>
       </div>
     </div>
     <!-- 手机端页脚 -->
@@ -202,7 +202,7 @@
       </div>
       <div class="m_footer_ziye">
         <a href="${base}site/zngg.html" data-en="Site Announcements" data-hant="站內公告">站内公告</a>
-        <a href="${base}site/mzsm.html" data-en="Disclaimer" data-hant="免責声明">免责声明</a>
+        <a href="${base}site/mzsm.html" data-en="Disclaimer" data-hant="免責聲明">免责声明</a>
         <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com" data-hant="聯繫我們：xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
         <a href="https://github.com/wuzuniao/wuzuniao.github.io" target="_blank" rel="noopener">GitHub</a>
         <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">Gitee</a>
@@ -217,7 +217,7 @@
             <span>赣公网安备 36098202000226号</span>
           </a>
         </p>
-        <p>CopyRight 2020-2026 wuzuniao.com © All Rights Reserved.</p>
+        <p>Copyright 2020-2026 wuzuniao.com © All Rights Reserved.</p>
       </div>
     </div>
 `;

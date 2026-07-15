@@ -27,27 +27,27 @@ Linux 系统管理、Shell 脚本、Vim、正则表达式、软件仓库、系�
 
 ## 繁體中文
 
-無足鳥（wuzuniao.com）是技術分享品牌，旗下 無足鳥ICT 微信公眾號以「所見即所得」的實戰筆法，專注紅帽 RHCA 系列筆記教程，把 Linux 全棧運維拆成可復現的操作記錄；同時覆蓋網絡規劃、Wireshark 抓包分析與 Vibe Coding 等實戰內容。
+無足鳥（wuzuniao.com）是技術分享品牌，旗下 無足鳥ICT 微信公眾號以「所見即所得」的實戰筆法，專注紅帽 RHCA 系列筆記教學，把 Linux 全端維運拆成可重現的操作記錄；同時覆蓋網路規劃、Wireshark 封包擷取分析與 Vibe Coding 等實戰內容。
 
 ### 核心內容方向
 
-- 紅帽 RHCA 筆記教程與 Linux 全棧：以 RHCA 體系為骨架，整理系統管理、Shell、安全加固（SELinux/iptables）、存儲備份、數據庫緩存、Web 與負載均衡、高可用集群、容器與 Kubernetes、虛擬化與 OpenStack、Ansible 自動化、監控與日誌等可復現的操作筆記；並延伸至性能壓測（FIO）、Git / Gitlab、Prometheus / Zabbix 監控、Ceph / GlusterFS 分布式存儲等 Linux 全棧內容。RHCE 級內容免費，RHCA 級收費，計劃 1500+ 篇。
-- 網絡與 Wireshark：網絡規劃設計師備考筆記、網絡配置與排障、OpenvSwitch / VXLAN / namespace、Wireshark 抓包分析與協議解讀。
-- Vibe Coding：用 AI 輔助編程的實戰心得、工具與工作流案例。
+- 紅帽 RHCA 筆記教學與 Linux 全端：以 RHCA 體系為骨架，整理系統管理、Shell、安全強化（SELinux/iptables）、儲存備份、資料庫快取、Web 與負載平衡、高可用性叢集、容器與 Kubernetes、虛擬化與 OpenStack、Ansible 自動化、監控與日誌等可重現的操作筆記；並延伸至效能壓力測試（FIO）、Git / Gitlab、Prometheus / Zabbix 監控、Ceph / GlusterFS 分散式儲存等 Linux 全端內容。RHCE 級內容免費，RHCA 級收費，計畫 1500+ 篇。
+- 網路與 Wireshark：網路規劃設計師備考筆記、網路設定與排除障礙、OpenvSwitch / VXLAN / namespace、Wireshark 封包擷取分析與協定解讀。
+- Vibe Coding：用 AI 輔助程式設計的實戰心得、工具與工作流案例。
 
 ### 站點頁面
 
-- 首頁（https://www.wuzuniao.com/）：紅帽 RHCA 筆記教程入口，按網絡熱度與內容完善度展示 18 大技術域，並單列網絡、Wireshark、Vibe Coding 等專欄。
-- 站內公告（https://www.wuzuniao.com/site/zngg.html）：無足鳥網站更新時間線，記錄自 2020 年山海門籌建至今的重構、開源托管、公眾號與小程序上線等動態。
-- 免責聲明（https://www.wuzuniao.com/site/mzsm.html）：本站為個人性質導航站點，僅提供技術資源的跳轉與匯總，不保證第三方資源的準確性、安全性與完整性，使用即視為認可聲明全部內容。
+- 首頁（https://www.wuzuniao.com/）：紅帽 RHCA 筆記教學入口，按網路熱度與內容完善度展示 18 大技術域，並單列網路、Wireshark、Vibe Coding 等專欄。
+- 站內公告（https://www.wuzuniao.com/site/zngg.html）：無足鳥網站更新時間線，記錄自 2020 年山海門籌建至今的重構、開源託管、公眾號與小程序上線等動態。
+- 免責聲明（https://www.wuzuniao.com/site/mzsm.html）：本站為個人性質導覽站點，僅提供技術資源的跳轉與彙整，不保證第三方資源的準確性、安全性與完整性，使用即視為認可聲明全部內容。
 
 ### 主題覆蓋
 
-Linux 系統管理、Shell 腳本、Vim、正則表達式、軟件倉庫、系統監控與調優（Tuned）、硬體與 /proc、內核與啟動、性能壓測（FIO）、服務與資源限制、進程與時間、日誌與 Graylog、用戶權限與文件系統、文本三劍客、打包備份、網絡規劃與排障、Wireshark 抓包分析、安全加固（SELinux/iptables/TCPWrapper/Firewall）、漏洞、PXE/Cobbler、遠程（SSH/VNC/OpenSSL/OpenLDAP/DHCP）、PAM/DNS/Dnsmasq/unbound、存儲（iSCSI/多路徑/udev/vsftpd/Samba/NFS/AutoFs）、Web（Apache/Nginx/Tomcat/LNMP）、數據庫（MariaDB/MySQL/RabbitMQ/Memcached/Redis/MongoDB）、負載（LVS/HAProxy/Squid/Varnish/Pacemaker/Keepalived）、代碼（Git/Gitlab/SVN/Confluence/Jenkins）、自動化（Ansible/yaml）、VPN（OpenVPN/NPS/cpolar）、監控（Nagios/Cacti/Zabbix/Prometheus/夜鶯）、分布式（Ceph/GlusterFS/Hadoop）、虛擬化（KVM/OpenStack/Docker/containerd/Kubernetes/OpenShift）、IP 管理（PHPIPAM/NetBox）、Vibe Coding（AI 輔助編程）。
+Linux 系統管理、Shell 腳本、Vim、正規表示式、軟體儲存庫、系統監控與調校（Tuned）、硬體與 /proc、核心與啟動、效能壓力測試（FIO）、服務與資源限制、行程與時間、日誌與 Graylog、使用者權限與檔案系統、文本三劍客、打包備份、網路規劃與排除障礙、Wireshark 封包擷取分析、安全強化（SELinux/iptables/TCPWrapper/Firewall）、漏洞、PXE/Cobbler、遠端（SSH/VNC/OpenSSL/OpenLDAP/DHCP）、PAM/DNS/Dnsmasq/unbound、儲存（iSCSI/多路徑/udev/vsftpd/Samba/NFS/AutoFs）、Web（Apache/Nginx/Tomcat/LNMP）、資料庫（MariaDB/MySQL/RabbitMQ/Memcached/Redis/MongoDB）、負載（LVS/HAProxy/Squid/Varnish/Pacemaker/Keepalived）、程式碼（Git/Gitlab/SVN/Confluence/Jenkins）、自動化（Ansible/yaml）、VPN（OpenVPN/NPS/cpolar）、監控（Nagios/Cacti/Zabbix/Prometheus/夜鶯）、分散式（Ceph/GlusterFS/Hadoop）、虛擬化（KVM/OpenStack/Docker/containerd/Kubernetes/OpenShift）、IP 管理（PHPIPAM/NetBox）、Vibe Coding（AI 輔助程式設計）。
 
 ### 聯繫方式
 
-- 開源倉庫：https://github.com/wuzuniao
+- 開源儲存庫：https://github.com/wuzuniao
 - 微信公眾號：無足鳥ICT（wuzuniao_com）
 
 ## English
