@@ -190,7 +190,7 @@
             <span>赣公网安备 36098202000226号</span>
           </a>
         </p>
-        <p>Copyright 2020-2026 wuzuniao.com © All Rights Reserved.</p>
+        <p>Copyright 2020-${new Date().getFullYear()} wuzuniao.com © All Rights Reserved.</p>
       </div>
     </div>
     <!-- 手机端页脚 -->
@@ -217,7 +217,7 @@
             <span>赣公网安备 36098202000226号</span>
           </a>
         </p>
-        <p>Copyright 2020-2026 wuzuniao.com © All Rights Reserved.</p>
+        <p>Copyright 2020-${new Date().getFullYear()} wuzuniao.com © All Rights Reserved.</p>
       </div>
     </div>
 `;
