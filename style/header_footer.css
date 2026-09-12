@@ -138,7 +138,7 @@
   gap: 0.625em;
 }
 
-/* 主题切换：分段胶囊（当前项为墨色底白字） */
+/* 主题切换：分段胶囊（当前项为中性灰底墨字；黑色高亮已让位给登录主 CTA） */
 .theme_toggle {
   display: inline-flex;
   align-items: center;
@@ -164,19 +164,15 @@
 }
 
 .theme_opt.is-active {
-  background-color: var(--color-ink);
-  color: var(--color-on-primary);
+  background-color: var(--color-hairline-strong);
+  color: var(--color-ink);
 }
 
-/* 主题段内图标：复用 sun/moon PNG，当前项（墨色底）反白显示 */
+/* 主题段内图标：复用 sun/moon PNG（浅色模式灰底上直接用深色图标，无需反白） */
 .theme_icon {
   display: block;
   width: 1em;
   height: 1em;
-}
-
-.theme_opt.is-active .theme_icon {
-  filter: brightness(0) invert(1);
 }
 
 .theme_opt:not(.is-active):hover {
@@ -264,6 +260,43 @@
 .lang_item.is-selected {
   color: var(--color-link);
   background-color: var(--color-canvas);
+}
+
+
+/* ============ 登录注册按钮（全站 header 注入；见 nav-partial.js 末尾 DOM 块） ============ */
+/* 默认（未登录）：墨色底反白胶囊（主 CTA 黑色高亮；深色模式随令牌翻转为亮底黑字）；
+   已登录 .is-logged：切换为中性胶囊，显示 localStorage 内的用户名（去除高亮）。 */
+.nav_login {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3em 1em;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  background-color: var(--color-ink);
+  color: var(--color-on-primary);
+  font-size: 0.8125em;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+/* 默认态悬停：墨底加深一档（覆盖全局 a:hover 变色，保持反白文字） */
+.nav_login:hover {
+  background-color: var(--color-ink-hover);
+  color: var(--color-on-primary);
+}
+
+/* 已登录态：与语言切换触发器同款中性胶囊，去除高亮 */
+.nav_login.is-logged {
+  border-color: var(--color-hairline);
+  background-color: var(--color-elevated);
+  color: var(--color-body);
+  font-weight: 400;
+}
+
+.nav_login.is-logged:hover {
+  border-color: var(--color-hairline-strong);
+  color: var(--color-ink);
 }
 
 
@@ -447,6 +480,23 @@ footer {
   .m_qian .m_qian_rg a .m_qian_menuimg {
     height: 25px;
     display: block;
+  }
+
+  /* 移动端 header 登录按钮：与汉堡图标同行 flex 居中（等高 25px 与图标对齐）；
+     DOM 顺序 [汉堡, 登录] 使登录作为最右子项贴齐右缘（呼应 PC 端「最右边」）。
+     flex 包裹以避免块级 img 在 inline 内被折出导致纵向堆叠。
+     尺寸核验：logo 250x100 在移动端高 50px → 宽 125px；右簇 5% + 按钮 + 间距 + 汉堡(65x44→高25宽37)
+     合计 ≤ 120px；左 125 + 右 120 = 245px ≪ 320px 视口，无溢出风险。 */
+  .m_qian_tools {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+  }
+
+  .m_qian_tools .nav_login {
+    height: 25px;
+    padding: 0 0.9em;
+    font-size: 0.8125em;
   }
 
   /* 抽屉容器：默认收起，is-open 展开 */
@@ -692,11 +742,8 @@ footer {
   }
 }
 
-/* 主题图标：浅色模式激活态反白；深色模式激活态保持深色 PNG（背景转亮），非激活态反白 */
-:root[data-theme="dark"] .theme_opt.is-active .theme_icon {
-  filter: none;
-}
-:root[data-theme="dark"] .theme_opt:not(.is-active) .theme_icon {
+/* 主题图标：深色模式下（含中性灰选中底）统一反白为白图标 */
+:root[data-theme="dark"] .theme_icon {
   filter: invert(1);
 }
 

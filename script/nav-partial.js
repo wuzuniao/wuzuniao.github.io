@@ -12,6 +12,24 @@
   // 资源与链接前缀：首页 ""，子页 "../"
   const base = document.documentElement.dataset.siteBase || '';
 
+  // 认证站（子域 auth.wuzuniao.com）页面地址与对接参数名：
+  //   未登录点击登录按钮 → 登录页并携带 redirect=当前页地址；
+  //   登录成功后认证站重定向回 redirect 页并附加 auth_user=用户名；
+  //   本站读取 auth_user 写入 localStorage 后清除该参数（见文件末尾），实现「登录完成自动跳回 + 按钮变用户名」。
+  //   已登录点击用户名 → 认证站个人中心（同样携带 redirect=当前页地址）；
+  //   个人中心退出登录后重定向回 redirect 页并附加 auth_logout=1，本站清除登录态、按钮恢复「登录」。
+  //   auth_user 仅用于界面展示（本站无鉴权逻辑）；若后续引入鉴权，禁止经 URL 明文传 token，
+  //   须改为一次性授权码或 .wuzuniao.com 主域 HttpOnly Cookie，并同步双方对接约定与以下常量。
+  //   若认证站实际参数名不同，仅需调整以下参数名常量。
+  const AUTH_LOGIN_URL = 'https://auth.wuzuniao.com/pages/authentication/login.html';
+  const AUTH_PROFILE_URL = 'https://auth.wuzuniao.com/pages/authentication/profile.html';
+  const AUTH_REDIRECT_KEY = 'redirect';
+  const AUTH_USER_KEY = 'auth_user';
+  const AUTH_LOGOUT_KEY = 'auth_logout';
+  // 登录注册按钮（全站 header 注入；href 为占位，由文件末尾按登录态写入真实跳转地址）
+  // 繁体「登入」为人工校正：机械转换「登录」→「登錄」语义为注册（record/register），对登录动作不准确
+  const loginBtnHTML = '<a class="nav_login" href="#" data-en="Sign in" data-hant="登入">登录</a>';
+
   // PC 端 + 移动端导航（与三页原有结构完全一致，仅路径加 base 前缀）
   const headerHTML = `
     <!-- PC 端导航 -->
@@ -227,4 +245,65 @@
   const footerEl = document.getElementById('site-footer');
   if (headerEl) headerEl.innerHTML = headerHTML;
   if (footerEl) footerEl.innerHTML = footerHTML;
+
+  // header 增强：追加登录按钮 + 登录态切换（全站三页；nav-partial defer 顺序在 i18n 之前，
+  //   故登录态属性调整会先于 i18n 首次翻译到位，详见下方注释）
+  if (headerEl) {
+    // PC 端：登录按钮追加到 .pc_nav_tools 末尾（贴右，作为最右子项）
+    const pcTools = headerEl.querySelector('.pc_nav_tools');
+    if (pcTools) pcTools.insertAdjacentHTML('beforeend', loginBtnHTML);
+
+    // 移动端：将登录按钮与汉堡图标包入同一 flex 容器并排对齐。
+    //   DOM 顺序 [汉堡, 登录]，使登录作为最右子项贴齐右缘（呼应 PC 端「最右边」）。
+    //   用 flex 包裹以避免块级 .m_qian_menuimg 在 inline 内被折出导致纵向堆叠。
+    const mRg = headerEl.querySelector('.m_qian_rg');
+    const mToggle = mRg && mRg.querySelector('.m_qian_tubiao');
+    if (mRg && mToggle) {
+      const tools = document.createElement('div');
+      tools.className = 'm_qian_tools';
+      mRg.insertBefore(tools, mToggle);
+      tools.appendChild(mToggle);
+      tools.insertAdjacentHTML('beforeend', loginBtnHTML);
+    }
+
+    // 登录回跳处理：认证站登录成功后重定向回「redirect 页」并附加 auth_user=用户名；
+    // 本站读取后写入 localStorage（持久登录态），并清除该参数还原干净地址（保留其余 query 与 hash）。
+    const returnPage = new URL(location.href);
+    const authUser = returnPage.searchParams.get(AUTH_USER_KEY);
+    if (authUser) {
+      localStorage.setItem('wuzuniao_user', authUser);
+      returnPage.searchParams.delete(AUTH_USER_KEY);
+      history.replaceState(null, '', returnPage.pathname + returnPage.search + returnPage.hash);
+    }
+
+    // 登出回跳处理：认证站个人中心退出登录后重定向回「redirect 页」并附加 auth_logout=1；
+    // 本站读取后清除本地登录态（按钮恢复「登录」态），并清除该参数还原干净地址（与 auth_user 同位置处理）。
+    if (returnPage.searchParams.get(AUTH_LOGOUT_KEY)) {
+      localStorage.removeItem('wuzuniao_user');
+      returnPage.searchParams.delete(AUTH_LOGOUT_KEY);
+      history.replaceState(null, '', returnPage.pathname + returnPage.search + returnPage.hash);
+    }
+
+    // 登录状态：读取 localStorage「wuzuniao_user」；非空则按钮显示用户名并去除高亮，点击跳认证站个人中心；
+    //   未登录则点击跳认证站登录页，redirect 携带当前页地址（不含 hash：认证站拼接参数时 hash 居中会破坏格式），
+    //   登录完成后由认证站重定向回本页并附加 auth_user，实现自动跳回。
+    //   已登录时移除 data-en/data-hant，i18n.applyLanguage 的 [data-en],[data-hant] 查询会跳过此元素，
+    //   使其在首次翻译及后续语言切换中始终保留用户名不被覆盖（refresh 重新读取 localStorage）。
+    //   登录/个人中心为流程页，同窗口跳转（不加 target=_blank）以保证登录回跳连贯。
+    const savedUser = localStorage.getItem('wuzuniao_user');
+    headerEl.querySelectorAll('.nav_login').forEach((btn) => {
+      if (savedUser) {
+        btn.textContent = savedUser;
+        btn.classList.add('is-logged');
+        btn.removeAttribute('data-en');
+        btn.removeAttribute('data-hant');
+        // 已登录：点击用户名跳转认证站个人中心，redirect 携带当前页地址（不含 hash，同登录按钮），
+        //   供个人中心退出登录后附加 auth_logout=1 回跳本页（本站据此恢复「登录」态）
+        btn.href = AUTH_PROFILE_URL + '?' + AUTH_REDIRECT_KEY + '=' + encodeURIComponent(location.origin + location.pathname + location.search);
+      } else {
+        // 未登录：跳转认证站登录页，redirect 告知认证站登录完成后回跳的页面
+        btn.href = AUTH_LOGIN_URL + '?' + AUTH_REDIRECT_KEY + '=' + encodeURIComponent(location.origin + location.pathname + location.search);
+      }
+    });
+  }
 })();
