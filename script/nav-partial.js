@@ -18,7 +18,10 @@
   //   本站读取 auth_user 写入 localStorage 后清除该参数（见文件末尾），实现「登录完成自动跳回 + 按钮变用户名」。
   //   已登录点击用户名 → 认证站个人中心（同样携带 redirect=当前页地址）；
   //   个人中心退出登录后重定向回 redirect 页并附加 auth_logout=1，本站清除登录态、按钮恢复「登录」。
-  //   auth_user 仅用于界面展示（本站无鉴权逻辑）；若后续引入鉴权，禁止经 URL 明文传 token，
+  //   SSO 自动识别：auth/yao 任一子域登录时同步写父域 Cookie wz_sso（Domain=.wuzuniao.com），
+  //   本站页面加载时读取该 Cookie 自动识别登录态（见下方同步逻辑），无需经登录页回跳；
+  //   auth/yao 任一子域登出时清除该 Cookie，本站下次加载即恢复「登录」态（惰性同步）。
+  //   auth_user 与 Cookie 中的用户名仅用于界面展示（本站无鉴权逻辑）；若后续引入鉴权，禁止经 URL 明文传 token，
   //   须改为一次性授权码或 .wuzuniao.com 主域 HttpOnly Cookie，并同步双方对接约定与以下常量。
   //   若认证站实际参数名不同，仅需调整以下参数名常量。
   const AUTH_LOGIN_URL = 'https://auth.wuzuniao.com/pages/authentication/login.html';
@@ -280,6 +283,35 @@
     //   .m_nav_tools 为 flex-end 紧凑贴右，窄屏放不下时 wrap 换行仍贴右）
     const mTools = headerEl.querySelector('.m_nav_tools');
     if (mTools) mTools.insertAdjacentHTML('beforeend', loginBtnHTML);
+
+    // SSO 单点登录同步：读取父域 Cookie wz_sso（Domain=.wuzuniao.com，auth/yao 登录或令牌刷新时写入，
+    //   值为 encodeURIComponent(JSON{at, rt, exp, ui})），与 auth/yao 实现「一处登录，处处通行」——
+    //   其他子域登录过则本站自动识别为已登录；其他子域登出（Cookie 被清除）或 Cookie 过期
+    //   （Max-Age 14 天）则清除本地登录态，按钮恢复「登录」（惰性同步）。
+    //   本站仅取 ui.username 用于界面展示（与下方 auth_user 回跳同一定位，不存令牌、无鉴权逻辑）；
+    //   有效性判断与写入端一致——Cookie 存在且含令牌（at）即视为已登录，不校验 exp：
+    //   www 无令牌刷新能力，3~14 天窗口内 yao/auth 静默刷新后仍为已登录态，本站保持一致。
+    //   先于 auth_user/auth_logout 回跳处理执行——URL 回跳参数代表认证站刚告知的最终状态，优先级最高。
+    let ssoUser = '';
+    try {
+      const ssoMatch = document.cookie.match(/(?:^|;\s*)wz_sso=([^;]*)/);
+      if (ssoMatch) {
+        const ssoPayload = JSON.parse(decodeURIComponent(ssoMatch[1]));
+        if (ssoPayload && ssoPayload.at && ssoPayload.ui && ssoPayload.ui.username) {
+          ssoUser = ssoPayload.ui.username;
+        }
+      }
+    } catch (e) {
+      // Cookie 缺失或格式异常（非本族站点写入）时按未登录处理
+      ssoUser = '';
+    }
+    if (ssoUser) {
+      // Cookie 有有效登录态：同步用户名到 localStorage（覆盖旧值，兼容在其他子域切换账号的场景）
+      localStorage.setItem('wuzuniao_user', ssoUser);
+    } else {
+      // Cookie 无登录态：清除本地残留（其他子域已登出或 Cookie 已过期）
+      localStorage.removeItem('wuzuniao_user');
+    }
 
     // 登录回跳处理：认证站登录成功后重定向回「redirect 页」并附加 auth_user=用户名；
     // 本站读取后写入 localStorage（持久登录态），并清除该参数还原干净地址（保留其余 query 与 hash）。
