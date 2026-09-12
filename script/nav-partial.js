@@ -37,10 +37,21 @@
       <nav class="pc_nav">
         <a href="${base}index.html"><img class="site-logo" src="${base}images/logo_wuzuniao_com_q.png" alt="无足鸟LOGO"></a>
         <ul>
+          <!-- 一级「解决方案」落点未指定，暂为占位 #；子导航为产品矩阵入口 -->
+          <li>
+            <a href="#" data-en="Solutions" data-hant="解決方案">解决方案</a>
+            <ul class="pc_nav2_ul">
+              <li class="pc_nav2_li">
+                <a href="https://auth.wuzuniao.com/" target="_blank" rel="noopener" data-en="Wuzuniao (User)" data-hant="無足鳥（用戶）">无足鸟（用户）</a>
+                <a href="https://yao.wuzuniao.com/" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)" data-hant="無足鳥（藥）">无足鸟（药）</a>
+              </li>
+            </ul>
+          </li>
           <li>
             <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source" data-hant="開源">开源</a>
             <ul class="pc_nav2_ul">
               <li class="pc_nav2_li">
+                <a href="https://github.com/wuzuniao/DESIGN" target="_blank" rel="noopener" data-en="Wuzuniao (Design)" data-hant="無足鳥（設計）">无足鸟（设计）</a>
                 <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)" data-hant="無足鳥（紅）">无足鸟（红）</a>
                 <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)" data-hant="無足鳥（黑）">无足鸟（黑）</a>
                 <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)" data-hant="無足鳥（藥）">无足鸟（药）</a>
@@ -128,12 +139,24 @@
           </div>
         </div>
         <ul>
+          <!-- 一级「解决方案」落点未指定，暂为占位 #；子导航为产品矩阵入口 -->
+          <li>
+            <div class="m_navList_a">
+              <a href="#" data-en="Solutions" data-hant="解決方案">解决方案</a>
+              <i></i>
+            </div>
+            <div class="m_navList_nav">
+              <a href="https://auth.wuzuniao.com/" target="_blank" rel="noopener" data-en="Wuzuniao (User)" data-hant="無足鳥（用戶）">无足鸟（用户）</a>
+              <a href="https://yao.wuzuniao.com/" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)" data-hant="無足鳥（藥）">无足鸟（药）</a>
+            </div>
+          </li>
           <li>
             <div class="m_navList_a">
               <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source" data-hant="開源">开源</a>
               <i></i>
             </div>
             <div class="m_navList_nav">
+              <a href="https://github.com/wuzuniao/DESIGN" target="_blank" rel="noopener" data-en="Wuzuniao (Design)" data-hant="無足鳥（設計）">无足鸟（设计）</a>
               <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)" data-hant="無足鳥（紅）">无足鸟（红）</a>
               <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)" data-hant="無足鳥（黑）">无足鸟（黑）</a>
               <a href="https://github.com/wuzuniao/yao" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)" data-hant="無足鳥（藥）">无足鸟（药）</a>
@@ -253,18 +276,10 @@
     const pcTools = headerEl.querySelector('.pc_nav_tools');
     if (pcTools) pcTools.insertAdjacentHTML('beforeend', loginBtnHTML);
 
-    // 移动端：将登录按钮与汉堡图标包入同一 flex 容器并排对齐。
-    //   DOM 顺序 [汉堡, 登录]，使登录作为最右子项贴齐右缘（呼应 PC 端「最右边」）。
-    //   用 flex 包裹以避免块级 .m_qian_menuimg 在 inline 内被折出导致纵向堆叠。
-    const mRg = headerEl.querySelector('.m_qian_rg');
-    const mToggle = mRg && mRg.querySelector('.m_qian_tubiao');
-    if (mRg && mToggle) {
-      const tools = document.createElement('div');
-      tools.className = 'm_qian_tools';
-      mRg.insertBefore(tools, mToggle);
-      tools.appendChild(mToggle);
-      tools.insertAdjacentHTML('beforeend', loginBtnHTML);
-    }
+    // 移动端：登录按钮追加到抽屉顶部工具区 .m_nav_tools 末尾（位于语言切换右侧，与 PC 工具区同构；
+    //   .m_nav_tools 为 flex-end 紧凑贴右，窄屏放不下时 wrap 换行仍贴右）
+    const mTools = headerEl.querySelector('.m_nav_tools');
+    if (mTools) mTools.insertAdjacentHTML('beforeend', loginBtnHTML);
 
     // 登录回跳处理：认证站登录成功后重定向回「redirect 页」并附加 auth_user=用户名；
     // 本站读取后写入 localStorage（持久登录态），并清除该参数还原干净地址（保留其余 query 与 hash）。

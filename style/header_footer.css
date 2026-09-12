@@ -482,23 +482,6 @@ footer {
     display: block;
   }
 
-  /* 移动端 header 登录按钮：与汉堡图标同行 flex 居中（等高 25px 与图标对齐）；
-     DOM 顺序 [汉堡, 登录] 使登录作为最右子项贴齐右缘（呼应 PC 端「最右边」）。
-     flex 包裹以避免块级 img 在 inline 内被折出导致纵向堆叠。
-     尺寸核验：logo 250x100 在移动端高 50px → 宽 125px；右簇 5% + 按钮 + 间距 + 汉堡(65x44→高25宽37)
-     合计 ≤ 120px；左 125 + 右 120 = 245px ≪ 320px 视口，无溢出风险。 */
-  .m_qian_tools {
-    display: flex;
-    align-items: center;
-    gap: 0.75em;
-  }
-
-  .m_qian_tools .nav_login {
-    height: 25px;
-    padding: 0 0.9em;
-    font-size: 0.8125em;
-  }
-
   /* 抽屉容器：默认收起，is-open 展开 */
   .m_hou {
     display: block;
@@ -573,11 +556,13 @@ footer {
     padding-right: 5%;
   }
 
-  /* 移动端抽屉顶部工具区：复用主题切换 + 中英文切换组件，与导航列表以发丝线分隔 */
+  /* 移动端抽屉顶部工具区：复用主题切换 + 中英文切换 + 登录按钮，与导航列表以发丝线分隔；
+     三件套紧凑贴右（与 PC 工具区同构，登录位于语言切换右侧）；窄屏放不下时换行仍贴右 */
   .m_nav_tools {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+    flex-wrap: wrap;
     gap: 0.625em;
     padding: 0.75em 5%;
     border-bottom: 1px solid var(--color-hairline);
