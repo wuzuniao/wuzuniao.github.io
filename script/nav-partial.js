@@ -31,20 +31,20 @@
   const AUTH_LOGOUT_KEY = 'auth_logout';
   // 登录注册按钮（全站 header 注入；href 为占位，由文件末尾按登录态写入真实跳转地址）
   // 繁体「登入」为人工校正：机械转换「登录」→「登錄」语义为注册（record/register），对登录动作不准确
-  const loginBtnHTML = '<a class="nav_login" href="#" data-en="Sign in" data-hant="登入">登录</a>';
+  const loginBtnHTML = '<a class="nav-login" href="#" data-en="Sign in" data-hant="登入">登录</a>';
 
   // PC 端 + 移动端导航（与三页原有结构完全一致，仅路径加 base 前缀）
   const headerHTML = `
     <!-- PC 端导航 -->
-    <div class="pc_header">
-      <nav class="pc_nav">
+    <div class="pc-header">
+      <nav class="pc-nav">
         <a href="${base}index.html"><img class="site-logo" src="${base}images/logo_wuzuniao_com_q.png" alt="无足鸟LOGO"></a>
         <ul>
           <!-- 一级「解决方案」落点未指定，暂为占位 #；子导航为产品矩阵入口 -->
           <li>
             <a href="#" data-en="Solutions" data-hant="解決方案">解决方案</a>
-            <ul class="pc_nav2_ul">
-              <li class="pc_nav2_li">
+            <ul class="pc-nav2-ul">
+              <li class="pc-nav2-li">
                 <a href="https://auth.wuzuniao.com/" target="_blank" rel="noopener" data-en="Wuzuniao (User)" data-hant="無足鳥（用戶）">无足鸟（用户）</a>
                 <a href="https://yao.wuzuniao.com/" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)" data-hant="無足鳥（藥）">无足鸟（药）</a>
               </li>
@@ -52,8 +52,8 @@
           </li>
           <li>
             <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source" data-hant="開源">开源</a>
-            <ul class="pc_nav2_ul">
-              <li class="pc_nav2_li">
+            <ul class="pc-nav2-ul">
+              <li class="pc-nav2-li">
                 <a href="https://github.com/wuzuniao/DESIGN" target="_blank" rel="noopener" data-en="Wuzuniao (Design)" data-hant="無足鳥（設計）">无足鸟（设计）</a>
                 <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)" data-hant="無足鳥（紅）">无足鸟（红）</a>
                 <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)" data-hant="無足鳥（黑）">无足鸟（黑）</a>
@@ -63,8 +63,8 @@
           </li>
           <li>
             <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Articles" data-hant="微信文章">微信文章</a>
-            <ul class="pc_nav2_ul">
-              <li class="pc_nav2_li">
+            <ul class="pc-nav2-ul">
+              <li class="pc-nav2-li">
                 <a href="https://mp.weixin.qq.com/s/kT6fiaZKdSvElfv_uc-3Ow" target="_blank" rel="noopener">Vibe Coding</a>
                 <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer" data-hant="網路規劃設計師">网络规划设计师</a>
                 <a href="https://mp.weixin.qq.com/s/LCWTZ2NWtaWwFm90bWdZfg" target="_blank" rel="noopener">Wireshark</a>
@@ -76,89 +76,89 @@
           </li>
           <li>
             <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="Community" data-hant="聊天交流">聊天交流</a>
-            <ul class="pc_nav2_ul">
-              <li class="pc_nav2_li">
+            <ul class="pc-nav2-ul">
+              <li class="pc-nav2-li">
               </li>
             </ul>
           </li>
         </ul>
         <!-- 右侧工具区：主题切换 + 中英文切换 -->
-        <div class="pc_nav_tools">
-          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label" data-hant-attr="主題切換">
-            <button type="button" class="theme_opt is-active" aria-pressed="true" data-theme-value="light"><img class="theme_icon theme_icon_sun" src="${base}images/sun.png" alt=""><span data-en="Light" data-hant="淺色">浅色</span></button>
-            <button type="button" class="theme_opt" aria-pressed="false" data-theme-value="dark"><img class="theme_icon theme_icon_moon" src="${base}images/moon.png" alt=""><span data-en="Dark" data-hant="深色">深色</span></button>
+        <div class="pc-nav-tools">
+          <div class="theme-toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label" data-hant-attr="主題切換">
+            <button type="button" class="theme-opt is-active" aria-pressed="true" data-theme-value="light"><img class="theme-icon theme-icon-sun" src="${base}images/sun.png" alt=""><span data-en="Light" data-hant="淺色">浅色</span></button>
+            <button type="button" class="theme-opt" aria-pressed="false" data-theme-value="dark"><img class="theme-icon theme-icon-moon" src="${base}images/moon.png" alt=""><span data-en="Dark" data-hant="深色">深色</span></button>
           </div>
-          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" data-hant-attr="語言切換" aria-expanded="false">
-            <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
-              <span class="lang_current">English</span>
+          <div class="lang-select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" data-hant-attr="語言切換" aria-expanded="false">
+            <button type="button" class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+              <span class="lang-current">English</span>
             </button>
-            <ul class="lang_menu">
-              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">简体中文</li>
-              <li class="lang_item" role="option" aria-selected="false" data-value="zh-Hant">繁體中文</li>
-              <li class="lang_item" role="option" aria-selected="false" data-value="en">English</li>
+            <ul class="lang-menu">
+              <li class="lang-item is-selected" role="option" aria-selected="true" data-value="zh">简体中文</li>
+              <li class="lang-item" role="option" aria-selected="false" data-value="zh-Hant">繁體中文</li>
+              <li class="lang-item" role="option" aria-selected="false" data-value="en">English</li>
             </ul>
           </div>
         </div>
-        <div class="pc_nav_both"></div>
+        <div class="pc-nav-both"></div>
       </nav>
     </div>
     <!-- 手机端导航--开始 未点击前 -->
-    <div class="m_qian">
-      <div class="m_qian_lf">
+    <div class="m-qian">
+      <div class="m-qian-lf">
         <a href="${base}index.html">
-          <img class="m_qian_logo site-logo" src="${base}images/logo_wuzuniao_com_q.png" alt="无足鸟LOGO">
+          <img class="m-qian-logo site-logo" src="${base}images/logo_wuzuniao_com_q.png" alt="无足鸟LOGO">
         </a>
       </div>
-      <div class="m_qian_rg">
-        <a href="#" class="m_qian_tubiao" role="button" aria-label="打开导航菜单" data-en="Open navigation menu" data-en-attr="aria-label" data-hant-attr="打開導覽選單">
-          <img class="m_qian_menuimg" src="${base}images/m_menuimg.png" alt="菜单">
+      <div class="m-qian-rg">
+        <a href="#" class="m-qian-tubiao" role="button" aria-label="打开导航菜单" data-en="Open navigation menu" data-en-attr="aria-label" data-hant-attr="打開導覽選單">
+          <img class="m-qian-menuimg" src="${base}images/m_menuimg.png" alt="菜单">
         </a>
       </div>
     </div>
     <!-- 点击右边导航后 -->
-    <div class="m_hou">
-      <div class="m_hou_beijing m_hou_tubiao"></div>
-      <div class="m_hou_tubiao_beijing">
-        <a href="#" class="m_hou_tubiao" role="button" aria-label="关闭导航菜单" data-en="Close navigation menu" data-en-attr="aria-label" data-hant-attr="關閉導覽選單">
+    <div class="m-hou">
+      <div class="m-hou-beijing m-hou-tubiao"></div>
+      <div class="m-hou-tubiao-beijing">
+        <a href="#" class="m-hou-tubiao" role="button" aria-label="关闭导航菜单" data-en="Close navigation menu" data-en-attr="aria-label" data-hant-attr="關閉導覽選單">
           <img src="${base}images/close.png" width="22" alt="关闭">
         </a>
       </div>
-      <div class="m_navList">
+      <div class="m-nav-list">
         <!-- 移动端抽屉顶部工具区：主题切换 + 中英文切换 -->
-        <div class="m_nav_tools">
-          <div class="theme_toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label" data-hant-attr="主題切換">
-            <button type="button" class="theme_opt is-active" aria-pressed="true" data-theme-value="light"><img class="theme_icon theme_icon_sun" src="${base}images/sun.png" alt=""><span data-en="Light" data-hant="淺色">浅色</span></button>
-            <button type="button" class="theme_opt" aria-pressed="false" data-theme-value="dark"><img class="theme_icon theme_icon_moon" src="${base}images/moon.png" alt=""><span data-en="Dark" data-hant="深色">深色</span></button>
+        <div class="m-nav-tools">
+          <div class="theme-toggle" role="group" aria-label="主题切换" data-en="Theme" data-en-attr="aria-label" data-hant-attr="主題切換">
+            <button type="button" class="theme-opt is-active" aria-pressed="true" data-theme-value="light"><img class="theme-icon theme-icon-sun" src="${base}images/sun.png" alt=""><span data-en="Light" data-hant="淺色">浅色</span></button>
+            <button type="button" class="theme-opt" aria-pressed="false" data-theme-value="dark"><img class="theme-icon theme-icon-moon" src="${base}images/moon.png" alt=""><span data-en="Dark" data-hant="深色">深色</span></button>
           </div>
-          <div class="lang_select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" data-hant-attr="語言切換" aria-expanded="false">
-            <button type="button" class="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
-              <span class="lang_current">English</span>
+          <div class="lang-select" role="listbox" aria-label="语言切换" data-en="Language" data-en-attr="aria-label" data-hant-attr="語言切換" aria-expanded="false">
+            <button type="button" class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+              <span class="lang-current">English</span>
             </button>
-            <ul class="lang_menu">
-              <li class="lang_item is-selected" role="option" aria-selected="true" data-value="zh">简体中文</li>
-              <li class="lang_item" role="option" aria-selected="false" data-value="zh-Hant">繁體中文</li>
-              <li class="lang_item" role="option" aria-selected="false" data-value="en">English</li>
+            <ul class="lang-menu">
+              <li class="lang-item is-selected" role="option" aria-selected="true" data-value="zh">简体中文</li>
+              <li class="lang-item" role="option" aria-selected="false" data-value="zh-Hant">繁體中文</li>
+              <li class="lang-item" role="option" aria-selected="false" data-value="en">English</li>
             </ul>
           </div>
         </div>
         <ul>
           <!-- 一级「解决方案」落点未指定，暂为占位 #；子导航为产品矩阵入口 -->
           <li>
-            <div class="m_navList_a">
+            <div class="m-nav-list-a">
               <a href="#" data-en="Solutions" data-hant="解決方案">解决方案</a>
               <i></i>
             </div>
-            <div class="m_navList_nav">
+            <div class="m-nav-list-nav">
               <a href="https://auth.wuzuniao.com/" target="_blank" rel="noopener" data-en="Wuzuniao (User)" data-hant="無足鳥（用戶）">无足鸟（用户）</a>
               <a href="https://yao.wuzuniao.com/" target="_blank" rel="noopener" data-en="Wuzuniao (Medicine)" data-hant="無足鳥（藥）">无足鸟（药）</a>
             </div>
           </li>
           <li>
-            <div class="m_navList_a">
+            <div class="m-nav-list-a">
               <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source" data-hant="開源">开源</a>
               <i></i>
             </div>
-            <div class="m_navList_nav">
+            <div class="m-nav-list-nav">
               <a href="https://github.com/wuzuniao/DESIGN" target="_blank" rel="noopener" data-en="Wuzuniao (Design)" data-hant="無足鳥（設計）">无足鸟（设计）</a>
               <a href="https://gitee.com/wuzuniao/hong" target="_blank" rel="noopener" data-en="Wuzuniao (Red)" data-hant="無足鳥（紅）">无足鸟（红）</a>
               <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener" data-en="Wuzuniao (Black)" data-hant="無足鳥（黑）">无足鸟（黑）</a>
@@ -166,11 +166,11 @@
             </div>
           </li>
           <li>
-            <div class="m_navList_a">
+            <div class="m-nav-list-a">
               <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Articles" data-hant="微信文章">微信文章</a>
               <i></i>
             </div>
-            <div class="m_navList_nav">
+            <div class="m-nav-list-nav">
               <a href="https://mp.weixin.qq.com/s/kT6fiaZKdSvElfv_uc-3Ow" target="_blank" rel="noopener">Vibe Coding</a>
               <a href="https://mp.weixin.qq.com/s/K5BwdoOtZCsrrGlfVU-CbQ" target="_blank" rel="noopener" data-en="Network Planning Designer" data-hant="網路規劃設計師">网络规划设计师</a>
               <a href="https://mp.weixin.qq.com/s/LCWTZ2NWtaWwFm90bWdZfg" target="_blank" rel="noopener">Wireshark</a>
@@ -180,11 +180,11 @@
             </div>
           </li>
           <li>
-            <div class="m_navList_a">
+            <div class="m-nav-list-a">
               <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="Community" data-hant="聊天交流">聊天交流</a>
               <i></i>
             </div>
-            <div class="m_navList_nav"></div>
+            <div class="m-nav-list-nav"></div>
           </li>
         </ul>
       </div>
@@ -196,7 +196,7 @@
   const footerHTML = `
     <!-- PC 端页脚 -->
     <div class="footer">
-      <div class="footer_erweima">
+      <div class="footer-erweima">
         <div>
           <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source" data-hant="開源">开源</a>
           <img src="${base}images/biaoqingbao.gif" alt="开源表情包">
@@ -213,7 +213,7 @@
           <a href="${base}index.html"><img class="site-logo" src="${base}images/logo_wuzuniao_com_q.png" alt="无足鸟LOGO"></a>
         </div>
       </div>
-      <div class="footer_ziye">
+      <div class="footer-ziye">
         <a href="${base}site/zngg.html" data-en="Site Announcements" data-hant="站內公告">站内公告</a>
         <a href="${base}site/mzsm.html" data-en="Disclaimer" data-hant="免責聲明">免责声明</a>
         <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com" data-hant="聯繫我們：xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
@@ -238,20 +238,20 @@
       </div>
     </div>
     <!-- 手机端页脚 -->
-    <div class="m_footer">
-      <div class="m_footer_erweima">
+    <div class="m-footer">
+      <div class="m-footer-erweima">
         <a href="https://github.com/wuzuniao" target="_blank" rel="noopener" data-en="Open Source" data-hant="開源">开源</a>
         <a href="https://mp.weixin.qq.com/s/sZmS0axaiBpExRVVSG1rgA" target="_blank" rel="noopener" data-en="WeChat Official Account" data-hant="微信公眾號">微信公众号</a>
         <a href="https://jq.qq.com/?_wv=1027&k=OyWwUJBI" target="_blank" rel="noopener" data-en="QQ Group" data-hant="QQ群">QQ群</a>
       </div>
-      <div class="m_footer_ziye">
+      <div class="m-footer-ziye">
         <a href="${base}site/zngg.html" data-en="Site Announcements" data-hant="站內公告">站内公告</a>
         <a href="${base}site/mzsm.html" data-en="Disclaimer" data-hant="免責聲明">免责声明</a>
         <a href="http://wpa.qq.com/msgrd?v=3&uin=2546467418&site=qq&menu=yes" target="_blank" rel="noopener" data-en="Contact us: xpg@wuzuniao.com" data-hant="聯繫我們：xpg@wuzuniao.com">联系我们：xpg@wuzuniao.com</a>
         <a href="https://github.com/wuzuniao/wuzuniao.github.io" target="_blank" rel="noopener">GitHub</a>
         <a href="https://gitee.com/wuzuniao/hei" target="_blank" rel="noopener">Gitee</a>
       </div>
-      <div class="m_copyright">
+      <div class="m-copyright">
         <p>
           <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">赣ICP备17002383号-5</a>
         </p>
@@ -275,13 +275,13 @@
   // header 增强：追加登录按钮 + 登录态切换（全站三页；nav-partial defer 顺序在 i18n 之前，
   //   故登录态属性调整会先于 i18n 首次翻译到位，详见下方注释）
   if (headerEl) {
-    // PC 端：登录按钮追加到 .pc_nav_tools 末尾（贴右，作为最右子项）
-    const pcTools = headerEl.querySelector('.pc_nav_tools');
+    // PC 端：登录按钮追加到 .pc-nav-tools 末尾（贴右，作为最右子项）
+    const pcTools = headerEl.querySelector('.pc-nav-tools');
     if (pcTools) pcTools.insertAdjacentHTML('beforeend', loginBtnHTML);
 
-    // 移动端：登录按钮追加到抽屉顶部工具区 .m_nav_tools 末尾（位于语言切换右侧，与 PC 工具区同构；
-    //   .m_nav_tools 为 flex-end 紧凑贴右，窄屏放不下时 wrap 换行仍贴右）
-    const mTools = headerEl.querySelector('.m_nav_tools');
+    // 移动端：登录按钮追加到抽屉顶部工具区 .m-nav-tools 末尾（位于语言切换右侧，与 PC 工具区同构；
+    //   .m-nav-tools 为 flex-end 紧凑贴右，窄屏放不下时 wrap 换行仍贴右）
+    const mTools = headerEl.querySelector('.m-nav-tools');
     if (mTools) mTools.insertAdjacentHTML('beforeend', loginBtnHTML);
 
     // SSO 单点登录同步：读取父域 Cookie wz_sso（Domain=.wuzuniao.com，auth/yao 登录或令牌刷新时写入，
@@ -338,7 +338,7 @@
     //   使其在首次翻译及后续语言切换中始终保留用户名不被覆盖（refresh 重新读取 localStorage）。
     //   登录/个人中心为流程页，同窗口跳转（不加 target=_blank）以保证登录回跳连贯。
     const savedUser = localStorage.getItem('wuzuniao_user');
-    headerEl.querySelectorAll('.nav_login').forEach((btn) => {
+    headerEl.querySelectorAll('.nav-login').forEach((btn) => {
       if (savedUser) {
         btn.textContent = savedUser;
         btn.classList.add('is-logged');

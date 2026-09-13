@@ -81,10 +81,10 @@ function applyLanguage(lang) {
   //   首次访问（无上一种记录）且为简体中文时，按钮默认显示 English。
   // 完整三语选项始终在下拉菜单中列出，当前项高亮。
   const prevLabel = getPrevLang() ? labelOf(getPrevLang()) : defaultPrevLabel(lang);
-  document.querySelectorAll('.lang_current').forEach((el) => {
+  document.querySelectorAll('.lang-current').forEach((el) => {
     el.textContent = prevLabel;
   });
-  document.querySelectorAll('.lang_select .lang_item').forEach((item) => {
+  document.querySelectorAll('.lang-select .lang-item').forEach((item) => {
     const selected = item.getAttribute('data-value') === lang;
     item.classList.toggle('is-selected', selected);
     item.setAttribute('aria-selected', String(selected));

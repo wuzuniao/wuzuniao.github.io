@@ -3,9 +3,9 @@
  * PC 端二级菜单展开已改由纯 CSS :hover/:has() 实现，无需 JS
  */
 document.addEventListener('DOMContentLoaded', () => {
-  const mHou = document.querySelector('.m_hou');
-  const openBtn = document.querySelector('.m_qian_tubiao');
-  const closeBtns = document.querySelectorAll('.m_hou_tubiao');
+  const mHou = document.querySelector('.m-hou');
+  const openBtn = document.querySelector('.m-qian-tubiao');
+  const closeBtns = document.querySelectorAll('.m-hou-tubiao');
 
   // 点击汉堡按钮，展开移动端导航抽屉
   openBtn?.addEventListener('click', (event) => {
@@ -22,15 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 移动端子导航展开 / 收起
-  const navItems = document.querySelectorAll('.m_navList > ul > li');
+  const navItems = document.querySelectorAll('.m-nav-list > ul > li');
   navItems.forEach((item) => {
-    const icon = item.querySelector('.m_navList_a > i');
-    const subNav = item.querySelector('.m_navList_nav');
+    const icon = item.querySelector('.m-nav-list-a > i');
+    const subNav = item.querySelector('.m-nav-list-nav');
     const hasSubLink = subNav ? subNav.querySelector('a') : null;
 
     // 仅含有子链接的项显示展开图标并绑定点击
     if (icon && hasSubLink) {
-      icon.classList.add('m_hou_icon');
+      icon.classList.add('m-hou-icon');
       icon.addEventListener('click', (event) => {
         event.preventDefault();
         // 先收起同级其他项
@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 主题切换：点击分段胶囊的某一项，调用全局 setTheme 应用并持久化
   // 选中态由 theme.js 的 applyTheme 统一同步（PC 与移动端联动）
-  document.querySelectorAll('.theme_toggle').forEach((group) => {
-    const opts = group.querySelectorAll('.theme_opt');
+  document.querySelectorAll('.theme-toggle').forEach((group) => {
+    const opts = group.querySelectorAll('.theme-opt');
     opts.forEach((opt) => {
       opt.addEventListener('click', () => {
         const value = opt.dataset.themeValue;
@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 中英文切换：自定义下拉单选框，选择后调用全局 setLanguage 切换并持久化
-  // 每个 .lang_select 独立处理（PC 与移动端各一组）
-  document.querySelectorAll('.lang_select').forEach((langSelect) => {
-    const langTrigger = langSelect.querySelector('.lang_trigger');
-    const langItems = langSelect.querySelectorAll('.lang_item');
+  // 每个 .lang-select 独立处理（PC 与移动端各一组）
+  document.querySelectorAll('.lang-select').forEach((langSelect) => {
+    const langTrigger = langSelect.querySelector('.lang-trigger');
+    const langItems = langSelect.querySelectorAll('.lang-item');
 
     // 收起当前下拉
     const closeLang = () => {

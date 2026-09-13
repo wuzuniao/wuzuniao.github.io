@@ -28,7 +28,7 @@ main p {
   box-sizing: border-box;
 }
 
-/* 页面标题（站内公告 / 免责声明）：与首页 section_title 一致——居中、2rem、600、紧字距 */
+/* 页面标题（站内公告 / 免责声明）：与首页 section-title 一致——居中、2rem、600、紧字距 */
 .site > h1 {
   display: block;
   font-size: 2rem;

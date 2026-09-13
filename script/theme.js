@@ -16,7 +16,7 @@ function getTheme() {
 // 应用主题：设置 data-theme，并同步 PC / 移动端主题切换器的选中态
 function applyTheme(theme) {
   document.documentElement.dataset.theme = theme;
-  document.querySelectorAll('.theme_opt').forEach((opt) => {
+  document.querySelectorAll('.theme-opt').forEach((opt) => {
     const isDark = opt.dataset.themeValue === 'dark';
     const active = theme === 'dark' ? isDark : !isDark;
     opt.classList.toggle('is-active', active);

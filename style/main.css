@@ -27,9 +27,9 @@
 }
 
 
-/* ===== 按钮基类：营销胶囊（主按钮 .btn_primary 与卡片按钮 .card_btn 共用外形） ===== */
+/* ===== 按钮基类：营销胶囊（主按钮 .btn-primary 与卡片按钮 .card-btn 共用外形） ===== */
 .btn,
-.card_btn {
+.card-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +42,7 @@
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
 
-.btn_primary {
+.btn-primary {
   font-size: 1.0625rem;
   padding: 0.75rem 1.75rem;
   min-height: 3rem;
@@ -50,22 +50,22 @@
   color: var(--color-on-primary);
 }
 
-.btn_primary:hover {
+.btn-primary:hover {
   background: var(--color-ink-hover);
   color: var(--color-on-primary);
   transform: translateY(-1px);
 }
 
 .btn:focus-visible,
-.card_btn:focus-visible {
+.card-btn:focus-visible {
   outline: 2px solid var(--color-link);
   outline-offset: 2px;
 }
 
 
 /* ===== 卡片基类：特性卡 / 目录卡 共用白底发丝边外观 ===== */
-.feature_card,
-.catalog_card {
+.feature-card,
+.catalog-card {
   display: flex;
   flex-direction: column;
   min-width: 0; /* 允许在网格轨道内收缩，避免内容撑破视口 */
@@ -79,15 +79,15 @@
 }
 
 /* Whisper 阴影：1px 发丝边 + 极低 alpha 分层投影 */
-.feature_card:hover,
-.catalog_card:hover {
+.feature-card:hover,
+.catalog-card:hover {
   border-color: var(--color-hairline-strong);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 8px 16px -4px rgba(0, 0, 0, 0.06);
 }
 
 /* 卡片标题 / 描述（两型共用） */
-.card_title,
-.catalog_card_title {
+.card-title,
+.catalog-card-title {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.75rem;
@@ -96,8 +96,8 @@
   margin: 0 0 0.75rem;
 }
 
-.card_desc,
-.catalog_card_desc {
+.card-desc,
+.catalog-card-desc {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5rem;
@@ -105,7 +105,7 @@
   margin: 0 0 1rem;
 }
 
-.card_list {
+.card-list {
   list-style: none;
   margin: 0 0 1rem;
   padding: 0;
@@ -114,7 +114,7 @@
   gap: 0.5rem;
 }
 
-.card_list > li {
+.card-list > li {
   position: relative;
   padding-left: 1.1em;
   font-size: 0.875rem;
@@ -122,7 +122,7 @@
   color: var(--color-body);
 }
 
-.card_list > li::before {
+.card-list > li::before {
   content: "—";
   position: absolute;
   left: 0;
@@ -131,7 +131,7 @@
 }
 
 /* 卡片内独立按钮（卡片本身不可点击时使用）：白底发丝边胶囊，hover 反转为墨底白字 */
-.card_btn {
+.card-btn {
   align-self: flex-start;
   margin-top: auto;
   font-size: 0.875rem;
@@ -142,7 +142,7 @@
   border: 1px solid var(--color-hairline);
 }
 
-.card_btn:hover {
+.card-btn:hover {
   background: var(--color-ink);
   color: var(--color-on-primary);
   border-color: var(--color-ink);
@@ -156,7 +156,7 @@
   display: flex;
 }
 
-.hero_inner {
+.hero-inner {
   flex: 1;
   width: 100%;
   max-width: 48rem;
@@ -169,7 +169,7 @@
   text-align: center;
 }
 
-.hero_title {
+.hero-title {
   font-size: 3.5rem;
   font-weight: 600;
   line-height: 1.1;
@@ -178,7 +178,7 @@
   margin: 0 0 1.5rem;
 }
 
-.hero_lead {
+.hero-lead {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.75rem;
@@ -187,11 +187,11 @@
   margin: 0 0 2.5rem;
 }
 
-.hero_actions {
+.hero-actions {
   margin: 0 0 1.5rem;
 }
 
-.hero_note {
+.hero-note {
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: var(--color-mute);
@@ -203,7 +203,7 @@
   background: var(--color-canvas);
 }
 
-.screen_inner {
+.screen-inner {
   max-width: 75rem;
   width: 100%;
   margin: 0 auto;
@@ -215,7 +215,7 @@
   margin: 0 0 0.75rem;
 }
 
-.section_title {
+.section-title {
   font-size: 2rem;
   font-weight: 600;
   line-height: 2.5rem;
@@ -226,7 +226,7 @@
 
 
 /* ===== 网络合集：3-up 卡片网格 ===== */
-.network_grid {
+.network-grid {
   display: grid;
   /* minmax(0,1fr)：轨道可收缩到 0，确保卡片宽度自适应、不超出视口 */
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -236,7 +236,7 @@
 
 
 /* ===== Vibe Coding：双栏，概念 + 实践项目 ===== */
-.vibe_grid {
+.vibe-grid {
   max-width: 56rem;
   margin: 0 auto;
   display: grid;
@@ -246,7 +246,7 @@
 }
 
 /* 左栏：概念说明卡片（不可点击） */
-.vibe_concept {
+.vibe-concept {
   min-width: 0; /* 允许在网格轨道内收缩，避免内容撑破视口 */
   background: var(--color-elevated);
   border: 1px solid var(--color-hairline);
@@ -263,7 +263,7 @@
   background: var(--color-canvas);
 }
 
-.catalog_inner {
+.catalog-inner {
   max-width: 75rem;
   width: 100%;
   margin: 0 auto;
@@ -271,7 +271,7 @@
   text-align: center;
 }
 
-.catalog_lead {
+.catalog-lead {
   font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.75rem;
@@ -280,7 +280,7 @@
   margin: 0 auto 3rem;
 }
 
-.catalog_grid {
+.catalog-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
@@ -290,7 +290,7 @@
 
 
 /* 技术域标签：白底发丝边胶囊 */
-.catalog_tags {
+.catalog-tags {
   list-style: none;
   margin: auto 0 0;
   padding: 0;
@@ -299,7 +299,7 @@
   gap: 0.5rem;
 }
 
-.catalog_tag {
+.catalog-tag {
   font-size: 0.75rem;
   line-height: 1rem;
   color: var(--color-body);
@@ -311,13 +311,13 @@
 
 
 /* ===== CTA band：收尾居中黑胶囊 ===== */
-.cta_band {
+.cta-band {
   background: var(--color-canvas);
   text-align: center;
   padding: 6rem 1.5rem;
 }
 
-.cta_title {
+.cta-title {
   font-size: 2rem;
   font-weight: 600;
   line-height: 2.5rem;
@@ -327,11 +327,11 @@
   max-width: 40rem;
 }
 
-.cta_actions {
+.cta-actions {
   margin-bottom: 1rem;
 }
 
-.cta_note {
+.cta-note {
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: var(--color-mute);
@@ -341,10 +341,10 @@
 /* ===== 尊重减弱动效偏好 ===== */
 @media (prefers-reduced-motion: reduce) {
   .btn,
-  .feature_card {
+  .feature-card {
     transition: none;
   }
-  .btn_primary:hover {
+  .btn-primary:hover {
     transform: none;
   }
 }
@@ -355,57 +355,57 @@
   .hero {
     min-height: auto;
   }
-  .hero_inner {
+  .hero-inner {
     padding: 3rem 1.25rem;
   }
-  .hero_title {
+  .hero-title {
     font-size: 2.25rem;
     line-height: 1.1;
     letter-spacing: -0.1rem;
   }
-  .screen_inner {
+  .screen-inner {
     padding: 4rem 1.25rem;
   }
-  .section_title {
+  .section-title {
     font-size: 1.75rem;
     line-height: 2.25rem;
   }
-  .network_grid {
+  .network-grid {
     grid-template-columns: 1fr;
   }
-  .vibe_grid {
+  .vibe-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  .catalog_grid {
+  .catalog-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .cta_band {
+  .cta-band {
     padding: 4rem 1.25rem;
   }
-  .cta_title {
+  .cta-title {
     font-size: 1.75rem;
     line-height: 2.25rem;
   }
 }
 
 @media screen and (max-width: 640px) {
-  .hero_inner {
+  .hero-inner {
     padding: 3.5rem 1.25rem;
   }
-  .hero_title {
+  .hero-title {
     font-size: 2rem;
     line-height: 2.25rem;
     letter-spacing: -0.08rem;
   }
-  .hero_lead {
+  .hero-lead {
     font-size: 1rem;
     line-height: 1.5rem;
   }
   .btn {
     width: 100%;
   }
-  .catalog_grid {
+  .catalog-grid {
     grid-template-columns: 1fr;
   }
 }

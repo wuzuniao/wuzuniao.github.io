@@ -88,7 +88,7 @@ address {
 }
 
 /* 初始化宽度，左右对齐 */
-.pc_nav, .site, .footer {
+.pc-nav, .site, .footer {
   max-width: 62.5em;
   margin-left: auto;
   margin-right: auto;

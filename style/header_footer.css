@@ -4,7 +4,7 @@
    灰阶文字：var(--color-body) body / var(--color-mute) mute / var(--color-faint) faint。图片保留原色，不做滤镜处理。 */
 
 /* ============ PC 端导航 ============ */
-.pc_header {
+.pc-header {
   width: 100%;
   background: var(--color-canvas);
   height: 6.25em;
@@ -12,19 +12,19 @@
 }
 
 /* 导航容器：flex 布局，左侧 logo+菜单，右侧工具区 */
-.pc_nav {
+.pc-nav {
   display: flex;
   align-items: center;
 }
 
-.pc_nav > a {
+.pc-nav > a {
   flex: 0 0 auto;
   width: 18.75em;
   text-align: center;
   line-height: 6.25em;
 }
 
-.pc_nav > a > img {
+.pc-nav > a > img {
   width: 15.625em;
   max-width: 15.625em;
 }
@@ -51,17 +51,17 @@
 }
 
 /* 一级菜单样式 */
-.pc_nav > ul {
+.pc-nav > ul {
   display: flex;
   flex: 0 0 auto;
   margin-left: 0.5em;
 }
 
-.pc_nav > ul > li {
+.pc-nav > ul > li {
   flex: 0 0 auto;
 }
 
-.pc_nav > ul > li > a {
+.pc-nav > ul > li > a {
   line-height: 6.25em;
   display: block;
   text-align: left;
@@ -72,12 +72,12 @@
   transition: color 0.15s ease;
 }
 
-.pc_nav > ul > li:hover > a {
+.pc-nav > ul > li:hover > a {
   color: var(--color-link);
 }
 
 /* 二级菜单样式（纯文字、无底无边框；悬停仅改文字颜色；无子项的一级菜单不响应） */
-.pc_nav > ul > li > .pc_nav2_ul {
+.pc-nav > ul > li > .pc-nav2-ul {
   position: absolute;
   z-index: 99;
   width: auto;
@@ -90,13 +90,13 @@
 }
 
 /* 仅当一级菜单含二级链接时悬停才展开，作为一级导航的延伸 */
-.pc_nav > ul > li:has(.pc_nav2_li a):hover > .pc_nav2_ul {
+.pc-nav > ul > li:has(.pc-nav2-li a):hover > .pc-nav2-ul {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-.pc_nav > ul > li > .pc_nav2_ul > .pc_nav2_li > a {
+.pc-nav > ul > li > .pc-nav2-ul > .pc-nav2-li > a {
   display: block;
   line-height: 2.75em;
   padding-left: 0.5em;
@@ -106,12 +106,12 @@
   transition: color 0.15s ease, background 0.15s ease;
 }
 
-.pc_nav > ul > li > .pc_nav2_ul > .pc_nav2_li > a:hover {
+.pc-nav > ul > li > .pc-nav2-ul > .pc-nav2-li > a:hover {
   color: var(--color-link);
 }
 
 /* 二级菜单背景面板：悬停含子链接的一级菜单时显示（白底、近不透明，遮住原页面） */
-.pc_nav_both {
+.pc-nav-both {
   position: absolute;
   left: 0;
   top: 6.25em;
@@ -124,13 +124,13 @@
   transition: opacity 0.2s ease, visibility 0.2s;
 }
 
-.pc_nav:has(> ul > li:hover .pc_nav2_li a) .pc_nav_both {
+.pc-nav:has(> ul > li:hover .pc-nav2-li a) .pc-nav-both {
   opacity: 0.92;
   visibility: visible;
 }
 
 /* ============ 右侧工具区（主题切换 + 中英文切换，占位） ============ */
-.pc_nav_tools {
+.pc-nav-tools {
   flex: 0 0 auto;
   margin-left: auto;
   display: flex;
@@ -139,7 +139,7 @@
 }
 
 /* 主题切换：分段胶囊（当前项为中性灰底墨字；黑色高亮已让位给登录主 CTA） */
-.theme_toggle {
+.theme-toggle {
   display: inline-flex;
   align-items: center;
   padding: 0.1875em;
@@ -148,7 +148,7 @@
   background-color: var(--color-elevated);
 }
 
-.theme_opt {
+.theme-opt {
   display: inline-flex;
   align-items: center;
   gap: 0.35em;
@@ -163,32 +163,32 @@
   transition: color 0.15s ease, background 0.15s ease;
 }
 
-.theme_opt.is-active {
+.theme-opt.is-active {
   background-color: var(--color-hairline-strong);
   color: var(--color-ink);
 }
 
 /* 主题段内图标：复用 sun/moon PNG（浅色模式灰底上直接用深色图标，无需反白） */
-.theme_icon {
+.theme-icon {
   display: block;
   width: 1em;
   height: 1em;
 }
 
-.theme_opt:not(.is-active):hover {
+.theme-opt:not(.is-active):hover {
   color: var(--color-ink);
 }
 
-.theme_opt:focus {
+.theme-opt:focus {
   outline: none;
 }
 
 /* 中英文切换：自定义下拉单选框（展开面板与整体风格一致，非系统默认） */
-.lang_select {
+.lang-select {
   position: relative;
 }
 
-.lang_trigger {
+.lang-trigger {
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
@@ -209,18 +209,18 @@
   background-size: 0.75em;
 }
 
-.lang_trigger:hover {
+.lang-trigger:hover {
   border-color: var(--color-hairline-strong);
   color: var(--color-ink);
 }
 
-.lang_trigger:focus {
+.lang-trigger:focus {
   outline: none;
   border-color: var(--color-ink);
 }
 
 /* 展开面板：白底发丝边圆角，与界面协调 */
-.lang_menu {
+.lang-menu {
   position: absolute;
   top: calc(100% + 0.4em);
   right: 0;
@@ -240,13 +240,13 @@
   z-index: 100;
 }
 
-.lang_select.is-open .lang_menu {
+.lang-select.is-open .lang-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-.lang_item {
+.lang-item {
   padding: 0.45em 1em;
   white-space: nowrap;
   color: var(--color-body);
@@ -256,8 +256,8 @@
   transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-.lang_item:hover,
-.lang_item.is-selected {
+.lang-item:hover,
+.lang-item.is-selected {
   color: var(--color-link);
   background-color: var(--color-canvas);
 }
@@ -266,7 +266,7 @@
 /* ============ 登录注册按钮（全站 header 注入；见 nav-partial.js 末尾 DOM 块） ============ */
 /* 默认（未登录）：墨色底反白胶囊（主 CTA 黑色高亮；深色模式随令牌翻转为亮底黑字）；
    已登录 .is-logged：切换为中性胶囊，显示 localStorage 内的用户名（去除高亮）。 */
-.nav_login {
+.nav-login {
   display: inline-flex;
   align-items: center;
   padding: 0.3em 1em;
@@ -281,20 +281,20 @@
 }
 
 /* 默认态悬停：墨底加深一档（覆盖全局 a:hover 变色，保持反白文字） */
-.nav_login:hover {
+.nav-login:hover {
   background-color: var(--color-ink-hover);
   color: var(--color-on-primary);
 }
 
 /* 已登录态：与语言切换触发器同款中性胶囊，去除高亮 */
-.nav_login.is-logged {
+.nav-login.is-logged {
   border-color: var(--color-hairline);
   background-color: var(--color-elevated);
   color: var(--color-body);
   font-weight: 400;
 }
 
-.nav_login.is-logged:hover {
+.nav-login.is-logged:hover {
   border-color: var(--color-hairline-strong);
   color: var(--color-ink);
 }
@@ -308,7 +308,7 @@ footer {
   color: var(--color-body);
 }
 
-.footer_erweima {
+.footer-erweima {
   overflow: hidden;
   /* 白底页脚内的主分割线用最强的 hairline-strong（二维码/主链接块与下方子页链接的分界），
      作为页脚最顶层级分隔，在纯白底上最清晰有质感 */
@@ -317,18 +317,18 @@ footer {
   padding-bottom: 20px;
 }
 
-.footer_erweima > div {
+.footer-erweima > div {
   width: 200px;
   display: inline-block;
   text-align: center;
   float: left;
 }
 
-.footer_erweima > div:last-child {
+.footer-erweima > div:last-child {
   width: 400px;
 }
 
-.footer_erweima > div > a {
+.footer-erweima > div > a {
   display: block;
   font-size: 1em;
   font-weight: 500;
@@ -337,24 +337,24 @@ footer {
   transition: color 0.15s ease;
 }
 
-.footer_erweima > div > a:hover {
+.footer-erweima > div > a:hover {
   color: var(--color-link);
 }
 
-.footer_erweima > div:last-child > a {
+.footer-erweima > div:last-child > a {
   margin-top: 65px;
 }
 
-.footer_ziye {
+.footer-ziye {
   display: block;
-  /* 去掉与上方 .footer_erweima 底边线相邻的重复 border-top，避免重影双线；
-     仅保留底部单线。页脚层级：.footer_erweima 底用 hairline-strong（主分割），
+  /* 去掉与上方 .footer-erweima 底边线相邻的重复 border-top，避免重影双线；
+     仅保留底部单线。页脚层级：.footer-erweima 底用 hairline-strong（主分割），
      此处用更弱的 hairline（次分割），形成强→弱层级，避免等色无层次 */
   border-bottom: 1px solid var(--color-hairline);
   box-sizing: border-box;
 }
 
-.footer_ziye > a {
+.footer-ziye > a {
   font-size: 0.875em;
   color: var(--color-body);
   line-height: 3em;
@@ -362,11 +362,11 @@ footer {
   transition: color 0.15s ease;
 }
 
-.footer_ziye > a:hover {
+.footer-ziye > a:hover {
   color: var(--color-link);
 }
 
-.footer_ziye > a > img {
+.footer-ziye > a > img {
   margin-bottom: 0.9em;
 }
 
@@ -404,15 +404,15 @@ footer {
 }
 
 /* PC 界面下隐藏手机版内容 */
-.m_qian {
+.m-qian {
   display: none;
 }
 
-.m_hou {
+.m-hou {
   display: none;
 }
 
-.m_footer {
+.m-footer {
   display: none;
 }
 
@@ -420,20 +420,20 @@ footer {
 /* 小于 1600 大于 1200 稍微调整字体 */
 @media screen and (max-width: 1600px) and (min-width: 1025px) {
   /* 导航栏 */
-  .pc_nav > ul > li > a {
+  .pc-nav > ul > li > a {
     font-size: 0.9375em;
   }
 
-  .pc_nav > ul > li > .pc_nav2_ul > .pc_nav2_li > a {
+  .pc-nav > ul > li > .pc-nav2-ul > .pc-nav2-li > a {
     font-size: 0.8125em;
   }
 
   /* 页脚 */
-  .footer_erweima > div > a {
+  .footer-erweima > div > a {
     font-size: 0.9375em;
   }
 
-  .footer_ziye > a {
+  .footer-ziye > a {
     font-size: 0.8125em;
   }
 
@@ -445,14 +445,14 @@ footer {
 
 /* ============ 移动端 ============ */
 @media screen and (max-width: 1024px) {
-  /* 统一移动端导航抽屉与 +/- 图标位置：通过 .m_hou.is-open 使用 100vw 锚定物理右缘
-     （见下方 .m_hou.is-open 规则），不再依赖 html overflow hack */
+  /* 统一移动端导航抽屉与 +/- 图标位置：通过 .m-hou.is-open 使用 100vw 锚定物理右缘
+     （见下方 .m-hou.is-open 规则），不再依赖 html overflow hack */
   /* 移动端导航 */
-  .pc_header {
+  .pc-header {
     display: none;
   }
 
-  .m_qian {
+  .m-qian {
     display: block;
     height: 60px;
     background: var(--color-canvas);
@@ -460,30 +460,30 @@ footer {
     overflow: hidden;
   }
 
-  .m_qian .m_qian_lf {
+  .m-qian .m-qian-lf {
     padding-top: 5px;
     padding-left: 5px;
     float: left;
   }
 
-  .m_qian .m_qian_lf .m_qian_logo {
+  .m-qian .m-qian-lf .m-qian-logo {
     height: 50px;
     display: block;
   }
 
-  .m_qian .m_qian_rg {
+  .m-qian .m-qian-rg {
     padding-right: 5%;
     padding-top: 17.5px;
     float: right;
   }
 
-  .m_qian .m_qian_rg a .m_qian_menuimg {
+  .m-qian .m-qian-rg a .m-qian-menuimg {
     height: 25px;
     display: block;
   }
 
   /* 抽屉容器：默认收起，is-open 展开 */
-  .m_hou {
+  .m-hou {
     display: block;
     position: fixed;
     top: 0;
@@ -494,7 +494,7 @@ footer {
     z-index: 10000;
   }
 
-  .m_hou.is-open {
+  .m-hou.is-open {
     /* 用 100vw（物理视口宽，与滚动条是否占布局无关）替代 100%，
        使首页（有滚动条）与子页（无滚动条）的抽屉容器宽度锚定到同一物理右缘，
        彻底消除 +/- 图标 right 锚点的跨页差异 */
@@ -502,7 +502,7 @@ footer {
     height: 100%;
   }
 
-  .m_hou .m_hou_beijing {
+  .m-hou .m-hou-beijing {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -514,11 +514,11 @@ footer {
     transition: opacity 0.3s ease;
   }
 
-  .m_hou.is-open .m_hou_beijing {
+  .m-hou.is-open .m-hou-beijing {
     opacity: 0.9;
   }
 
-  .m_hou .m_hou_tubiao_beijing {
+  .m-hou .m-hou-tubiao-beijing {
     position: absolute;
     width: 20%;
     left: 0;
@@ -529,11 +529,11 @@ footer {
     transition: opacity 0.3s ease;
   }
 
-  .m_hou.is-open .m_hou_tubiao_beijing {
+  .m-hou.is-open .m-hou-tubiao-beijing {
     opacity: 1;
   }
 
-  .m_hou .m_navList {
+  .m-hou .m-nav-list {
     position: absolute;
     width: 80%;
     top: 0;
@@ -547,18 +547,18 @@ footer {
     transition: right 0.3s ease;
   }
 
-  .m_hou.is-open .m_navList {
+  .m-hou.is-open .m-nav-list {
     right: 0;
   }
 
-  .m_hou .m_navList ul {
+  .m-hou .m-nav-list ul {
     padding-left: 5%;
     padding-right: 5%;
   }
 
   /* 移动端抽屉顶部工具区：复用主题切换 + 中英文切换 + 登录按钮，与导航列表以发丝线分隔；
      三件套紧凑贴右（与 PC 工具区同构，登录位于语言切换右侧）；窄屏放不下时换行仍贴右 */
-  .m_nav_tools {
+  .m-nav-tools {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -568,11 +568,11 @@ footer {
     border-bottom: 1px solid var(--color-hairline);
   }
 
-  .m_hou .m_navList ul li {
+  .m-hou .m-nav-list ul li {
     border-bottom: 1px solid var(--color-hairline);
   }
 
-  .m_hou .m_navList ul li a {
+  .m-hou .m-nav-list ul li a {
     display: block;
     height: 45px;
     color: var(--color-body);
@@ -582,25 +582,25 @@ footer {
     transition: color 0.15s ease;
   }
 
-  .m_hou .m_navList ul > li > a:hover,
-  .m_hou .m_navList ul > li .m_navList_a > a:hover {
+  .m-hou .m-nav-list ul > li > a:hover,
+  .m-hou .m-nav-list ul > li .m-nav-list-a > a:hover {
     color: var(--color-link);
   }
 
-  .m_hou .m_navList ul li .m_navList_a {
+  .m-hou .m-nav-list ul li .m-nav-list-a {
     position: relative;
     width: 100%;
   }
 
-  .m_hou .m_navList ul li .m_navList_a a {
+  .m-hou .m-nav-list ul li .m-nav-list-a a {
     display: block;
     padding-right: 60px; /* 为 +/- 图标预留固定空间，避免抽屉宽度变化影响图标位置 */
   }
 
-  .m_hou .m_navList ul li .m_navList_a i {
+  .m-hou .m-nav-list ul li .m-nav-list-a i {
     position: absolute;
     top: 5px;
-    /* right 相对 .m_navList_a 右缘；该右缘距抽屉/物理右缘约 46px，
+    /* right 相对 .m-nav-list-a 右缘；该右缘距抽屉/物理右缘约 46px，
        故图标实际距右缘约 46+right px，远离经典滚动条(~17px)，不会被遮挡。
        当前 5px：整体更靠右（相对上次的 12px 再右移 7px）。 */
     right: 5px;
@@ -610,29 +610,29 @@ footer {
   }
 
   /* 展开/收起图标（仅含子链接的项显示）：深色描边，浅色模式 */
-  .m_hou_icon {
+  .m-hou-icon {
     background: url(../images/plus.png) no-repeat 50% 50%;
     background-size: 20px 20px;
   }
 
-  .m_navList li.is-expanded .m_hou_icon {
+  .m-nav-list li.is-expanded .m-hou-icon {
     background: url(../images/reduce.png) no-repeat 50% 50%;
     background-size: 20px 20px;
   }
 
   /* 子导航：max-height 过渡 */
-  .m_hou .m_navList ul li .m_navList_nav {
+  .m-hou .m-nav-list ul li .m-nav-list-nav {
     width: 100%;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
 
-  .m_hou .m_navList ul li.is-expanded > .m_navList_nav {
+  .m-hou .m-nav-list ul li.is-expanded > .m-nav-list-nav {
     max-height: 320px;
   }
 
-  .m_hou .m_navList ul li .m_navList_nav a {
+  .m-hou .m-nav-list ul li .m-nav-list-nav a {
     display: block;
     height: 40px;
     line-height: 40px;
@@ -646,7 +646,7 @@ footer {
     transition: color 0.15s ease;
   }
 
-  .m_hou .m_navList ul li .m_navList_nav a:hover {
+  .m-hou .m-nav-list ul li .m-nav-list-nav a:hover {
     color: var(--color-link);
   }
 
@@ -655,17 +655,17 @@ footer {
     display: none;
   }
 
-  .m_footer {
+  .m-footer {
     display: block;
     padding: 2rem 1.25rem;
     background: var(--color-elevated);
   }
 
-  .m_footer_erweima {
+  .m-footer-erweima {
     overflow: hidden;
   }
 
-  .m_footer_erweima > a {
+  .m-footer-erweima > a {
     display: inline-block;
     width: 33.3333%;
     font-size: 0.875em;
@@ -676,11 +676,11 @@ footer {
     transition: color 0.15s ease;
   }
 
-  .m_footer_erweima > a:hover {
+  .m-footer-erweima > a:hover {
     color: var(--color-link);
   }
 
-  .m_footer_ziye {
+  .m-footer-ziye {
     /* 移动端层级同 PC：上边线为 erweima|ziye 主分割（hairline-strong），
        下边线为 ziye|copyright 次分割（hairline），强→弱体现层级 */
     border-top: 1px solid var(--color-hairline-strong);
@@ -691,7 +691,7 @@ footer {
     margin-bottom: 0.5em;
   }
 
-  .m_footer_ziye > a {
+  .m-footer-ziye > a {
     font-size: 0.75em;
     color: var(--color-body);
     line-height: 2em;
@@ -699,26 +699,26 @@ footer {
     transition: color 0.15s ease;
   }
 
-  .m_footer_ziye > a:hover {
+  .m-footer-ziye > a:hover {
     color: var(--color-link);
   }
 
-  .m_copyright {
+  .m-copyright {
     text-align: center;
     font-size: 0.75em;
   }
 
-  .m_copyright > p {
+  .m-copyright > p {
     line-height: 1.5em;
     color: var(--color-mute);
   }
 
-  .m_copyright > p > a {
+  .m-copyright > p > a {
     color: var(--color-mute);
     transition: color 0.15s ease;
   }
 
-  .m_copyright > p > a:hover {
+  .m-copyright > p > a:hover {
     color: var(--color-link);
   }
 
@@ -728,15 +728,15 @@ footer {
 }
 
 /* 主题图标：深色模式下（含中性灰选中底）统一反白为白图标 */
-:root[data-theme="dark"] .theme_icon {
+:root[data-theme="dark"] .theme-icon {
   filter: invert(1);
 }
 
 /* ============ 移动端导航功能图标：随主题切换 ============ */
-/* 菜单/关闭/展开收起图标均为深色 PNG，无白色变体；深色模式下统一反色为白（功能性控件，与 .theme_icon 同处理） */
-:root[data-theme="dark"] .m_qian_menuimg,
-:root[data-theme="dark"] .m_hou_tubiao_beijing img,
-:root[data-theme="dark"] .m_hou_icon {
+/* 菜单/关闭/展开收起图标均为深色 PNG，无白色变体；深色模式下统一反色为白（功能性控件，与 .theme-icon 同处理） */
+:root[data-theme="dark"] .m-qian-menuimg,
+:root[data-theme="dark"] .m-hou-tubiao-beijing img,
+:root[data-theme="dark"] .m-hou-icon {
   filter: invert(1);
 }
 
