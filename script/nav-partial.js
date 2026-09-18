@@ -111,7 +111,8 @@
       </div>
       <div class="m-qian-rg">
         <a href="#" class="m-qian-tubiao" role="button" aria-label="打开导航菜单" data-en="Open navigation menu" data-en-attr="aria-label" data-hant-attr="打開導覽選單">
-          <img class="m-qian-menuimg" src="${base}images/m_menuimg.png" alt="菜单">
+          <!-- 纯 CSS 三横线图标（原 m_menuimg.png，绘制见 header_footer.css .m-qian-menuimg） -->
+          <span class="m-qian-menuimg" aria-hidden="true"></span>
         </a>
       </div>
     </div>
@@ -120,7 +121,8 @@
       <div class="m-hou-beijing m-hou-tubiao"></div>
       <div class="m-hou-tubiao-beijing">
         <a href="#" class="m-hou-tubiao" role="button" aria-label="关闭导航菜单" data-en="Close navigation menu" data-en-attr="aria-label" data-hant-attr="關閉導覽選單">
-          <img src="${base}images/close.png" width="22" alt="关闭">
+          <!-- 纯 CSS ✕ 图标（原 close.png，绘制见 header_footer.css .m-hou-close） -->
+          <span class="m-hou-close" aria-hidden="true"></span>
         </a>
       </div>
       <div class="m-nav-list">

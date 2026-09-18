@@ -473,13 +473,44 @@ footer {
 
   .m-qian .m-qian-rg {
     padding-right: 5%;
-    padding-top: 17.5px;
+    padding-top: 21px;
     float: right;
   }
 
+  /* 汉堡菜单图标：纯 CSS 三横线，尺寸对齐 auth 项目 .sidebar__menu-icon
+     （auth 1rem=10px：宽 2.4rem=24px、线厚 0.2rem=2px、线偏移 0.8rem=8px →
+     总高 18px、线中心距 8px，圆头 border-radius 9999px）。
+     中线由 span 内容盒绘制（padding 上下 8px → 内容盒为居中的 24x2px 线，
+     border-radius 使内容盒圆角自动钳制为 1px 半圆头），上下线由伪元素绘制。
+     颜色走令牌，深浅主题自动翻转 */
   .m-qian .m-qian-rg a .m-qian-menuimg {
-    height: 25px;
     display: block;
+    position: relative;
+    width: 24px;
+    height: 18px;
+    padding: 8px 0;
+    border-radius: 9999px;
+    background: var(--color-body);
+    background-clip: content-box;
+  }
+
+  .m-qian-menuimg::before,
+  .m-qian-menuimg::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 9999px;
+    background: var(--color-body);
+  }
+
+  .m-qian-menuimg::before {
+    top: 0;
+  }
+
+  .m-qian-menuimg::after {
+    bottom: 0;
   }
 
   /* 抽屉容器：默认收起，is-open 展开 */
@@ -531,6 +562,34 @@ footer {
 
   .m-hou.is-open .m-hou-tubiao-beijing {
     opacity: 1;
+  }
+
+  /* 抽屉关闭图标：纯 CSS ✕（参考 auth 项目 .sidebar-drawer__close-icon 方案）。
+     原 close.png 48x48 显示 22x22：两臂长 15.56px、线厚 2.59px、圆头，±45° 交叉居中，
+     旋转后包围盒 12.83px（(15.56+2.59)/√2，对齐原图 28/48*22）。
+     颜色走令牌，深浅主题自动翻转（替代原深色 filter 反转） */
+  .m-hou-close {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+  }
+
+  .m-hou-close::before,
+  .m-hou-close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15.56px;
+    height: 2.59px;
+    border-radius: 9999px;
+    background: var(--color-ink);
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .m-hou-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 
   .m-hou .m-nav-list {
@@ -609,15 +668,31 @@ footer {
     display: block;
   }
 
-  /* 展开/收起图标（仅含子链接的项显示）：深色描边，浅色模式 */
-  .m-hou-icon {
-    background: url(../images/plus.png) no-repeat 50% 50%;
-    background-size: 20px 20px;
+  /* 展开/收起图标：纯 CSS +/−（参考 auth 项目 .sidebar-link__arrow 方案）。
+     原 plus.png / reduce.png 48x48 按 background-size 20x20 显示：臂长 13.33px
+     （32/48*20）、线厚 1.67px（4/48*20）、圆头，十字居中。横线 + 旋转 90° 竖线
+     构成 +；展开（.is-expanded）时竖线淡出构成 −，随子导航展开过渡（0.2s 与 auth 一致）。
+     颜色走令牌，深浅主题自动翻转（替代原深色 filter 反转） */
+  .m-hou-icon::before,
+  .m-hou-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 13.33px;
+    height: 1.67px;
+    border-radius: 9999px;
+    background: var(--color-ink);
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
-  .m-nav-list li.is-expanded .m-hou-icon {
-    background: url(../images/reduce.png) no-repeat 50% 50%;
-    background-size: 20px 20px;
+  .m-hou-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .m-nav-list li.is-expanded .m-hou-icon::after {
+    opacity: 0;
   }
 
   /* 子导航：max-height 过渡 */
@@ -729,14 +804,6 @@ footer {
 
 /* 主题图标：深色模式下（含中性灰选中底）统一反白为白图标 */
 :root[data-theme="dark"] .theme-icon {
-  filter: invert(1);
-}
-
-/* ============ 移动端导航功能图标：随主题切换 ============ */
-/* 菜单/关闭/展开收起图标均为深色 PNG，无白色变体；深色模式下统一反色为白（功能性控件，与 .theme-icon 同处理） */
-:root[data-theme="dark"] .m-qian-menuimg,
-:root[data-theme="dark"] .m-hou-tubiao-beijing img,
-:root[data-theme="dark"] .m-hou-icon {
   filter: invert(1);
 }
 
